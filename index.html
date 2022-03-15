@@ -17,54 +17,54 @@
 <body class="">
   <div class="offcanvas offcanvas-start" tabindex="-1" id="options">
     <div class="offcanvas-header">
-      <h3 class="offcanvas-title maincolour" id="offcanvasLabel">Settings</h3>
+      <h3 class="offcanvas-title maincolour" id="offcanvasLabel">Configurações</h3>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <p>The settings available here allow you to modify which components / rules you want this
-        variant to use. Changes will be made to the wording of some rules to reflect these settings.</p>
-      <h6 class="paraseparator">General</h6>
+      <p>As configurações disponíveis aqui permitem modificar quais componentes/regras você quer que essa variante use.
+        Alterações serão feitas no texto de algumas regras para refletir essas configurações.</p>
+      <h6 class="paraseparator">Geral</h6>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkdynamicInstructions" onclick="chkClick(this);" disabled>
         <label for="chkdynamicInstructions" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="By default all rules will be displayed. When toggled ON rules will display based on certain criteria, i.e: when the RB is discovered, movement & deployment rules will ONLY be displayed in relation to the RB">Dynamic
-          Rules</label>
+          title="Por padrão todas as regras serão exibidas. Quando ATIVADO, as regras serão exibidas baseados em certos critérios,
+                  ou seja, quando a BR estiver descoberta, regras de movimentação e destacamento só serão exibidas em relação à BR">Regras Dinâmicas</label>
       </div>
 
-      <h6 class="sidebarsubheader">Rise of the Empire Expansion
+      <h6 class="sidebarsubheader">Expansão Ascensão do Império
         <span class="material-icons" style="font-size: large;">dark_mode</span>
       </h6>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkROTE-Units" onclick="chkClick(this);">
         <label for="chkROTE-Units" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="Setup deployment rules will change">Use Expansion Units</label>
+          title="Regras de destacamento na preparação serão alteradas">Usar Unidades da Expansão</label>
       </div>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkROTE-TacticCards" onclick="chkClick(this);">
         <label for="chkROTE-TacticCards" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="Battle rules will change">Use Advanced Tactic Cards</label>
+          title="Regras de batalha serão alteradas">Usar Cartas Táticas Avançadas</label>
       </div>
-      <h6 class="sidebarsubheader">Variants
+      <h6 class="sidebarsubheader">Variantes
         <span class="material-icons" style="font-size: large;">science</span>
       </h6>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkvar-Movement" onclick="chkClick(this);">
         <label for="chkvar-Movement" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="The Empire will roll a D6 to determine whether to move to RB/PRB or nearest rebel units. Movement rules will be updated to reflect this">Movement
-          Variant</label>
+          title="O Império rolará um D6 para determinar se move-se para a BR/PBR ou para as unidades rebeldes mais próximas.
+          As regras de movimentação serão atualizadas para refletir isso">Variante de Movimentação</label>
       </div>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkvar-Deployment" onclick="chkClick(this);">
         <label for="chkvar-Deployment" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="The Empire will deploy prioritizing proximity to PRB > proximity to Rebel system (tie going to production strength) > Imperial production strength">Deployment
-          Variant: Priority</label>
+          title="O Império vai destacar priorizando proximidade à PBR 
+            > proximidade a sistema Rebelde (desempate pela força de produção) 
+            > força de produção Imperial">Variante de Destacamento: Prioridade</label>
       </div>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkvar-UnPlayableMissions" onclick="chkClick(this);">
         <label for="chkvar-UnPlayableMissions" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="Unplayable Missions will be put at the bottom of the Initial Missions Desk and resolved at the end of the command phase. Wording in 'Play Initial Missions' section will change">Unplayable
-          Missions
-          Variant</label>
+          title="Missões injogáveis serão colocadas no fundo do Baralho de Missões Iniciais, e resolvidas ao final da fase de comando.
+          O texto da seção 'Jogue Missões Iniciais' será alterado">Variando Missões Injogáveis</label>
       </div>
     </div>
   </div>
@@ -72,14 +72,14 @@
   <div class="offcanvasSilm offcanvas-end" id="roundtracker" tabindex="-1" aria-labelledby="offcanvasLabel"
     data-bs-backdrop="false" data-bs-scroll="true">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title">Round Tracker</h5>
+      <h5 class="offcanvas-title">Indicador de Rodada</h5>
       <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
     </div>
     <div class="offcanvas-body small">
       <div class="roundtracker text-center">
         <div class="justify-content-center">
           <button class="btnNoBackground" onclick="changeRound()" data-bs-toggle="tooltip" data-bs-placement="right"
-            title="New Round">
+            title="Nova Rodada">
             <span class="material-icons align-middle icon-medium">add</span>
           </button>
         </div>
@@ -161,11 +161,11 @@
       <div>
         <div class="d-inline" id="fulltitle">Star Wars Rebellion</div>
         <!-- <div class="d-inline" id="abrtitle">SWR</div> -->
-        <div class="d-inline" style="font-weight: 100;"> Solo Variant</div>
+        <div class="d-inline" style="font-weight: 100;"> Variante Solo</div>
       </div>
       <div>
         <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#roundtracker">
-          <span class="icon-medium" id="roundnumber" data-bs-toggle="tooltip" title="Round" data-bs-placement="bottom"
+          <span class="icon-medium" id="roundnumber" data-bs-toggle="tooltip" title="Rodada" data-bs-placement="bottom"
             data-bs-target="#roundtracker">1</span>
         </button>
         <button type="button" class="btnNoBackground" id="d6button">
@@ -173,7 +173,7 @@
             data-bs-placement="bottom">casino</span>
         </button>
         <button id="reset" type="button" class="btnNoBackground" data-bs-toggle="modal" data-bs-target="#yesNo">
-          <span class="material-icons align-middle icon-medium" data-bs-toggle="tooltip" title="Reset"
+          <span class="material-icons align-middle icon-medium" data-bs-toggle="tooltip" title="Reiniciar"
             data-bs-placement="bottom">refresh</span>
         </button>
       </div>
@@ -185,7 +185,7 @@
           href="#list-setup-steps" role="tab" aria-controls="setup">
           <span class="material-icons align-middle icon-small">settings</span>
           <span class="d-none d-sm-inline p-1">
-            Setup
+            Preparação
           </span></a>
       </li>
       <li class="nav-item">
@@ -193,7 +193,7 @@
           data-bs-toggle="list" href="#list-assigment-steps" role="tab" aria-controls="assignment">
           <span class="material-icons align-middle icon-small">people_alt</span>
           <span class="d-none d-sm-inline p-1">
-            Assignment
+            Atribuição
           </span></a>
       </li>
       <li class="nav-item">
@@ -201,7 +201,7 @@
           data-bs-toggle="list" href="#list-command-steps" role="tab" aria-controls="command">
           <span class="material-icons align-middle icon-small">shield</span>
           <span class="d-none d-sm-inline p-1">
-            Command
+            Comando
           </span></a>
       </li>
       <li class="nav-item">
@@ -209,14 +209,14 @@
           data-bs-toggle="list" href="#list-refresh-steps" role="tab" aria-controls="refresh">
           <span class="material-icons align-middle icon-small">restart_alt</span>
           <span class="d-none d-sm-inline p-1">
-            Refresh
+            Restauração
           </span></a>
       </li>
       <li class="nav-item">
         <a class="list-group-item list-group-item-action" id="list-build-list" data-toggle="list" data-bs-toggle="list"
           href="#list-build-steps" role="tab" aria-controls="build">
           <span class="material-icons align-middle icon-small">build</span>
-          <span class="d-none d-sm-inline p-1">Build Queue</span></a>
+          <span class="d-none d-sm-inline p-1">Linha de Construção</span></a>
       </li>
       <li class="nav-item">
         <a class="list-group-item list-group-item-action" id="list-remotesystems-list" data-toggle="list"
@@ -224,7 +224,7 @@
           <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                   data-bs-target="#remotesystemslist"> -->
           <span class="material-icons align-middle icon-small">public</span>
-          <span class="d-none d-sm-inline p-1">Remote Systems</span>
+          <span class="d-none d-sm-inline p-1">Sistemas Remotos</span>
           <!-- </button> -->
         </a>
       </li>
@@ -239,165 +239,154 @@
             <!-- Setup Sets -->
             <section class="tab-pane" id="list-setup-steps" role="tabpanel" aria-labelledby="list-setup-list">
               <div class="callout">
-                <h5>Setup</h5>
+                <h5>Preparação</h5>
                 <p>
-                  Use the <a class="link-danger" href="#0" data-bs-toggle="collapse"
-                    data-bs-target="#advancedsetup">Advanced Set-up</a>
-                  from the Rules with the following changes:
+                  Use a <a class="link-danger" href="#0" data-bs-toggle="collapse"
+                    data-bs-target="#advancedsetup">Preparação Avançada</a>
+                  das Regras com as seguintes alterações:
                 </p>
                 <div class="callout-both">
-                  <h5>Place Starting Leaders</h5>
-                  <p class=" collapse" id="advancedsetup">Gather the four leaders that do not have a recruit icon and
-                    places them in the box labeled
-                    “Leader Pool”</p>
+                  <h5>Posicione os Líderes Iniciais</h5>
+                  <p class=" collapse" id="advancedsetup">Pegue os quatro líderes que não possuem um ícone de recrutamento 
+                    e posicione-os no espaço marcado “Reserva de Líderes”.</p>
                   <strong>
-                    <p>The Empire starts with five Leaders. Recruit the 5th by drawing one Action Card (keep drawing
-                      until the Empire acquires the additional Leader)</p>
+                    <p>O Império começa com cinco Líderes. 
+                      Recrute o 5º comprando uma Carta de Ação 
+                      (continue comprando até o Império conseguir o Líder adicional).</p>
                   </strong>
                 </div>
                 <div class="callout collapse" id="advancedsetup">
-                  <h5>Prepare Time Track</h5>
-                  <p>Then place the time marker on space “1” of the track and the reputation marker on space “14”
-                    of the track</p>
+                  <h5>Prepare o Indicador de Tempo</h5>
+                  <p>Coloque o marcador de tempo no espaço “1” do indicador e o marcador de reputação no espaço “14” do indicador.</p>
                 </div>
                 <div class="callout-rebel">
-                  <h5>Prepare Objective Deck</h5>
-                  <p class=" collapse" id="advancedsetup">Sort the objective cards into three piles based on the
-                    number shown on the card back (I, II,
-                    or III)</p>
+                  <h5>Prepare o Baralho de Objetivos</h5>
+                  <p class=" collapse" id="advancedsetup">Separe as cartas de objetivo em três pilhas baseadas no número mostrado no verso da carta (I, II ou III).</p>
                   <strong>
                     <p>
-                      Remove the “Heart of the Empire” (Level II) Objective card</p>
+                      Remova a carta de Objetivo “Coração do Império” (Nível II).</p>
                   </strong>
-                  <p class=" collapse" id="advancedsetup">Draw one card from the objective deck</p>
+                  <p class=" collapse" id="advancedsetup">Compre uma carta do baralho de objetivos.</p>
                 </div>
                 <div class="callout-both collapse" id="advancedsetup">
-                  <h5>Prepare Action Decks</h5>
-                  <p>Gather all action cards that have a recruit icon and shuffle them to create two action decks.
-                    Place them facedown next to each faction sheet on the side labeled “Action Deck.”</p>
+                  <h5>Prepare os Baralhos de Ação</h5>
+                  <p>Pegue todas as cartas de ação com um ícone de recrutamento e embaralhe-as para criar dois baralhos de ação.
+                    Coloque-os virados para baixo ao lado de cada planilha de facção no lado marcado “Baralho de Ação”.</p>
                 </div>
                 <div class="callout-both">
-                  <h5>Prepare Mission Cards</h5>
+                  <h5>Prepare as Cartas de Missão</h5>
                   <div class="callout-both collapse" id="advancedsetup">
-                    <p>Starting Missions: Starting mission cards are identified by a curved arrow at the bottom of the
-                      card. For both sides take four starting mission cards and set them aside.</p>
+                    <p>Missões Iniciais: Cartas de missões iniciais são identificadas por uma seta curvada na parte inferior da carta. 
+                      Para cada lado, pegue quatro cartas de missões iniciais coloque-as de lado.</p>
                   </div>
                   <div class="callout-both collapse" id="advancedsetup">
-                    <p>Remaining Missions: For both sides take the remaining mission cards and shuffles them to create
-                      the mission deck. Place it facedown next to each faction sheet on the side labeled “Mission
-                      Deck.”</p>
+                    <p>Missões Remanescentes: Para cada lado, pegue as cartas de missões remanescentes e embaralhe-as para criar o baralho de missão.
+                      Coloque-o virado para baixo ao lado de cada planilha de facção no lado marcado “Baralho de Missão.”</p>
                   </div>
                   <div class="callout-empire">
-                    <p>Shuffle one of each of the five different <strong>Project</strong> cards into the <em>Empire’s
-                        Main Missions Deck.</em></p>
+                    <p>Embaralhe uma de cada das cinco cartas de <strong>Projetos</strong> diferentes no <em>Baralho de Missões Principais do Império</em>.</p>
                   </div>
                 </div>
                 <div class="callout">
-                  <h5>Place Starting Units and Loyalty</h5>
+                  <h5>Posicione as Unidades Iniciais e Marcadores de Lealdades</h5>
                   <div class="callout collapse" id="advancedsetup">
-                    <h5>Loyalty</h5>
-                    <p>Shuffle the probe deck and reveal cards from the top of the deck until three Rebel systems and
-                      five Imperial systems have been revealed</p>
-                    <p>Place a Rebel loyalty marker in each of the three Rebel systems. Place a subjugation marker in
-                      the first two Imperial systems drawn and an Imperial loyalty marker in each of the other three
-                      Imperial systems drawn</p>
-                    <p>Return the five Imperial probe cards to the game box. Then shuffle all other probe cards back
-                      into the probe deck</p>
+                    <h5>Lealdade</h5>
+                    <p>Embaralhe o baralho de sonda e revele cartas do topo do baralho até três sistemas Rebeldes 
+                      e cinco sistemas Imperiais tenham sido revelados.</p>
+                    <p>Coloque um marcador de lealdade Rebelde em cada um dos três sistemas Rebeldes. 
+                      Coloque um marcador de subjugação em cada um dos dois primeiros sistemas Imperiais e 
+                      um marcador de lealdade em cada um dos outros três sistemas Imperiais.</p>
+                    <p>Devolva as cinco cartas de sonda Imperiais à caixa do jogo. 
+                      Em seguida, embaralhe todas as outras cartas de sonda no baralho de sonda.</p>
                   </div>
 
                   <div class="callout-empire">
-                    <h5>Empire Deployment</h5>
+                    <h5>Destacamento Imperial</h5>
                     <p>
-                      Deploy the Empire Units as follows (use <a class="link-danger" href="#" type="button"
-                        id="d6button">D6</a>, as
-                      needed):
+                      Destaque as Unidades Imperiais da seguinte forma (use <a class="link-danger" href="#" type="button"
+                        id="d6button">D6</a>, quando necessário):
                     </p>
                     <ul id="Base-Setup">
-                      <li>2 TIE Fighters & 2 Stormtroopers in each of the
-                        initial six Systems
+                      <li>2 TIE Fighters & 2 Stormtroopers em cada um dos seis Sistemas iniciais.</li>
+                      <li>Aleatoriamente destaque 3 Star Destroyers em 3 Sistemas separados (1 em cada);
+                        destaque 3 Assault Carriers nos 3 Sistemas restantes.</li>
+                      <li>Aleatoriamente destaque 1 AT-AT em um Sistema; 
+                        em seguida, destaque 5 AT-STs (1 por Sistema) nos 5 Sistemas restantes.
                       </li>
-                      <li>Randomly deploy 3 Star Destroyers in 3 separate Systems (1 each);
-                        deploy 3 Assault Carriers in the remaining 3 Systems</li>
-                      <li>Randomly deploy 1 AT-AT to a System; then deploy 5 AT-STs (1 per
-                        System) in the remaining 5 Systems
-                      </li>
-                      <li>Randomly deploy the Death Star</li>
+                      <li>Aleatoriamente destaque a Estrela da Morte.</li>
                     </ul>
                     <div class="d-none variant" id="ROTE-Setup">
                       <div>
-                        <p>Place a Death Star on space 3 of the build queue and the in-construction Death Star, a
-                          subjugation marker, 4
-                          TIE Fighters and 1 Stormtrooper in one of the 6 neutral single-triangle resource systems
-                          chosen
-                          at random
-                          from: Felucia, Kessel, Malastare, Alderaan, Rodia or Ryloth, return its probe card to the
-                          game
-                          box</p>
+                        <p>
+                          Coloque a Estrela da Morte no espaço 3 da linha de construção, 
+                          e coloque a Estrela da Morte em Construção, um marcador de subjugação, 
+                          4 TIE Fighters e 1 Stormtrooper em um dos 6 sistemas neutros com apenas um triângulo de recurso
+                          escolhido aleatoriamente entre: Felucia, Kessel, Malastare, Alderaan, Rodia ou Ryloth,
+                          devolva sua carta de sonda à caixa do jogo.</p>
                         <ul>
-                          <li>2 Stormtroopers in each of the 6 Systems</li>
-                          <li>Randomly deploy 3 Star Destroyers in 3 separate Systems (1 each);
-                            deploy 3 Assault Carriers in the remaining 3 Systems</li>
-                          <li>Place a TIE Fighter in each system except Coruscant, then randomly add TIE striker to 2
-                            of those five and a TIE Fighter to the remaining 3.
+                          <li>2 Stormtroopers em cada um dos 6 Sistemas.</li>
+                          <li>Aleatoriamente destaque 3 Star Destroyers em 3 Sistemas separados (1 em cada);
+                            destaque 3 Assault Carriers nos 3 Sistemas restantes.</li>
+                          <li>Coloque um TIE Fighter em cada sistema exceto em Coruscant, 
+                            em seguida, adicione aleatoriamente um TIE Striker em 2 desses 5 Sistemas 
+                            e um TIE Fighter nos 3 restantes.
                           </li>
-                          <li>Randomly place 2 Assault Tanks and 4 AT-STs in each of the 6 systems (1 per system)</li>
-                          <li>Randomly place an AT-AT in one of the 5 systems - not Coruscant</li>
+                          <li>Aleatoriamente coloque 2 Assault Tanks e 4 AT-STs em cada um dos 6 Sistemas (1 por sistema).</li>
+                          <li>Aleatoriamente coloque um AT-AT em um dos 5 Sistemas (não em Coruscant).</li>
                         </ul>
                       </div>
                       <span class="material-icons">dark_mode</span>
                     </div>
                   </div>
                   <div class="callout-rebel collapse" id="advancedsetup">
-                    <h5>Rebel Deployment</h5>
-                    <p>The Rebel player receives:</p>
+                    <h5>Destacamento Rebelde</h5>
+                    <p>O jogador Rebelde recebe:</p>
                     <div id="Base-Setup" style="display: flex;">
                       <ul>
-                        <li>1 Corellian Corvette</li>
-                        <li>1 Rebel Transport</li>
+                        <li>1 Corvette Corelliano</li>
+                        <li>1 Transporte Rebelde</li>
                         <li>2 X-wings</li>
                       </ul>
                       <ul>
                         <li>2 Y-wings</li>
-                        <li>6 Rebel Troopers</li>
+                        <li>6 Troopers Rebeldes</li>
                         <li>2 Airspeeders</li>
                       </ul>
                     </div>
                     <div class="d-none variant" id="ROTE-Setup">
                       <ul>
-                        <li>1 Corellian Corvette</li>
-                        <li>1 Rebel Transport</li>
+                        <li>1 Corvette Corelliano</li>
+                        <li>1 Transporte Rebelde</li>
                         <li>1 X-wing</li>
                         <li>1 Y-wing</li>
                       </ul>
                       <ul>
                         <li>1 U-wing</li>
-                        <li>5 Rebel Troopers</li>
+                        <li>5 Troopers Rebeldes</li>
                         <li>2 Airspeeders</li>
-                        <li>1 Rebel Vanguard</li>
+                        <li>1 Vanguarda Rebelde</li>
                       </ul>
                       <span class="material-icons">dark_mode</span>
                     </div>
-                    <p>These units can be placed in the “Rebel Base” space of the game board and/or in any one Rebel
-                      or neutral system</p>
+                    <p>Essas unidades podem ser colocadas no espaço “Base Rebelde” do tabuleiro e/ou em qualquer Sistema Rebelde ou neutro.</p>
                   </div>
                   <div class="callout-both collapse" id="advancedsetup">
-                    <h5>Action Cards</h5>
-                    <p>For both sides draw two random starting action cards (i.e., the action cards without a recruit
-                      icon on them). These cards provide special, once-per-game abilities</p>
+                    <h5>Cartas de Ação</h5>
+                    <p>Para cada lado, compre duas cartas de ação iniciais aleatórias (ou seja, cartas de ação sem o ícone de recrutamento).
+                      Essas cartas fornecem habilidades especiais de uso único.</p>
                   </div>
                 </div>
                 <div class="callout-rebel">
-                  <h5>Rebel Base</h5>
+                  <h5>Base Rebelde</h5>
                   <p>
-                    The Solo Player chooses the Rebel Base’s location from among the 8 Remote Systems, after placing
-                    all Starting Units and Loyalty Markers. The Empire knows it is located in one of these Systems
-                    (acquired vital information through its intelligence networks), and will aggressively search for
-                    it</p>
+                    O Jogador Solo escolhe a localização da Base Rebelde entre os 8 Sistemas Remotos,
+                    após colocar todas as Unidades Iniciais e Marcadores de Lealdade.
+                    O Império sabe que ela está localizada em um destes Sistemas (obteve informações vitais através de suas redes de inteligência),
+                    e vai buscá-la agressivamente.</p>
                 </div>
                 <div class="callout-rebel collapse" id="advancedsetup">
-                  <h5>Draw Starting Hand</h5>
-                  <p>Take the four starting missions and draw two cards from the mission deck to create your starting
-                    hand</p>
+                  <h5>Compre a Mão Inicial</h5>
+                  <p>Pegue as quatro missões iniciais e compre duas cartas do baralho de missão para criar sua mão inicial.</p>
                 </div>
               </div>
             </section>
@@ -406,35 +395,35 @@
             <section class="tab-pane active" id="list-assigment-steps" role="tabpanel"
               aria-labelledby="list-assignment-list">
               <div class="callout-rebel">
-                <h5>Assign Leaders to Missions</h5>
-                <p>Rebel player assigns leaders to missions</p>
+                <h5>Atribua Líderes às Missões</h5>
+                <p>O jogador Rebelde atribui líderes às missões.</p>
               </div>
 
               <div class="callout-empire">
-                <h5>Create Mission Deck</h5>
+                <h5>Crie o Baralho de Missões</h5>
                 <div id="createmissiondeck">
-                  <p>Draw a specified number of Missions (see Missions Table,
-                    below) shuffle the drawn cards, and place them in a
-                    facedown pile, forming the <em class="text-medium">Initial Missions Deck</em></p>
+                  <p>Compre um número especificado de Missões (veja a Tabela de Missões abaixo),
+                    embaralhe as cartas compradas, e coloque-as em uma pilha virada para baixo,
+                    formando o <em class="text-medium">Baralho de Missões Iniciais</em>.</p>
 
                   <div class="callout text-small">
-                    <div id="missiontable"><strong>Mission Table</strong>
+                    <div id="missiontable"><strong>Tabela de Missões</strong>
                       <div class="container-fluid">
                         <div class="row">
-                          <div class="col-3 fw-bold">Turn 1:</div>
-                          <div class="col">2 Missions (1 Starting Mission + 1 Main Mission)</div>
+                          <div class="col-3 fw-bold">Turno 1:</div>
+                          <div class="col">2 Missões (1 Missão Inicial + 1 Missões Principais)</div>
                         </div>
                         <div class="row">
-                          <div class="col-3 fw-bold">Turns 2-3:</div>
-                          <div class="col">3 Missions (1 Starting Mission + 2 Main Missions)</div>
+                          <div class="col-3 fw-bold">Turnos 2-3:</div>
+                          <div class="col">3 Missões (1 Missão Inicial + 2 Missões Principais)</div>
                         </div>
                         <div class="row">
-                          <div class="col-3 fw-bold">Turn 4+:</div>
-                          <div class="col">4 Missions (1 Starting Mission + 3 Main Missions)</div>
+                          <div class="col-3 fw-bold">Turno 4+:</div>
+                          <div class="col">4 Missões (1 Missão Inicial + 3 Missões Principais)</div>
                         </div>
                         <div class="row">
-                          <div class="col-3 fw-bold">Rebel Base Revealed</div>
-                          <div class="col">3 Missions (1 Starting Mission + 2 Main Missions)</div>
+                          <div class="col-3 fw-bold">Base Rebelde Revelada</div>
+                          <div class="col">3 Missões (1 Missão Inicial + 2 Missões Principais)</div>
                         </div>
                       </div>
                     </div>
@@ -443,9 +432,9 @@
               </div>
 
               <div class="callout-empire">
-                <h5>Play Action Cards</h5>
-                <p>The Empire plays all Action Cards designated as <strong class="text-medium">playable</strong>
-                  during the Assignment Phase</p>
+                <h5>Jogue Cartas de Ação</h5>
+                <p>O Império joga todas as Cartas de Ação designadas como <strong class="text-medium">jogáveis</strong>
+                  durante a Fase de Atribuição.</p>
               </div>
             </section>
 
@@ -816,17 +805,17 @@
                   <div class="row sticky-top align-items-center" id="buildheader">
                     <div class="col-3"></div>
                     <div class="col-1 swg swg-lightsabers swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Blockaded/Sabotaged"></div>
+                      data-bs-placement="bottom" title="Bloqueado/Sabotado"></div>
                     <div class="col-1 swg swg-stormtrooper swg-lg d-flex justify-content-center"
-                      data-bs-toggle="tooltip" data-bs-placement="bottom" title="Subjugated"></div>
+                      data-bs-toggle="tooltip" data-bs-placement="bottom" title="Subjugado"></div>
                     <div class="col-1 swg swg-galemp swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Empire-Loyal"></div>
+                      data-bs-placement="bottom" title="Lealdade Imperial"></div>
                     <!-- <div class="col-1 swg swg-stormtrooper swg-lg d-flex justify-content-center" data-bs-toggle="tooltip" data-bs-placement="bottom"
                         title="Subjugated"></div> -->
                     <div class="col-1 swg swg-galsenate swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Neutral"></div>
+                      data-bs-placement="bottom" title="Neutro"></div>
                     <div class="col-1 swg swg-reball swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Rebel-Loyal"></div>
+                      data-bs-placement="bottom" title="Lealdade Rebelde"></div>
                     <!-- <div class="col-1 swg swg-stormtrooper-3 swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
                         data-bs-placement="bottom" title="Rebel-Loyal-Subjugated"></div> -->
                   </div>
@@ -876,7 +865,7 @@
                   </div>
                   <div class="row" id="buildbutton">
                     <button class="btn btn-secondary" style="width: 50%;" data-bs-toggle="modal"
-                      data-bs-target="#buildqueuelist" onclick="createBuildQueue()">Build!</button>
+                      data-bs-target="#buildqueuelist" onclick="createBuildQueue()">Construir!</button>
                   </div>
                 </div>
               </div>
@@ -886,7 +875,7 @@
             <section class="tab-pane" id="list-remotesystems-steps" role="tabpanel"
               aria-labelledby="list-remotesystems-list">
               <div class="callout">
-                <h5>Remote Systems List</h5>
+                <h5>Lista de Sistemas Remotos</h5>
                 <ul>
                   <input type="checkbox" class="planetbtn d-none" id="planet-check-dagobah" title="Dagobah">
                   <label for="planet-check-dagobah" id="dagobah" class="planetlabel"></label>
@@ -912,13 +901,13 @@
                   <input type="checkbox" class="planetbtn d-none" id="planet-check-yavin" title="Yavin">
                   <label for="planet-check-yavin" id="yavin" class="planetlabel"></label>
                 </ul>
-                <p class="paraseparator fs-7 p-2">The Rebel Base will be revealed only after the Empire has obtained
-                  the Probe Cards for the other 7 Remote Systems OR when the
-                  Empire has any Ground Units in that System</p>
-                <p class="fs-7 px-2">Empire movement and deployment will change priority when Rebel Base is revealed
+                <p class="paraseparator fs-7 p-2">A Base Rebelde será revelada apenas após o Império ter
+                  obtido as Cartas de Sonda dos outros 7 Sistemas Remotos 
+                  OU quando o Império tiver Unidades Terrestres nesse Sistema.</p>
+                <p class="fs-7 px-2">O movimento e destacamento do Império terão prioridade alterada quando a Base Rebelde for revelada.
                 </p>
                 <div class="modal-footer">
-                  <div>Number of scanned systems:</div>
+                  <div>Número de Sistemas escaneados:</div>
                   <div id="numselectedsystems">0</div>
                 </div>
               </div>
@@ -934,17 +923,19 @@
       <div class="container-fluid h-100 py-2">
         <div class="row justify-content-between h-100">
           <ul class="col-4 list-unstyled">
-            <li><strong>Website designed by: </strong><a href="https://boardgamegeek.com/user/OZ10"
-                target="_blank">OZ10</a></li>
-          </ul>
+            <li><strong>Website projetado por: </strong><a href="https://boardgamegeek.com/user/OZ10"
+              target="_blank">OZ10</a></li>
+              <li><strong>Tradução PT-BR por: </strong><a href="https://boardgamegeek.com/user/zhouluyi"
+                target="_blank">zhouluyi</a></li>
+        </ul>
           <ul class="col-4 list-unstyled">
-            <li><strong>Solo Variant by: </strong><a href="https://boardgamegeek.com/user/Elad" target="_blank">Dale
+            <li><strong>Variante Solo por: </strong><a href="https://boardgamegeek.com/user/Elad" target="_blank">Dale
                 Buonocore</a></li>
             <li><a
                 href="https://boardgamegeek.com/thread/1697801/solitaire-variant-empire-attacks-revised-version-1/page/1"
                 target="_blank">Solo Variant BBG Thread</a></li>
             <p></p>
-            <li><strong>Star Wars Icons provided by: </strong> <a href="http://starwarsglyphicons.com/"
+            <li><strong>Ícones de Star Wars fornecidos por: </strong> <a href="http://starwarsglyphicons.com/"
                 target="_blank">Star Wars Glyph Icons</a></li>
           </ul>
         </div>
