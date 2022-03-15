@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupRoundMarkers();
 })
 
-const planetnames = [["Coruscant", "Rebel Base"],
+const planetnames = [["Coruscant", "Base Rebelde"],
 ["Felucia", "Mon Calamari", "Saleucami"],
 ["Mygeeto", "Ord Mantell"],
 ["Kashyyyk", "Malastare", "Mandalore"],
@@ -45,7 +45,7 @@ function setupBuildQueue() {
     moveBuildButton();
 
     setDefaultBuildOptions('Coruscant', 'radioempire');
-    setDefaultBuildOptions('Rebel Base', 'radiorebel');
+    setDefaultBuildOptions('Base Rebelde', 'radiorebel');
 
     hideBuildTemplate();
 
@@ -292,7 +292,7 @@ function getPlanetsBuildResources(planetname, subjugated = false) {
             return [["space", "tri", 2], ["ground", "squ", 2]];
         case "Ord Mantell":
             return [["ground", "cir", 2], ["space", "cir", 2]];
-        case "Rebel Base":
+        case "Base Rebelde":
             return [["space", "tri", 1], ["ground", "tri", 1]];
         case "Sullust":
             return [["ground", "tri", 2], ["ground", "squ", 2]];
@@ -343,7 +343,7 @@ function resetBuildQueue() {
         if (check.type == 'checkbox' && check.id == 'chkblock') {
             check.checked = false;
         } else {
-            if (check.name == 'CoruscantRadioOptions' || check.name == 'Rebel BaseRadioOptions') { continue; }
+            if (check.name == 'CoruscantRadioOptions' || check.name == 'Base RebeldeRadioOptions') { continue; }
             if (check.id != 'radioneutral') { continue; }
 
             check.checked = true;
@@ -441,7 +441,7 @@ document.querySelectorAll('.planetbtn').forEach(
             updateNumberOfSelectedSystems();
 
             if (numSelectedSystems == 7) {
-                alert('The rebel base is on ' + GetRebelBaseName() + '!');
+                alert('A Base Rebelde está em ' + GetRebelBaseName() + '!');
                 // alert(GetRebelBaseName());
             }
         })
@@ -482,7 +482,7 @@ function changeRound(){
             let newRound = document.getElementById('round_' + currentRoundNumber);
 
             if (newRound.checked){
-                alert('Rebels win!');
+                alert('Os Rebeldes venceram!');
                 return;
             }
 
@@ -507,8 +507,9 @@ function checkIfRebelRepLessThan5(currentRoundNumber) {
         if (promptUserRebelsWithin5) {
             // alert('Rebels are now within FIVE rounds of winning the game. Movement rules have changed.');
             const messageBox = new bootstrap.Modal(document.getElementById('messageBox'));
-            document.getElementById('messageBoxTitle').innerHTML = "Crossing The Finish Line";
-            document.getElementById('messageBoxBody').innerHTML = "Rebels are now within FIVE rounds of winning the game. The Empire's Movement & Deployment rules have changed";
+            document.getElementById('messageBoxTitle').innerHTML = "Chegando no Fim";
+            document.getElementById('messageBoxBody').innerHTML = 
+                    "Os Rebeldes estão a CINCO turnos de vencer o jogo. As regras de Movimentação e Destacamento do Império foram alteradas.";
             messageBox.show();
             promptUserRebelsWithin5 = false;
         }
