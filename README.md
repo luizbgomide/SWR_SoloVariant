@@ -1,6 +1,6 @@
 # SWR_SoloVariant
-Instruções para usar a variante solo para Star Wars Rebellion
+Solo variant instructions for Star War Rebellion
 
-Link PT-BR - https://luizbgomide.github.io/SWR_SoloVariant/
+Public link - https://vortilion.github.io/SWR_SoloVariant/
 
-Link original - https://oz10.github.io/SWR_SoloVariant/
+WIP
