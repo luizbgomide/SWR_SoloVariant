@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Star Wars Rebellion: Variante Solo</title>
+  <link rel="apple-touch-icon" href="./resources/images/manifest/icon-192x192.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="./Resources/index.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="./resources/index.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./Resources/icons/starwars-glyphicons/css/starwars-glyphicons.css">
+  <link rel="stylesheet" href="./resources/icons/starwars-glyphicons/css/starwars-glyphicons.css">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
 </head>
 
-<body class="">
+<body>
   <div class="offcanvas offcanvas-start" tabindex="-1" id="options">
     <div class="offcanvas-header">
-      <h3 class="offcanvas-title maincolour" id="offcanvasLabel">Configurações</h3>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <h3 class="offcanvas-title maincolour" id="offcanvasLabel">
+        Configurações
+      </h3>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar">
+      </button>
     </div>
     <div class="offcanvas-body">
       <p>As configurações disponíveis aqui permitem modificar quais componentes/regras você quer que essa variante use.
         Alterações serão feitas no texto de algumas regras para refletir essas configurações.</p>
-      <h6 class="paraseparator">Geral</h6>
+      <h6 class="paraseparator">General</h6>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkdynamicInstructions" onclick="chkClick(this);" disabled>
         <label for="chkdynamicInstructions" data-bs-toggle="tooltip" data-bs-placement="right"
@@ -32,7 +36,7 @@
       </div>
 
       <h6 class="sidebarsubheader">Expansão Ascensão do Império
-        <span class="material-icons" style="font-size: large;">dark_mode</span>
+        <span class="material-icons" style="font-size: large">dark_mode</span>
       </h6>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkROTE-Units" onclick="chkClick(this);">
@@ -44,8 +48,9 @@
         <label for="chkROTE-TacticCards" data-bs-toggle="tooltip" data-bs-placement="right"
           title="Regras de batalha serão alteradas">Usar Cartas Táticas Avançadas</label>
       </div>
-      <h6 class="sidebarsubheader">Variantes
-        <span class="material-icons" style="font-size: large;">science</span>
+      <h6 class="sidebarsubheader">
+        Variantes
+        <span class="material-icons" style="font-size: large">science</span>
       </h6>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkvar-Movement" onclick="chkClick(this);">
@@ -61,7 +66,14 @@
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="chkvar-UnPlayableMissions" onclick="chkClick(this);">
         <label for="chkvar-UnPlayableMissions" data-bs-toggle="tooltip" data-bs-placement="right" title="Missões injogáveis serão colocadas no fundo do Baralho de Missões Iniciais, e resolvidas ao final da fase de comando.
-          O texto da seção 'Jogue Missões Iniciais' será alterado">Variando Missões Injogáveis</label>
+          O texto da seção 'Jogue Missões Iniciais' será alterado">Variante Missões Injogáveis</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="chkvar-ActionCardExecution" onclick="chkClick(this);">
+        <label for="chkvar-ActionCardExecution" data-bs-toggle="tooltip" data-bs-placement="right"
+          title="Se esta variante for ativada o jogador jogará um D6 na fase de Atribuição após escolher missões. O império só ativará a carta de Ação de Atribuição em um 4-6.">
+          Variante de Carta de Ação de Atribuição
+        </label>
       </div>
     </div>
   </div>
@@ -70,7 +82,6 @@
     data-bs-backdrop="false" data-bs-scroll="true">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title">Rodadas</h5>
-      <!-- <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
     </div>
     <div class="offcanvas-body small">
       <div class="roundtracker text-center">
@@ -150,82 +161,91 @@
     </div>
   </div>
 
-  <main>
-    <div class="d-flex justify-content-between" id="mainheader">
-      <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#options">
-        <span class="material-icons align-middle icon-medium" data-bs-target="#options">menu</span>
-      </button>
-      <div>
-        <div class="d-inline" id="fulltitle">Star Wars Rebellion</div>
-        <!-- <div class="d-inline" id="abrtitle">SWR</div> -->
-        <div class="d-inline" style="font-weight: 100;"> Variante Solo</div>
+  <main class="main">
+    <header class="fixed-top">
+      <div class="d-flex justify-content-between" id="mainheader">
+        <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#options">
+          <span class="material-icons align-middle icon-medium" data-bs-target="#options">menu</span>
+        </button>
+        <div>
+          <div class="d-inline" id="fulltitle">
+            Star Wars Rebellion
+          </div>
+          <div class="d-inline" style="font-weight: 100">
+            Variante Solo
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#roundtracker">
+            <span class="icon-medium" id="roundnumber" data-bs-toggle="tooltip" title="Rodada"
+              data-bs-placement="bottom" data-bs-target="#roundtracker">
+              1
+            </span>
+          </button>
+          <button type="button" class="btnNoBackground d6button">
+            <span class="material-icons align-middle icon-medium" data-bs-toggle="tooltip" title="D6"
+              data-bs-placement="bottom">
+              casino
+            </span>
+          </button>
+          <button id="reset" type="button" class="btnNoBackground" data-bs-toggle="modal" data-bs-target="#yesNo">
+            <span class="material-icons align-middle icon-medium" data-bs-toggle="tooltip" title="Reiniciar"
+              data-bs-placement="bottom">
+              refresh
+            </span>
+          </button>
+        </div>
       </div>
-      <div>
-        <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#roundtracker">
-          <span class="icon-medium" id="roundnumber" data-bs-toggle="tooltip" title="Rodada" data-bs-placement="bottom"
-            data-bs-target="#roundtracker">1</span>
-        </button>
-        <button type="button" class="btnNoBackground" id="d6button">
-          <span class="material-icons align-middle icon-medium" data-bs-toggle="tooltip" title="D6"
-            data-bs-placement="bottom">casino</span>
-        </button>
-        <button id="reset" type="button" class="btnNoBackground" data-bs-toggle="modal" data-bs-target="#yesNo">
-          <span class="material-icons align-middle icon-medium" data-bs-toggle="tooltip" title="Reiniciar"
-            data-bs-placement="bottom">refresh</span>
-        </button>
-      </div>
-    </div>
 
-    <ul class="nav nav-tabs nav-fill roundselector">
-      <li class="nav-item">
-        <a class="list-group-item list-group-item-action" id="list-setup-list" data-toggle="list" data-bs-toggle="list"
-          href="#list-setup-steps" role="tab" aria-controls="setup">
-          <span class="material-icons align-middle icon-small">settings</span>
-          <span class="d-none d-sm-inline p-1">
-            Preparação
-          </span></a>
-      </li>
-      <li class="nav-item">
-        <a class="list-group-item list-group-item-action active" id="list-assignment-list" data-toggle="list"
-          data-bs-toggle="list" href="#list-assigment-steps" role="tab" aria-controls="assignment">
-          <span class="material-icons align-middle icon-small">people_alt</span>
-          <span class="d-none d-sm-inline p-1">
-            Atribuição
-          </span></a>
-      </li>
-      <li class="nav-item">
-        <a class="list-group-item list-group-item-action" id="list-command-list" data-toggle="list"
-          data-bs-toggle="list" href="#list-command-steps" role="tab" aria-controls="command">
-          <span class="material-icons align-middle icon-small">shield</span>
-          <span class="d-none d-sm-inline p-1">
-            Comando
-          </span></a>
-      </li>
-      <li class="nav-item">
-        <a class="list-group-item list-group-item-action" id="list-refresh-list" data-toggle="list"
-          data-bs-toggle="list" href="#list-refresh-steps" role="tab" aria-controls="refresh">
-          <span class="material-icons align-middle icon-small">restart_alt</span>
-          <span class="d-none d-sm-inline p-1">
-            Restauração
-          </span></a>
-      </li>
-      <li class="nav-item">
-        <a class="list-group-item list-group-item-action" id="list-build-list" data-toggle="list" data-bs-toggle="list"
-          href="#list-build-steps" role="tab" aria-controls="build">
-          <span class="material-icons align-middle icon-small">build</span>
-          <span class="d-none d-sm-inline p-1">Linha de Construção</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="list-group-item list-group-item-action" id="list-remotesystems-list" data-toggle="list"
-          data-bs-toggle="list" href="#list-remotesystems-steps" role="tab" aria-controls="remotesystems">
-          <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                  data-bs-target="#remotesystemslist"> -->
-          <span class="material-icons align-middle icon-small">public</span>
-          <span class="d-none d-sm-inline p-1">Sistemas Remotos</span>
-          <!-- </button> -->
-        </a>
-      </li>
-    </ul>
+      <ul class="nav nav-tabs nav-fill roundselector">
+        <li class="nav-item">
+          <a class="list-group-item list-group-item-action" id="list-setup-list" data-toggle="list"
+            data-bs-toggle="list" href="#list-setup-steps" role="tab" aria-controls="setup">
+            <span class="material-icons align-middle icon-small">settings</span>
+            <span class="d-none d-sm-inline p-1">
+              Preparação
+            </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="list-group-item list-group-item-action active" id="list-assignment-list" data-toggle="list"
+            data-bs-toggle="list" href="#list-assigment-steps" role="tab" aria-controls="assignment">
+            <span class="material-icons align-middle icon-small">people_alt</span>
+            <span class="d-none d-sm-inline p-1">
+              Atribuição
+            </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="list-group-item list-group-item-action" id="list-command-list" data-toggle="list"
+            data-bs-toggle="list" href="#list-command-steps" role="tab" aria-controls="command">
+            <span class="material-icons align-middle icon-small">shield</span>
+            <span class="d-none d-sm-inline p-1">
+              Comando
+            </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="list-group-item list-group-item-action" id="list-refresh-list" data-toggle="list"
+            data-bs-toggle="list" href="#list-refresh-steps" role="tab" aria-controls="refresh">
+            <span class="material-icons align-middle icon-small">restart_alt</span>
+            <span class="d-none d-sm-inline p-1">
+              Restauração
+            </span></a>
+        </li>
+        <li class="nav-item">
+          <a class="list-group-item list-group-item-action" id="list-build-list" data-toggle="list"
+            data-bs-toggle="list" href="#list-build-steps" role="tab" aria-controls="build">
+            <span class="material-icons align-middle icon-small">build</span>
+            <span class="d-none d-sm-inline p-1">Linha de Construção</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="list-group-item list-group-item-action" id="list-remotesystems-list" data-toggle="list"
+            data-bs-toggle="list" href="#list-remotesystems-steps" role="tab" aria-controls="remotesystems">
+            <span class="material-icons align-middle icon-small">public</span>
+            <span class="d-none d-sm-inline p-1">Sistemas Remotos</span>
+
+          </a>
+        </li>
+      </ul>
+    </header>
 
     <div class="container">
       <div class="row">
@@ -238,7 +258,7 @@
               <div class="callout">
                 <h5>Preparação</h5>
                 <p>
-                  Use a <a class="link-danger" href="#0" data-bs-toggle="collapse"
+                  Use a <a class="link-danger" href="#" data-bs-toggle="collapse"
                     data-bs-target="#advancedsetup">Preparação Avançada</a>
                   das Regras com as seguintes alterações:
                 </p>
@@ -255,12 +275,14 @@
                 </div>
                 <div class="callout collapse" id="advancedsetup">
                   <h5>Prepare o Indicador de Tempo</h5>
-                  <p>Coloque o marcador de tempo no espaço “1” do indicador e o marcador de reputação no espaço “14” do
+                  <p>Coloque o marcador de tempo no espaço “1” do indicador e o marcador de reputação no espaço “14”
+                    do
                     indicador.</p>
                 </div>
                 <div class="callout-rebel">
                   <h5>Prepare o Baralho de Objetivos</h5>
-                  <p class=" collapse" id="advancedsetup">Separe as cartas de objetivo em três pilhas baseadas no número
+                  <p class=" collapse" id="advancedsetup">Separe as cartas de objetivo em três pilhas baseadas no
+                    número
                     mostrado no verso da carta (I, II ou III).</p>
                   <strong>
                     <p>
@@ -270,9 +292,11 @@
                 </div>
                 <div class="callout-both collapse" id="advancedsetup">
                   <h5>Prepare os Baralhos de Ação</h5>
-                  <p>Pegue todas as cartas de ação com um ícone de recrutamento e embaralhe-as para criar dois baralhos
+                  <p>Pegue todas as cartas de ação com um ícone de recrutamento e embaralhe-as para criar dois
+                    baralhos
                     de ação.
-                    Coloque-os virados para baixo ao lado de cada planilha de facção no lado marcado “Baralho de Ação”.
+                    Coloque-os virados para baixo ao lado de cada planilha de facção no lado marcado “Baralho de
+                    Ação”.
                   </p>
                 </div>
                 <div class="callout-both">
@@ -289,7 +313,8 @@
                       Missão.”</p>
                   </div>
                   <div class="callout-empire">
-                    <p>Embaralhe uma de cada das cinco cartas de <strong>Projetos</strong> diferentes no <em>Baralho de
+                    <p>Embaralhe uma de cada das cinco cartas de <strong>Projetos</strong> diferentes no <em>Baralho
+                        de
                         Missões Principais do Império</em>.</p>
                   </div>
                 </div>
@@ -309,8 +334,8 @@
                   <div class="callout-empire">
                     <h5>Destacamento Imperial</h5>
                     <p>
-                      Destaque as Unidades Imperiais da seguinte forma (use <a class="link-danger" href="#0"
-                        type="button" id="d6button">D6</a>, quando necessário):
+                      Destaque as Unidades Imperiais da seguinte forma (use <a class="link-danger d6button" href="#"
+                        type="button">D6</a>, quando necessário):
                     </p>
                     <ul id="Base-Setup">
                       <li>2 TIE Fighters & 2 Stormtroopers em cada um dos seis Sistemas iniciais.</li>
@@ -376,7 +401,8 @@
                       </ul>
                       <span class="material-icons">dark_mode</span>
                     </div>
-                    <p>Essas unidades podem ser colocadas no espaço “Base Rebelde” do tabuleiro e/ou em qualquer Sistema
+                    <p>Essas unidades podem ser colocadas no espaço “Base Rebelde” do tabuleiro e/ou em qualquer
+                      Sistema
                       Rebelde ou neutro.</p>
                   </div>
                   <div class="callout-both collapse" id="advancedsetup">
@@ -445,8 +471,31 @@
 
               <div class="callout-empire">
                 <h5>Jogue Cartas de Ação</h5>
-                <p>O Império joga todas as Cartas de Ação designadas como <strong class="text-medium">jogáveis</strong>
-                  durante a Fase de Atribuição.</p>
+
+                <div class="d-none variant" id="var-ActionCardExecution">
+                  <div>
+                    <p>
+                      Role um <a class="link-danger d6button" href="#" type="button">D6</a>:
+                    </p>
+                    <div class="d-flex">
+                      <p>1-3:</p>
+                      <p>
+                        O Império não usa sua Carta de Ação de Atribuição.
+                      </p>
+                    </div>
+                    <div class="d-flex">
+                      <p>4-6:</p>
+                      <p>
+                        O Império usa sua Carta de Ação de Atribuição.
+                      </p>
+                    </div>
+                  </div>
+                  <span class="material-icons">science</span>
+                </div>
+                <p>
+                  O Império joga todas as Cartas de Ação designadas como <strong class="text-medium">jogáveis</strong>
+                  durante a Fase de Atribuição.
+                </p>
               </div>
             </section>
 
@@ -461,7 +510,7 @@
                   <p>O jogador Rebelde pode revelar missões ou ativar sistemas.</p>
 
                   <div class="callout-rebel">
-                    <a class="text-decoration-none" href="#0" role="button" data-bs-toggle="collapse"
+                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
                       data-bs-target="#establishnewbase">
                       <h5>Estabelescendo uma Nova Base</h5>
                     </a>
@@ -479,25 +528,27 @@
                   </div>
 
                   <div class="callout-empire">
-                    <a class="text-decoration-none" href="#0" role="button" data-bs-toggle="collapse"
+                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
                       data-bs-target="#opposingrebelmissions">
                       <h5>Contrapondo Missões Rebeldes</h5>
                     </a>
                     <p class="collapse" id="opposingrebelmissions">
-                      Apenas se houver mais Líderes Imperiais do que cartas de <em>Missões Iniciais</em> não reveladas,
+                      Apenas se houver mais Líderes Imperiais do que cartas de <em>Missões Iniciais</em> não
+                      reveladas,
                       o Império vai emitir uma ordem (em um resultado no
-                      <a class="link-danger" href="#0" type="button" id="d6button">D6</a>
+                      <a class="link-danger" href="#" type="button">D6</a>
                       de 4+) para enviar seu Líder “melhor” qualificado para contrapor à Missão Rebelde.
                       Se nenhum Líder tiver ícones de habilidade correspondentes,
                       o Líder com menor número total de ícones de habilidade é selecionado.
                     </p>
 
-                    <a class="text-decoration-none" href="#0" role="button" data-bs-toggle="collapse"
+                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
                       data-bs-target="#joinabattle">
                       <h5>Entrar na Batalha</h5>
                     </a>
                     <p class="collapse" id="joinabattle">
-                      Apenas se houver mais Líderes Imperiais do que cartas de <em>Missões Iniciais</em> não reveladas,
+                      Apenas se houver mais Líderes Imperiais do que cartas de <em>Missões Iniciais</em> não
+                      reveladas,
                       o Império enviará um Líder selecionado para entrar em uma batalha sem Líder ou
                       com um Líder que não possua Valor(es) Tático(s).
                       Priorize Líderes com cartas de Ação “Início do Combate”, e com os maiores Valores Táticos
@@ -529,7 +580,8 @@
                       (ex: nenhum líder capturado, a Estrela da Morte não se moveu, etc),
                       coloque a carta no fundo do Baralho de <em class="text-medium">Missões Iniciais</em>.
                       Reserve o líder que teria feito a missão.
-                      Depois de ter feito todas as outras <em class="text-medium">Missões Iniciais</em> e movimentações,
+                      Depois de ter feito todas as outras <em class="text-medium">Missões Iniciais</em> e
+                      movimentações,
                       tente resolver qualquer missão injogável com o líder reservado.
                       Se a missão ainda não puder ser realizada,
                       compre uma nova missão.
@@ -546,7 +598,7 @@
                   </p>
 
                   <div class="callout">
-                    <a class="text-decoration-none" href="#0" role="button" data-bs-toggle="collapse"
+                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
                       data-bs-target="#capturingleaders">
                       <h5>Capturando Líderes</h5>
                     </a>
@@ -555,7 +607,7 @@
                       e mantido refém pela Unidade Espacial Imperial mais forte
                       presente atualmente no Sistema onde ele ou ela está localizado.</p>
 
-                    <a class="text-decoration-none" href="#0" role="button" data-bs-toggle="collapse"
+                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
                       data-bs-target="#acquiringprojectcards">
                       <h5>Adquirindo Cartas de Projeto</h5>
                     </a>
@@ -577,7 +629,7 @@
                 </p>
 
                 <div class="callout">
-                  <a class="text-decoration-none" href="#0" role="button" data-bs-toggle="collapse"
+                  <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
                     data-bs-target="#movementrules">
                     <h5>Regras de Movimentação</h5>
                   </a>
@@ -585,8 +637,7 @@
                     <div class="d-none variant" id="var-movement">
                       <div>
                         <p>
-                          Antes de se mover, role um <a class="link-danger" href="#0" type="button"
-                            id="d6button">D6</a>:
+                          Antes de se mover, role um <a class="link-danger d6button" href="#" type="button">D6</a>:
                         </p>
                         <div class="d-flex">
                           <p style="white-space: nowrap;">1‒3:</p>
@@ -646,7 +697,7 @@
                     </p>
                   </div>
 
-                  <a class="text-decoration-none" href="#0" role="button" data-bs-toggle="collapse"
+                  <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
                     data-bs-target="#revealingtherebelbase">
                     <h5>Revelando a Base Rebelde</h5>
                   </a>
@@ -680,7 +731,7 @@
                     </p>
                   </div>
 
-                  <a class="text-decoration-none" href="#0" role="button" data-bs-toggle="collapse"
+                  <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
                     data-bs-target="#battles">
                     <h5>Batalhas</h5>
                   </a>
@@ -832,7 +883,7 @@
                   </p>
                   <ul id="deployflowchart" style="list-style-position: inside;">
                     <li id="Base-Empiredeploy">
-                      Encontre o Sistema com <a class="link-danger text-medium" href="#0" data-bs-toggle="modal"
+                      Encontre o Sistema com <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
                         data-bs-target="#productionvalueguide">Maior Valor de Produção</a>.
                     </li>
                     <div class="d-none variant" id="var-Empiredeploy">
@@ -841,10 +892,10 @@
                         à BR/PBR
                         >
                         a um sistema Rebelde (desempate pela
-                        <a class="link-danger text-medium" href="#0" data-bs-toggle="modal"
+                        <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
                           data-bs-target="#productionvalueguide">Força de Produção</a>)
                         >
-                        <a class="link-danger text-medium" href="#0" data-bs-toggle="modal"
+                        <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
                           data-bs-target="#productionvalueguide">Força de Produção</a> Imperial.
                       </li>
                       <span class="material-icons">science</span>
@@ -861,10 +912,10 @@
                     </li>
                     <li id="Base-Empiredeploy">
                       Vá para o próximo Sistema com
-                      <a class="link-danger text-medium" href="#0" data-bs-toggle="modal"
+                      <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
                         data-bs-target="#productionvalueguide">Maior Valor de Produção</a>;
                       Repita o fluxograma, retornando ao primeiro Sistema com
-                      <a class="link-danger text-medium" href="#0" data-bs-toggle="modal"
+                      <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
                         data-bs-target="#productionvalueguide">Maior Valor de Produção</a>,
                       se necessário.
                     </li>
@@ -910,7 +961,9 @@
                   </div>
                   <div class="row my-3 mx-1" id="buildtemplate">
                     <div class="col-3">
-                      <div class="planetname">BuildTemplate</div>
+                      <div class="planetname">
+                        BuildTemplate
+                      </div>
                     </div>
                     <div class="col-1 d-flex justify-content-center">
                       <div class="form-check">
@@ -928,12 +981,7 @@
                           value="empire">
                       </div>
                     </div>
-                    <!-- <div class="col-1">
-                        <div class="form-check d-flex justify-content-center">
-                          <input class="form-check-input" type="radio" id="radiosubjugated" name="RadioOptions"
-                            value="Subjugated">
-                        </div>
-                      </div> -->
+
                     <div class="col-1">
                       <div class="form-check d-flex justify-content-center">
                         <input class="form-check-input" type="radio" id="radioneutral" name="RadioOptions"
@@ -945,12 +993,6 @@
                         <input class="form-check-input" type="radio" id="radiorebel" name="RadioOptions" value="Rebel">
                       </div>
                     </div>
-                    <!-- <div class="col-1">
-                        <div class="form-check d-flex justify-content-center">
-                          <input class="form-check-input" type="radio" id="radiorebelsubjugated" name="RadioOptions"
-                            value="Rebel-Subjugated">
-                        </div>
-                      </div> -->
                   </div>
                   <div class="row" id="buildbutton">
                     <button class="btn btn-secondary" style="width: 50%;" data-bs-toggle="modal"
@@ -966,28 +1008,28 @@
               <div class="callout">
                 <h5>Lista de Sistemas Remotos</h5>
                 <ul>
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-dagobah" title="Dagobah">
+                  <input type="checkbox" class="planetbtn d-none" id="planet-check-dagobah" title="Dagobah" />
                   <label for="planet-check-dagobah" id="dagobah" class="planetlabel"></label>
 
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-dantooine" title="Dantooine">
+                  <input type="checkbox" class="planetbtn d-none" id="planet-check-dantooine" title="Dantooine" />
                   <label for="planet-check-dantooine" id="dantooine" class="planetlabel"></label>
 
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-dathomir" title="Dathomir">
+                  <input type="checkbox" class="planetbtn d-none" id="planet-check-dathomir" title="Dathomir" />
                   <label for="planet-check-dathomir" id="dathomir" class="planetlabel"></label>
 
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-endor" title="Endor">
+                  <input type="checkbox" class="planetbtn d-none" id="planet-check-endor" title="Endor" />
                   <label for="planet-check-endor" id="endor" class="planetlabel"></label>
 
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-hoth" title="Hoth">
+                  <input type="checkbox" class="planetbtn d-none" id="planet-check-hoth" title="Hoth" />
                   <label for="planet-check-hoth" id="hoth" class="planetlabel"></label>
 
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-ilum" title="Ilum">
+                  <input type="checkbox" class="planetbtn d-none" id="planet-check-ilum" title="Ilum" />
                   <label for="planet-check-ilum" id="ilum" class="planetlabel"></label>
 
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-tatooine" title="Tatooine">
+                  <input type="checkbox" class="planetbtn d-none" id="planet-check-tatooine" title="Tatooine" />
                   <label for="planet-check-tatooine" id="tatooine" class="planetlabel"></label>
 
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-yavin" title="Yavin">
+                  <input type="checkbox" class="planetbtn d-none" id="planet-check-yavin" title="Yavin" />
                   <label for="planet-check-yavin" id="yavin" class="planetlabel"></label>
                 </ul>
                 <p class="paraseparator fs-7 p-2">A Base Rebelde será revelada apenas após o Império ter
@@ -1007,9 +1049,7 @@
       </div>
     </div>
 
-    <div style="height: 50px;"></div>
-
-    <footer id="footer">
+    <footer id="footer" class="fixed-bottom">
       <div class="container-fluid h-100 py-2">
         <div class="row justify-content-between h-100">
           <ul class="col-4 list-unstyled">
@@ -1025,8 +1065,8 @@
                 href="https://boardgamegeek.com/thread/1697801/solitaire-variant-empire-attacks-revised-version-1/page/1"
                 target="_blank">Solo Variant BBG Thread</a></li>
             <p></p>
-            <li><strong>Ícones de Star Wars fornecidos por: </strong> <a href="http://starwarsglyphicons.com/"
-                target="_blank">Star Wars Glyph Icons</a></li>
+            <li><strong>Ícones de Star Wars: </strong> <a href="http://starwarsglyphicons.com/" target="_blank">Star
+                Wars Glyph Icons</a></li>
           </ul>
         </div>
       </div>
@@ -1154,7 +1194,8 @@
               <div class="row cardlist" title="É uma Armadilha">
                 <div class="col-4">É uma Armadilha</div>
                 <div class="col">
-                  O Líder Imperial não usará suas táticas espaciais durante a primeira rodada (nenhuma rerrolagem forçada).
+                  O Líder Imperial não usará suas táticas espaciais durante a primeira rodada (nenhuma rerrolagem
+                  forçada).
                 </div>
               </div>
               <div class="row cardlist" title="Operação Independente">
@@ -1385,10 +1426,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body d-flex">
-            <img src="./Resources/images/D6_1.png" alt="" id="d6">
+            <img src="./resources/images/D6_1.png" alt="" id="d6" />
           </div>
-          <div class="modal-footer">
-          </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
@@ -1405,62 +1445,133 @@
             <h6 class="buildrowheader">Império</h6>
             <div class="row buildrowempire">
               <div class="col-1 fw-bold">3:</div>
-              <div class="triangle d-none" id="build-emp-ground-tri-3">0</div>
-              <div class="circle d-none" id="build-emp-ground-cir-3">0</div>
-              <div class="square d-none" id="build-emp-ground-squ-3">0</div>
-              <div class="triangle d-none" id="build-emp-space-tri-3">0</div>
-              <div class="circle d-none" id="build-emp-space-cir-3">0</div>
-              <div class="square d-none" id="build-emp-space-squ-3">0</div>
+              <div class="triangle d-none" id="build-emp-ground-tri-3">
+                0
+              </div>
+              <div class="circle d-none" id="build-emp-ground-cir-3">
+                0
+              </div>
+              <div class="square d-none" id="build-emp-ground-squ-3">
+                0
+              </div>
+              <div class="triangle d-none" id="build-emp-space-tri-3">
+                0
+              </div>
+              <div class="circle d-none" id="build-emp-space-cir-3">
+                0
+              </div>
+              <div class="square d-none" id="build-emp-space-squ-3">
+                0
+              </div>
             </div>
             <div class="row buildrowempire">
               <div class="col-1 fw-bold">2:</div>
-              <div class="triangle d-none" id="build-emp-ground-tri-2">0</div>
-              <div class="circle d-none" id="build-emp-ground-cir-2">0</div>
-              <div class="square d-none" id="build-emp-ground-squ-2">0</div>
-              <div class="triangle d-none" id="build-emp-space-tri-2">0</div>
-              <div class="circle d-none" id="build-emp-space-cir-2">0</div>
-              <div class="square d-none" id="build-emp-space-squ-2">0</div>
+              <div class="triangle d-none" id="build-emp-ground-tri-2">
+                0
+              </div>
+              <div class="circle d-none" id="build-emp-ground-cir-2">
+                0
+              </div>
+              <div class="square d-none" id="build-emp-ground-squ-2">
+                0
+              </div>
+              <div class="triangle d-none" id="build-emp-space-tri-2">
+                0
+              </div>
+              <div class="circle d-none" id="build-emp-space-cir-2">
+                0
+              </div>
+              <div class="square d-none" id="build-emp-space-squ-2">
+                0
+              </div>
             </div>
             <div class="row buildrowempire">
               <div class="col-1 fw-bold">1:</div>
-              <div class="triangle d-none" id="build-emp-ground-tri-1">0</div>
-              <div class="circle d-none" id="build-emp-ground-cir-1">0</div>
-              <div class="square d-none" id="build-emp-ground-squ-1">0</div>
-              <div class="triangle d-none" id="build-emp-space-tri-1">0</div>
-              <div class="circle d-none" id="build-emp-space-cir-1">0</div>
-              <div class="square d-none" id="build-emp-space-squ-1">0</div>
+              <div class="triangle d-none" id="build-emp-ground-tri-1">
+                0
+              </div>
+              <div class="circle d-none" id="build-emp-ground-cir-1">
+                0
+              </div>
+              <div class="square d-none" id="build-emp-ground-squ-1">
+                0
+              </div>
+              <div class="triangle d-none" id="build-emp-space-tri-1">
+                0
+              </div>
+              <div class="circle d-none" id="build-emp-space-cir-1">
+                0
+              </div>
+              <div class="square d-none" id="build-emp-space-squ-1">
+                0
+              </div>
             </div>
             <p></p>
             <h6 class="buildrowheader">Rebeldes</h6>
             <div class="row buildrowrebel">
               <div class="col-1 fw-bold">3:</div>
-              <div class="triangle d-none" id="build-rebel-ground-tri-3">0</div>
-              <div class="circle d-none" id="build-rebel-ground-cir-3">0</div>
-              <div class="square d-none" id="build-rebel-ground-squ-3">0</div>
-              <div class="triangle d-none" id="build-rebel-space-tri-3">0</div>
-              <div class="circle d-none" id="build-rebel-space-cir-3">0</div>
-              <div class="square d-none" id="build-rebel-space-squ-3">0</div>
+              <div class="triangle d-none" id="build-rebel-ground-tri-3">
+                0
+              </div>
+              <div class="circle d-none" id="build-rebel-ground-cir-3">
+                0
+              </div>
+              <div class="square d-none" id="build-rebel-ground-squ-3">
+                0
+              </div>
+              <div class="triangle d-none" id="build-rebel-space-tri-3">
+                0
+              </div>
+              <div class="circle d-none" id="build-rebel-space-cir-3">
+                0
+              </div>
+              <div class="square d-none" id="build-rebel-space-squ-3">
+                0
+              </div>
             </div>
             <div class="row buildrowrebel">
               <div class="col-1 fw-bold">2:</div>
-              <div class="triangle d-none" id="build-rebel-ground-tri-2">0</div>
-              <div class="circle d-none" id="build-rebel-ground-cir-2">0</div>
-              <div class="square d-none" id="build-rebel-ground-squ-2">0</div>
-              <div class="triangle d-none" id="build-rebel-space-tri-2">0</div>
-              <div class="circle d-none" id="build-rebel-space-cir-2">0</div>
-              <div class="square d-none" id="build-rebel-space-squ-2">0</div>
+              <div class="triangle d-none" id="build-rebel-ground-tri-2">
+                0
+              </div>
+              <div class="circle d-none" id="build-rebel-ground-cir-2">
+                0
+              </div>
+              <div class="square d-none" id="build-rebel-ground-squ-2">
+                0
+              </div>
+              <div class="triangle d-none" id="build-rebel-space-tri-2">
+                0
+              </div>
+              <div class="circle d-none" id="build-rebel-space-cir-2">
+                0
+              </div>
+              <div class="square d-none" id="build-rebel-space-squ-2">
+                0
+              </div>
             </div>
             <div class="row buildrowrebel">
               <div class="col-1 fw-bold">1:</div>
-              <div class="triangle d-none" id="build-rebel-ground-tri-1">0</div>
-              <div class="circle d-none" id="build-rebel-ground-cir-1">0</div>
-              <div class="square d-none" id="build-rebel-ground-squ-1">0</div>
-              <div class="triangle d-none" id="build-rebel-space-tri-1">0</div>
-              <div class="circle d-none" id="build-rebel-space-cir-1">0</div>
-              <div class="square d-none" id="build-rebel-space-squ-1">0</div>
+              <div class="triangle d-none" id="build-rebel-ground-tri-1">
+                0
+              </div>
+              <div class="circle d-none" id="build-rebel-ground-cir-1">
+                0
+              </div>
+              <div class="square d-none" id="build-rebel-ground-squ-1">
+                0
+              </div>
+              <div class="triangle d-none" id="build-rebel-space-tri-1">
+                0
+              </div>
+              <div class="circle d-none" id="build-rebel-space-cir-1">
+                0
+              </div>
+              <div class="square d-none" id="build-rebel-space-squ-1">
+                0
+              </div>
             </div>
-            <div class="modal-footer">
-            </div>
+            <div class="modal-footer"></div>
           </div>
         </div>
       </div>
@@ -1478,11 +1589,13 @@
           <div class="modal-body">
             <p class="text-small">
               Valor de produção igual a
-              <a class="link-danger text-medium" href="#0" data-bs-toggle="modal"
-                data-bs-target="#strengthguide">Força</a> 
-                de todas as Unidades que um sistema pode produzir.
-                Conte todos os ícones de produção, incluindo Sistemas Subjugados (ex: o Sistema Mon Calamari tem Valor de Produção 4).
-                Sistemas Sabotados tem Valor de Produção 0.
+              <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
+                data-bs-target="#strengthguide">Força</a>
+              de todas as Unidades que um sistema pode produzir.
+              Conte todos os ícones de produção, incluindo Sistemas Subjugados (ex: o Sistema Mon Calamari tem Valor
+              de
+              Produção 4).
+              Sistemas Sabotados tem Valor de Produção 0.
             </p>
           </div>
         </div>
@@ -1575,17 +1688,11 @@
     </div>
   </div>
 
-
-
-  <!-- bootstrap -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
 
-  <script src="./Resources/js/main.js"></script>
+  <script src="./resources/js/main.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -1593,24 +1700,31 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
-
-      $('#dismissbutton, .overlay').on('click', function () {
-        $('#sidebar').removeClass('show');
-        $('.overlay').removeClass('show');
+      $("#dismissbutton, .overlay").on("click", function () {
+        $("#sidebar").removeClass("show");
+        $(".overlay").removeClass("show");
       });
 
-      $('#sidebarToggle').on('click', function () {
-        $('#sidebar').addClass('show');
-        $('.overlay').addClass('show');
+      $("#sidebarToggle").on("click", function () {
+        $("#sidebar").addClass("show");
+        $(".overlay").addClass("show");
       });
 
-      // $('#d6button').on('click', function () {
-      //   // alert("gimme the D6!");
-      //   $.get("http://roll.diceapi.com/json/d6", function(data) {
-      //     alert("gimme the D6!");
-      //   });
-      // });
     });
+  </script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(function (registration) {
+          console.log('Service worker registration succeeded: ', registration);
+        })
+        .catch(function (error) {
+          console.error('Service worker registration failed: ', error);
+        });
+    } else {
+      console.log('Service workers are not supported');
+    }
   </script>
 </body>
 
