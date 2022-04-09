@@ -2,1730 +2,1495 @@
 <html lang="pt">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Star Wars Rebellion: Variante Solo</title>
-  <link rel="apple-touch-icon" href="./resources/images/manifest/icon-192x192.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="./resources/index.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./resources/icons/starwars-glyphicons/css/starwars-glyphicons.css">
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Star Wars Rebellion: Variante Solo</title>
+    <link rel="apple-touch-icon" href="./resources/images/manifest/icon-192x192.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="resources/css/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="resources/icons/starwars-glyphicons/css/starwars-glyphicons.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
 </head>
 
 <body>
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="options">
-    <div class="offcanvas-header">
-      <h3 class="offcanvas-title maincolour" id="offcanvasLabel">
-        Configurações
-      </h3>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="options">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title maincolour" id="offcanvasLabel">
+                Configurações
+            </h3>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fechar">
       </button>
-    </div>
-    <div class="offcanvas-body">
-      <p>As configurações disponíveis aqui permitem modificar quais componentes/regras você quer que essa variante use.
-        Alterações serão feitas no texto de algumas regras para refletir essas configurações.</p>
-      <h6 class="paraseparator">General</h6>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="chkdynamicInstructions" onclick="chkClick(this);" disabled>
-        <label for="chkdynamicInstructions" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="Por padrão todas as regras serão exibidas. Quando ATIVADO, as regras serão exibidas baseados em certos critérios,
+        </div>
+        <div class="offcanvas-body">
+            <p>As configurações disponíveis aqui permitem modificar quais componentes/regras você quer que essa variante use. Alterações serão feitas no texto de algumas regras para refletir essas configurações.</p>
+            <h6 class="paraseparator">General</h6>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="chkdynamicInstructions" onclick="chkClick(this);" disabled>
+                <label for="chkdynamicInstructions" data-bs-toggle="tooltip" data-bs-placement="right" title="Por padrão todas as regras serão exibidas. Quando ATIVADO, as regras serão exibidas baseados em certos critérios,
                   ou seja, quando a BR estiver descoberta, regras de movimentação e destacamento só serão exibidas em relação à BR">Regras Dinâmicas</label>
-      </div>
+            </div>
 
-      <h6 class="sidebarsubheader">Expansão Ascensão do Império
-        <span class="material-icons" style="font-size: large">dark_mode</span>
-      </h6>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="chkROTE-Units" onclick="chkClick(this);">
-        <label for="chkROTE-Units" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="Regras de destacamento na preparação serão alteradas">Usar Unidades da Expansão</label>
-      </div>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="chkROTE-TacticCards" onclick="chkClick(this);">
-        <label for="chkROTE-TacticCards" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="Regras de batalha serão alteradas">Usar Cartas Táticas Avançadas</label>
-      </div>
-      <h6 class="sidebarsubheader">
-        Variantes
-        <span class="material-icons" style="font-size: large">science</span>
-      </h6>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="chkvar-Movement" onclick="chkClick(this);">
-        <label for="chkvar-Movement" data-bs-toggle="tooltip" data-bs-placement="right" title="O Império rolará um D6 para determinar se move-se para a BR/PBR ou para as unidades rebeldes mais próximas.
+            <h6 class="sidebarsubheader">Expansão Ascensão do Império
+                <span class="material-icons" style="font-size: large">dark_mode</span>
+            </h6>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="chkROTE-Units" onclick="chkClick(this);">
+                <label for="chkROTE-Units" data-bs-toggle="tooltip" data-bs-placement="right" title="Regras de destacamento na preparação serão alteradas">Usar Unidades da Expansão</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="chkROTE-TacticCards" onclick="chkClick(this);">
+                <label for="chkROTE-TacticCards" data-bs-toggle="tooltip" data-bs-placement="right" title="Regras de batalha serão alteradas">Usar Cartas Táticas Avançadas</label>
+            </div>
+            <h6 class="sidebarsubheader">
+                Variantes
+                <span class="material-icons" style="font-size: large">science</span>
+            </h6>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="chkvar-Movement" onclick="chkClick(this);">
+                <label for="chkvar-Movement" data-bs-toggle="tooltip" data-bs-placement="right" title="O Império rolará um D6 para determinar se move-se para a BR/PBR ou para as unidades rebeldes mais próximas.
           As regras de movimentação serão atualizadas para refletir isso">Variante de Movimentação</label>
-      </div>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="chkvar-Deployment" onclick="chkClick(this);">
-        <label for="chkvar-Deployment" data-bs-toggle="tooltip" data-bs-placement="right" title="O Império vai destacar priorizando proximidade à PBR 
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="chkvar-Deployment" onclick="chkClick(this);">
+                <label for="chkvar-Deployment" data-bs-toggle="tooltip" data-bs-placement="right" title="O Império vai destacar priorizando proximidade à PBR 
             > proximidade a sistema Rebelde (desempate pela força de produção) 
             > força de produção Imperial">Variante de Destacamento: Prioridade</label>
-      </div>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="chkvar-UnPlayableMissions" onclick="chkClick(this);">
-        <label for="chkvar-UnPlayableMissions" data-bs-toggle="tooltip" data-bs-placement="right" title="Missões injogáveis serão colocadas no fundo do Baralho de Missões Iniciais, e resolvidas ao final da fase de comando.
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="chkvar-UnPlayableMissions" onclick="chkClick(this);">
+                <label for="chkvar-UnPlayableMissions" data-bs-toggle="tooltip" data-bs-placement="right" title="Missões injogáveis serão colocadas no fundo do Baralho de Missões Iniciais, e resolvidas ao final da fase de comando.
           O texto da seção 'Jogue Missões Iniciais' será alterado">Variante Missões Injogáveis</label>
-      </div>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="chkvar-ActionCardExecution" onclick="chkClick(this);">
-        <label for="chkvar-ActionCardExecution" data-bs-toggle="tooltip" data-bs-placement="right"
-          title="Se esta variante for ativada o jogador jogará um D6 na fase de Atribuição após escolher missões. O império só ativará a carta de Ação de Atribuição em um 4-6.">
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="chkvar-ActionCardExecution" onclick="chkClick(this);">
+                <label for="chkvar-ActionCardExecution" data-bs-toggle="tooltip" data-bs-placement="right" title="Se esta variante for ativada o jogador jogará um D6 na fase de Atribuição após escolher missões. O império só ativará a carta de Ação de Atribuição em um 4-6.">
           Variante de Carta de Ação de Atribuição
         </label>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="offcanvasSilm offcanvas-end" id="roundtracker" tabindex="-1" aria-labelledby="offcanvasLabel"
-    data-bs-backdrop="false" data-bs-scroll="true">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title">Rodadas</h5>
-    </div>
-    <div class="offcanvas-body small">
-      <div class="roundtracker text-center">
-        <div class="justify-content-center">
-          <button class="btnNoBackground" onclick="changeRound()" data-bs-toggle="tooltip" data-bs-placement="right"
-            title="Nova Rodada">
+    <div class="offcanvasSilm offcanvas-end" id="roundtracker" tabindex="-1" aria-labelledby="offcanvasLabel" data-bs-backdrop="false" data-bs-scroll="true">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Rodadas</h5>
+        </div>
+        <div class="offcanvas-body small">
+            <div class="roundtracker text-center">
+                <div class="justify-content-center">
+                    <button class="btnNoBackground" onclick="changeRound()" data-bs-toggle="tooltip" data-bs-placement="right" title="Nova Rodada">
             <span class="material-icons align-middle icon-medium">add</span>
           </button>
+                </div>
+                <p></p>
+                <div class="col">
+                    <input type="checkbox" id="round_16" onclick="setRebelRep(id)">
+                    <label for="round_16" id="round_label">16</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_15" onclick="setRebelRep(id)">
+                    <label for="round_15" id="round_label">15</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_14" onclick="setRebelRep(id)" checked>
+                    <label for="round_14" id="round_label">14</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_13" onclick="setRebelRep(id)">
+                    <label for="round_13" id="round_label">13</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_12" onclick="setRebelRep(id)">
+                    <label for="round_12" id="round_label">12</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_11" onclick="setRebelRep(id)">
+                    <label for="round_11" id="round_label">11</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_10" onclick="setRebelRep(id)">
+                    <label for="round_10" id="round_label">10</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_9" onclick="setRebelRep(id)">
+                    <label for="round_9" id="round_label">9</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_8" onclick="setRebelRep(id)">
+                    <label for="round_8" id="round_label">8</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_7" onclick="setRebelRep(id)">
+                    <label for="round_7" id="round_label">7</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_6" onclick="setRebelRep(id)">
+                    <label for="round_6" id="round_label">6</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_5" onclick="setRebelRep(id)">
+                    <label for="round_5" id="round_label">5</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_4" onclick="setRebelRep(id)">
+                    <label for="round_4" id="round_label">4</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_3" onclick="setRebelRep(id)">
+                    <label for="round_3" id="round_label">3</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_2" onclick="setRebelRep(id)">
+                    <label for="round_2" id="round_label">2</label>
+                </div>
+                <div class="col">
+                    <input type="checkbox" id="round_1" onclick="setRebelRep(id)" checked disabled>
+                    <label for="round_1" id="round_label">1</label>
+                </div>
+                <p></p>
+            </div>
         </div>
-        <p></p>
-        <div class="col">
-          <input type="checkbox" id="round_16" onclick="setRebelRep(id)">
-          <label for="round_16" id="round_label">16</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_15" onclick="setRebelRep(id)">
-          <label for="round_15" id="round_label">15</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_14" onclick="setRebelRep(id)" checked>
-          <label for="round_14" id="round_label">14</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_13" onclick="setRebelRep(id)">
-          <label for="round_13" id="round_label">13</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_12" onclick="setRebelRep(id)">
-          <label for="round_12" id="round_label">12</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_11" onclick="setRebelRep(id)">
-          <label for="round_11" id="round_label">11</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_10" onclick="setRebelRep(id)">
-          <label for="round_10" id="round_label">10</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_9" onclick="setRebelRep(id)">
-          <label for="round_9" id="round_label">9</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_8" onclick="setRebelRep(id)">
-          <label for="round_8" id="round_label">8</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_7" onclick="setRebelRep(id)">
-          <label for="round_7" id="round_label">7</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_6" onclick="setRebelRep(id)">
-          <label for="round_6" id="round_label">6</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_5" onclick="setRebelRep(id)">
-          <label for="round_5" id="round_label">5</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_4" onclick="setRebelRep(id)">
-          <label for="round_4" id="round_label">4</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_3" onclick="setRebelRep(id)">
-          <label for="round_3" id="round_label">3</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_2" onclick="setRebelRep(id)">
-          <label for="round_2" id="round_label">2</label>
-        </div>
-        <div class="col">
-          <input type="checkbox" id="round_1" onclick="setRebelRep(id)" checked disabled>
-          <label for="round_1" id="round_label">1</label>
-        </div>
-        <p></p>
-      </div>
     </div>
-  </div>
 
-  <main class="main">
-    <header class="fixed-top">
-      <div class="d-flex justify-content-between" id="mainheader">
-        <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#options">
+    <main class="main">
+        <header class="fixed-top">
+            <div class="d-flex justify-content-between mainheader" id="mainheader">
+                <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#options">
           <span class="material-icons align-middle icon-medium" data-bs-target="#options">menu</span>
         </button>
-        <div>
-          <div class="d-inline" id="fulltitle">
-            Star Wars Rebellion
-          </div>
-          <div class="d-inline" style="font-weight: 100">
-            Variante Solo
-          </div>
-        </div>
-        <div>
-          <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#roundtracker">
+                <div>
+                    <div class="d-inline" id="fulltitle">
+                        Star Wars Rebellion
+                    </div>
+                    <div class="d-inline" style="font-weight: 100">
+                        Variante Solo
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#roundtracker">
             <span class="icon-medium" id="roundnumber" data-bs-toggle="tooltip" title="Rodada"
               data-bs-placement="bottom" data-bs-target="#roundtracker">
               1
             </span>
           </button>
-          <button type="button" class="btnNoBackground d6button">
+                    <button type="button" class="btnNoBackground d6button">
             <span class="material-icons align-middle icon-medium" data-bs-toggle="tooltip" title="D6"
               data-bs-placement="bottom">
               casino
             </span>
           </button>
-          <button id="reset" type="button" class="btnNoBackground" data-bs-toggle="modal" data-bs-target="#yesNo">
+                    <button id="reset" type="button" class="btnNoBackground" data-bs-toggle="modal" data-bs-target="#yesNo">
             <span class="material-icons align-middle icon-medium" data-bs-toggle="tooltip" title="Reiniciar"
               data-bs-placement="bottom">
               refresh
             </span>
           </button>
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <ul class="nav nav-tabs nav-fill roundselector">
-        <li class="nav-item">
-          <a class="list-group-item list-group-item-action" id="list-setup-list" data-toggle="list"
-            data-bs-toggle="list" href="#list-setup-steps" role="tab" aria-controls="setup">
-            <span class="material-icons align-middle icon-small">settings</span>
-            <span class="d-none d-sm-inline p-1">
+            <ul class="nav nav-tabs nav-fill roundselector">
+                <li class="nav-item">
+                    <a class="list-group-item list-group-item-action" id="list-setup-list" data-toggle="list" data-bs-toggle="list" href="#list-setup-steps" role="tab" aria-controls="setup">
+                        <span class="material-icons align-middle icon-small">settings</span>
+                        <span class="d-none d-sm-inline p-1">
               Preparação
             </span></a>
-        </li>
-        <li class="nav-item">
-          <a class="list-group-item list-group-item-action active" id="list-assignment-list" data-toggle="list"
-            data-bs-toggle="list" href="#list-assigment-steps" role="tab" aria-controls="assignment">
-            <span class="material-icons align-middle icon-small">people_alt</span>
-            <span class="d-none d-sm-inline p-1">
+                </li>
+                <li class="nav-item">
+                    <a class="list-group-item list-group-item-action active" id="list-assignment-list" data-toggle="list" data-bs-toggle="list" href="#list-assigment-steps" role="tab" aria-controls="assignment">
+                        <span class="material-icons align-middle icon-small">people_alt</span>
+                        <span class="d-none d-sm-inline p-1">
               Atribuição
             </span></a>
-        </li>
-        <li class="nav-item">
-          <a class="list-group-item list-group-item-action" id="list-command-list" data-toggle="list"
-            data-bs-toggle="list" href="#list-command-steps" role="tab" aria-controls="command">
-            <span class="material-icons align-middle icon-small">shield</span>
-            <span class="d-none d-sm-inline p-1">
+                </li>
+                <li class="nav-item">
+                    <a class="list-group-item list-group-item-action" id="list-command-list" data-toggle="list" data-bs-toggle="list" href="#list-command-steps" role="tab" aria-controls="command">
+                        <span class="material-icons align-middle icon-small">shield</span>
+                        <span class="d-none d-sm-inline p-1">
               Comando
             </span></a>
-        </li>
-        <li class="nav-item">
-          <a class="list-group-item list-group-item-action" id="list-refresh-list" data-toggle="list"
-            data-bs-toggle="list" href="#list-refresh-steps" role="tab" aria-controls="refresh">
-            <span class="material-icons align-middle icon-small">restart_alt</span>
-            <span class="d-none d-sm-inline p-1">
+                </li>
+                <li class="nav-item">
+                    <a class="list-group-item list-group-item-action" id="list-refresh-list" data-toggle="list" data-bs-toggle="list" href="#list-refresh-steps" role="tab" aria-controls="refresh">
+                        <span class="material-icons align-middle icon-small">restart_alt</span>
+                        <span class="d-none d-sm-inline p-1">
               Restauração
             </span></a>
-        </li>
-        <li class="nav-item">
-          <a class="list-group-item list-group-item-action" id="list-build-list" data-toggle="list"
-            data-bs-toggle="list" href="#list-build-steps" role="tab" aria-controls="build">
-            <span class="material-icons align-middle icon-small">build</span>
-            <span class="d-none d-sm-inline p-1">Linha de Construção</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="list-group-item list-group-item-action" id="list-remotesystems-list" data-toggle="list"
-            data-bs-toggle="list" href="#list-remotesystems-steps" role="tab" aria-controls="remotesystems">
-            <span class="material-icons align-middle icon-small">public</span>
-            <span class="d-none d-sm-inline p-1">Sistemas Remotos</span>
+                </li>
+                <li class="nav-item">
+                    <a class="list-group-item list-group-item-action" id="list-build-list" data-toggle="list" data-bs-toggle="list" href="#list-build-steps" role="tab" aria-controls="build">
+                        <span class="material-icons align-middle icon-small">build</span>
+                        <span class="d-none d-sm-inline p-1">Linha de Construção</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="list-group-item list-group-item-action" id="list-remotesystems-list" data-toggle="list" data-bs-toggle="list" href="#list-remotesystems-steps" role="tab" aria-controls="remotesystems">
+                        <span class="material-icons align-middle icon-small">public</span>
+                        <span class="d-none d-sm-inline p-1">Sistemas Remotos</span>
 
-          </a>
-        </li>
-      </ul>
-    </header>
+                    </a>
+                </li>
+            </ul>
+        </header>
 
-    <div class="container">
-      <div class="row">
-        <!-- Steps Panel -->
-        <section class="py-4">
-          <div class="tab-content" id="nav-tabContent">
+        <div class="container">
+            <div class="row">
+                <!-- Steps Panel -->
+                <section class="py-4">
+                    <div class="tab-content" id="nav-tabContent">
 
-            <!-- Setup Sets -->
-            <section class="tab-pane" id="list-setup-steps" role="tabpanel" aria-labelledby="list-setup-list">
-              <div class="callout">
-                <h5>Preparação</h5>
-                <p>
-                  Use a <a class="link-danger" href="#" data-bs-toggle="collapse"
-                    data-bs-target="#advancedsetup">Preparação Avançada</a>
-                  das Regras com as seguintes alterações:
-                </p>
-                <div class="callout-both">
-                  <h5>Posicione os Líderes Iniciais</h5>
-                  <p class=" collapse" id="advancedsetup">Pegue os quatro líderes que não possuem um ícone de
-                    recrutamento
-                    e posicione-os no espaço marcado “Reserva de Líderes”.</p>
-                  <strong>
+                        <!-- Setup Sets -->
+                        <section class="tab-pane" id="list-setup-steps" role="tabpanel" aria-labelledby="list-setup-list">
+                            <div class="callout">
+                                <h5>Preparação</h5>
+                                <p>
+                                    Use a <a class="link-danger" href="#" data-bs-toggle="collapse" data-bs-target="#advancedsetup">Preparação Avançada</a> das Regras com as seguintes alterações:
+                                </p>
+                                <div class="callout-both">
+                                    <h5>Posicione os Líderes Iniciais</h5>
+                                    <p class=" collapse" id="advancedsetup">Pegue os quatro líderes que não possuem um ícone de recrutamento e posicione-os no espaço marcado “Reserva de Líderes”.</p>
+                                    <strong>
                     <p>O Império começa com cinco Líderes.
                       Recrute o 5º comprando uma Carta de Ação
                       (continue comprando até o Império conseguir o Líder adicional).</p>
                   </strong>
-                </div>
-                <div class="callout collapse" id="advancedsetup">
-                  <h5>Prepare o Indicador de Tempo</h5>
-                  <p>Coloque o marcador de tempo no espaço “1” do indicador e o marcador de reputação no espaço “14”
-                    do
-                    indicador.</p>
-                </div>
-                <div class="callout-rebel">
-                  <h5>Prepare o Baralho de Objetivos</h5>
-                  <p class=" collapse" id="advancedsetup">Separe as cartas de objetivo em três pilhas baseadas no
-                    número
-                    mostrado no verso da carta (I, II ou III).</p>
-                  <strong>
+                                </div>
+                                <div class="callout collapse" id="advancedsetup">
+                                    <h5>Prepare o Indicador de Tempo</h5>
+                                    <p>Coloque o marcador de tempo no espaço “1” do indicador e o marcador de reputação no espaço “14” do indicador.
+                                    </p>
+                                </div>
+                                <div class="callout-rebel">
+                                    <h5>Prepare o Baralho de Objetivos</h5>
+                                    <p class=" collapse" id="advancedsetup">Separe as cartas de objetivo em três pilhas baseadas no número mostrado no verso da carta (I, II ou III).</p>
+                                    <strong>
                     <p>
                       Remova a carta de Objetivo “Coração do Império” (Nível II).</p>
                   </strong>
-                  <p class=" collapse" id="advancedsetup">Compre uma carta do baralho de objetivos.</p>
-                </div>
-                <div class="callout-both collapse" id="advancedsetup">
-                  <h5>Prepare os Baralhos de Ação</h5>
-                  <p>Pegue todas as cartas de ação com um ícone de recrutamento e embaralhe-as para criar dois
-                    baralhos
-                    de ação.
-                    Coloque-os virados para baixo ao lado de cada planilha de facção no lado marcado “Baralho de
-                    Ação”.
-                  </p>
-                </div>
-                <div class="callout-both">
-                  <h5>Prepare as Cartas de Missão</h5>
-                  <div class="callout-both collapse" id="advancedsetup">
-                    <p>Missões Iniciais: Cartas de missões iniciais são identificadas por uma seta curvada na parte
-                      inferior da carta.
-                      Para cada lado, pegue quatro cartas de missões iniciais coloque-as de lado.</p>
-                  </div>
-                  <div class="callout-both collapse" id="advancedsetup">
-                    <p>Missões Remanescentes: Para cada lado, pegue as cartas de missões remanescentes e embaralhe-as
-                      para criar o baralho de missão.
-                      Coloque-o virado para baixo ao lado de cada planilha de facção no lado marcado “Baralho de
-                      Missão.”</p>
-                  </div>
-                  <div class="callout-empire">
-                    <p>Embaralhe uma de cada das cinco cartas de <strong>Projetos</strong> diferentes no <em>Baralho
+                                    <p class=" collapse" id="advancedsetup">Compre uma carta do baralho de objetivos.</p>
+                                </div>
+                                <div class="callout-both collapse" id="advancedsetup">
+                                    <h5>Prepare os Baralhos de Ação</h5>
+                                    <p>Pegue todas as cartas de ação com um ícone de recrutamento e embaralhe-as para criar dois baralhos de ação. Coloque-os virados para baixo ao lado de cada planilha de facção no lado marcado “Baralho de Ação”.
+                                    </p>
+                                </div>
+                                <div class="callout-both">
+                                    <h5>Prepare as Cartas de Missão</h5>
+                                    <div class="callout-both collapse" id="advancedsetup">
+                                        <p>Missões Iniciais: Cartas de missões iniciais são identificadas por uma seta curvada na parte inferior da carta. Para cada lado, pegue quatro cartas de missões iniciais coloque-as de lado.</p>
+                                    </div>
+                                    <div class="callout-both collapse" id="advancedsetup">
+                                        <p>Missões Remanescentes: Para cada lado, pegue as cartas de missões remanescentes e embaralhe-as para criar o baralho de missão. Coloque-o virado para baixo ao lado de cada planilha de facção no lado marcado “Baralho
+                                            de Missão.”
+                                        </p>
+                                    </div>
+                                    <div class="callout-empire">
+                                        <p>Embaralhe uma de cada das cinco cartas de <strong>Projetos</strong> diferentes no <em>Baralho
                         de
                         Missões Principais do Império</em>.</p>
-                  </div>
-                </div>
-                <div class="callout">
-                  <h5>Posicione as Unidades Iniciais e Marcadores de Lealdades</h5>
-                  <div class="callout collapse" id="advancedsetup">
-                    <h5>Lealdade</h5>
-                    <p>Embaralhe o baralho de sonda e revele cartas do topo do baralho até três sistemas Rebeldes
-                      e cinco sistemas Imperiais tenham sido revelados.</p>
-                    <p>Coloque um marcador de lealdade Rebelde em cada um dos três sistemas Rebeldes.
-                      Coloque um marcador de subjugação em cada um dos dois primeiros sistemas Imperiais e
-                      um marcador de lealdade em cada um dos outros três sistemas Imperiais.</p>
-                    <p>Devolva as cinco cartas de sonda Imperiais à caixa do jogo.
-                      Em seguida, embaralhe todas as outras cartas de sonda no baralho de sonda.</p>
-                  </div>
+                                    </div>
+                                </div>
+                                <div class="callout">
+                                    <h5>Posicione as Unidades Iniciais e Marcadores de Lealdades</h5>
+                                    <div class="callout collapse" id="advancedsetup">
+                                        <h5>Lealdade</h5>
+                                        <p>Embaralhe o baralho de sonda e revele cartas do topo do baralho até três sistemas Rebeldes e cinco sistemas Imperiais tenham sido revelados.</p>
+                                        <p>Coloque um marcador de lealdade Rebelde em cada um dos três sistemas Rebeldes. Coloque um marcador de subjugação em cada um dos dois primeiros sistemas Imperiais e um marcador de lealdade em cada um dos outros três
+                                            sistemas Imperiais.</p>
+                                        <p>Devolva as cinco cartas de sonda Imperiais à caixa do jogo. Em seguida, embaralhe todas as outras cartas de sonda no baralho de sonda.</p>
+                                    </div>
 
-                  <div class="callout-empire">
-                    <h5>Destacamento Imperial</h5>
-                    <p>
-                      Destaque as Unidades Imperiais da seguinte forma (use <a class="link-danger d6button" href="#"
-                        type="button">D6</a>, quando necessário):
-                    </p>
-                    <ul id="Base-Setup">
-                      <li>2 TIE Fighters & 2 Stormtroopers em cada um dos seis Sistemas iniciais.</li>
-                      <li>Aleatoriamente destaque 3 Star Destroyers em 3 Sistemas separados (1 em cada);
-                        destaque 3 Assault Carriers nos 3 Sistemas restantes.</li>
-                      <li>Aleatoriamente destaque 1 AT-AT em um Sistema;
-                        em seguida, destaque 5 AT-STs (1 por Sistema) nos 5 Sistemas restantes.
-                      </li>
-                      <li>Aleatoriamente destaque a Estrela da Morte.</li>
-                    </ul>
-                    <div class="d-none variant" id="ROTE-Setup">
-                      <div>
-                        <p>
-                          Coloque a Estrela da Morte no espaço 3 da linha de construção,
-                          e coloque a Estrela da Morte em Construção, um marcador de subjugação,
-                          4 TIE Fighters e 1 Stormtrooper em um dos 6 sistemas neutros com apenas um triângulo de
-                          recurso
-                          escolhido aleatoriamente entre: Felucia, Kessel, Malastare, Alderaan, Rodia ou Ryloth,
-                          devolva sua carta de sonda à caixa do jogo.</p>
-                        <ul>
-                          <li>2 Stormtroopers em cada um dos 6 Sistemas.</li>
-                          <li>Aleatoriamente destaque 3 Star Destroyers em 3 Sistemas separados (1 em cada);
-                            destaque 3 Assault Carriers nos 3 Sistemas restantes.</li>
-                          <li>Coloque um TIE Fighter em cada sistema exceto em Coruscant,
-                            em seguida, adicione aleatoriamente um TIE Striker em 2 desses 5 Sistemas
-                            e um TIE Fighter nos 3 restantes.
-                          </li>
-                          <li>Aleatoriamente coloque 2 Assault Tanks e 4 AT-STs em cada um dos 6 Sistemas (1 por
-                            sistema).</li>
-                          <li>Aleatoriamente coloque um AT-AT em um dos 5 Sistemas (não em Coruscant).</li>
-                        </ul>
-                      </div>
-                      <span class="material-icons">dark_mode</span>
-                    </div>
-                  </div>
-                  <div class="callout-rebel collapse" id="advancedsetup">
-                    <h5>Destacamento Rebelde</h5>
-                    <p>O jogador Rebelde recebe:</p>
-                    <div id="Base-Setup" style="display: flex;">
-                      <ul>
-                        <li>1 Corvette Corelliano</li>
-                        <li>1 Transporte Rebelde</li>
-                        <li>2 X-wings</li>
-                      </ul>
-                      <ul>
-                        <li>2 Y-wings</li>
-                        <li>6 Troopers Rebeldes</li>
-                        <li>2 Airspeeders</li>
-                      </ul>
-                    </div>
-                    <div class="d-none variant" id="ROTE-Setup">
-                      <ul>
-                        <li>1 Corvette Corelliano</li>
-                        <li>1 Transporte Rebelde</li>
-                        <li>1 X-wing</li>
-                        <li>1 Y-wing</li>
-                      </ul>
-                      <ul>
-                        <li>1 U-wing</li>
-                        <li>5 Troopers Rebeldes</li>
-                        <li>2 Airspeeders</li>
-                        <li>1 Vanguarda Rebelde</li>
-                      </ul>
-                      <span class="material-icons">dark_mode</span>
-                    </div>
-                    <p>Essas unidades podem ser colocadas no espaço “Base Rebelde” do tabuleiro e/ou em qualquer
-                      Sistema
-                      Rebelde ou neutro.</p>
-                  </div>
-                  <div class="callout-both collapse" id="advancedsetup">
-                    <h5>Cartas de Ação</h5>
-                    <p>Para cada lado, compre duas cartas de ação iniciais aleatórias (ou seja, cartas de ação sem o
-                      ícone de recrutamento).
-                      Essas cartas fornecem habilidades especiais de uso único.</p>
-                  </div>
-                </div>
-                <div class="callout-rebel">
-                  <h5>Base Rebelde</h5>
-                  <p>
-                    O Jogador Solo escolhe a localização da Base Rebelde entre os 8 Sistemas Remotos,
-                    após colocar todas as Unidades Iniciais e Marcadores de Lealdade.
-                    O Império sabe que ela está localizada em um destes Sistemas (obteve informações vitais através de
-                    suas redes de inteligência),
-                    e vai buscá-la agressivamente.</p>
-                </div>
-                <div class="callout-rebel collapse" id="advancedsetup">
-                  <h5>Compre a Mão Inicial</h5>
-                  <p>Pegue as quatro missões iniciais e compre duas cartas do baralho de missão para criar sua mão
-                    inicial.</p>
-                </div>
-              </div>
-            </section>
+                                    <div class="callout-empire">
+                                        <h5>Destacamento Imperial</h5>
+                                        <p>
+                                            Destaque as Unidades Imperiais da seguinte forma (use <a class="link-danger d6button" href="#" type="button">D6</a>, quando necessário):
+                                        </p>
+                                        <ul id="Base-Setup">
+                                            <li>2 TIE Fighters & 2 Stormtroopers em cada um dos seis Sistemas iniciais.</li>
+                                            <li>Aleatoriamente destaque 3 Star Destroyers em 3 Sistemas separados (1 em cada); destaque 3 Assault Carriers nos 3 Sistemas restantes.</li>
+                                            <li>Aleatoriamente destaque 1 AT-AT em um Sistema; em seguida, destaque 5 AT-STs (1 por Sistema) nos 5 Sistemas restantes.
+                                            </li>
+                                            <li>Aleatoriamente destaque a Estrela da Morte.</li>
+                                        </ul>
+                                        <div class="d-none variant" id="ROTE-Setup">
+                                            <div>
+                                                <p>
+                                                    Coloque a Estrela da Morte no espaço 3 da linha de construção, e coloque a Estrela da Morte em Construção, um marcador de subjugação, 4 TIE Fighters e 1 Stormtrooper em um dos 6 sistemas neutros com apenas um triângulo de recurso escolhido aleatoriamente
+                                                    entre: Felucia, Kessel, Malastare, Alderaan, Rodia ou Ryloth, devolva sua carta de sonda à caixa do jogo.</p>
+                                                <ul>
+                                                    <li>2 Stormtroopers em cada um dos 6 Sistemas.</li>
+                                                    <li>Aleatoriamente destaque 3 Star Destroyers em 3 Sistemas separados (1 em cada); destaque 3 Assault Carriers nos 3 Sistemas restantes.</li>
+                                                    <li>Coloque um TIE Fighter em cada sistema exceto em Coruscant, em seguida, adicione aleatoriamente um TIE Striker em 2 desses 5 Sistemas e um TIE Fighter nos 3 restantes.
+                                                    </li>
+                                                    <li>Aleatoriamente coloque 2 Assault Tanks e 4 AT-STs em cada um dos 6 Sistemas (1 por sistema).
+                                                    </li>
+                                                    <li>Aleatoriamente coloque um AT-AT em um dos 5 Sistemas (não em Coruscant).</li>
+                                                </ul>
+                                            </div>
+                                            <span class="material-icons">dark_mode</span>
+                                        </div>
+                                    </div>
+                                    <div class="callout-rebel collapse" id="advancedsetup">
+                                        <h5>Destacamento Rebelde</h5>
+                                        <p>O jogador Rebelde recebe:</p>
+                                        <div id="Base-Setup" style="display: flex;">
+                                            <ul>
+                                                <li>1 Corvette Corelliano</li>
+                                                <li>1 Transporte Rebelde</li>
+                                                <li>2 X-wings</li>
+                                            </ul>
+                                            <ul>
+                                                <li>2 Y-wings</li>
+                                                <li>6 Troopers Rebeldes</li>
+                                                <li>2 Airspeeders</li>
+                                            </ul>
+                                        </div>
+                                        <div class="d-none variant" id="ROTE-Setup">
+                                            <ul>
+                                                <li>1 Corvette Corelliano</li>
+                                                <li>1 Transporte Rebelde</li>
+                                                <li>1 X-wing</li>
+                                                <li>1 Y-wing</li>
+                                            </ul>
+                                            <ul>
+                                                <li>1 U-wing</li>
+                                                <li>5 Troopers Rebeldes</li>
+                                                <li>2 Airspeeders</li>
+                                                <li>1 Vanguarda Rebelde</li>
+                                            </ul>
+                                            <span class="material-icons">dark_mode</span>
+                                        </div>
+                                        <p>Essas unidades podem ser colocadas no espaço “Base Rebelde” do tabuleiro e/ou em qualquer Sistema Rebelde ou neutro.</p>
+                                    </div>
+                                    <div class="callout-both collapse" id="advancedsetup">
+                                        <h5>Cartas de Ação</h5>
+                                        <p>Para cada lado, compre duas cartas de ação iniciais aleatórias (ou seja, cartas de ação sem o ícone de recrutamento). Essas cartas fornecem habilidades especiais de uso único.</p>
+                                    </div>
+                                </div>
+                                <div class="callout-rebel">
+                                    <h5>Base Rebelde</h5>
+                                    <p>
+                                        O Jogador Solo escolhe a localização da Base Rebelde entre os 8 Sistemas Remotos, após colocar todas as Unidades Iniciais e Marcadores de Lealdade. O Império sabe que ela está localizada em um destes Sistemas (obteve informações vitais através de suas
+                                        redes de inteligência), e vai buscá-la agressivamente.</p>
+                                </div>
+                                <div class="callout-rebel collapse" id="advancedsetup">
+                                    <h5>Compre a Mão Inicial</h5>
+                                    <p>Pegue as quatro missões iniciais e compre duas cartas do baralho de missão para criar sua mão inicial.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
 
-            <!-- Assignment Steps-->
-            <section class="tab-pane active" id="list-assigment-steps" role="tabpanel"
-              aria-labelledby="list-assignment-list">
-              <div class="callout-rebel">
-                <h5>Atribua Líderes às Missões</h5>
-                <p>O jogador Rebelde atribui líderes às missões.</p>
-              </div>
+                        <!-- Assignment Steps-->
+                        <section class="tab-pane active" id="list-assigment-steps" role="tabpanel" aria-labelledby="list-assignment-list">
+                            <div class="callout-rebel">
+                                <h5>Atribua Líderes às Missões</h5>
+                                <p>O jogador Rebelde atribui líderes às missões.</p>
+                            </div>
 
-              <div class="callout-empire">
-                <h5>Crie o Baralho de Missões</h5>
-                <div id="createmissiondeck">
-                  <p>Compre um número especificado de Missões (veja a Tabela de Missões abaixo),
-                    embaralhe as cartas compradas, e coloque-as em uma pilha virada para baixo,
-                    formando o <em class="text-medium">Baralho de Missões Iniciais</em>.</p>
+                            <div class="callout-empire">
+                                <h5>Crie o Baralho de Missões</h5>
+                                <div id="createmissiondeck">
+                                    <p>Compre um número especificado de Missões (veja a Tabela de Missões abaixo), embaralhe as cartas compradas, e coloque-as em uma pilha virada para baixo, formando o <em class="text-medium">Baralho de Missões Iniciais</em>.</p>
 
-                  <div class="callout text-small">
-                    <div id="missiontable"><strong>Tabela de Missões</strong>
-                      <div class="container-fluid">
-                        <div class="row">
-                          <div class="col-3 fw-bold">Rodada 1:</div>
-                          <div class="col">2 Missões (1 Missão Inicial + 1 Missões Principais)</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-3 fw-bold">Rodadas 2-3:</div>
-                          <div class="col">3 Missões (1 Missão Inicial + 2 Missões Principais)</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-3 fw-bold">Rodada 4+:</div>
-                          <div class="col">4 Missões (1 Missão Inicial + 3 Missões Principais)</div>
-                        </div>
-                        <div class="row">
-                          <div class="col-3 fw-bold">Base Rebelde Revelada</div>
-                          <div class="col">3 Missões (1 Missão Inicial + 2 Missões Principais)</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                    <div class="callout text-small">
+                                        <div id="missiontable"><strong>Tabela de Missões</strong>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-3 fw-bold">Rodada 1:</div>
+                                                    <div class="col">2 Missões (1 Missão Inicial + 1 Missões Principais)</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3 fw-bold">Rodadas 2-3:</div>
+                                                    <div class="col">3 Missões (1 Missão Inicial + 2 Missões Principais)</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3 fw-bold">Rodada 4+:</div>
+                                                    <div class="col">4 Missões (1 Missão Inicial + 3 Missões Principais)</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-3 fw-bold">Base Rebelde Revelada</div>
+                                                    <div class="col">3 Missões (1 Missão Inicial + 2 Missões Principais)</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-              <div class="callout-empire">
-                <h5>Jogue Cartas de Ação</h5>
+                            <div class="callout-empire">
+                                <h5>Jogue Cartas de Ação</h5>
 
-                <div class="d-none variant" id="var-ActionCardExecution">
-                  <div>
-                    <p>
-                      Role um <a class="link-danger d6button" href="#" type="button">D6</a>:
-                    </p>
-                    <div class="d-flex">
-                      <p>1-3:</p>
-                      <p>
-                        O Império não usa sua Carta de Ação de Atribuição.
-                      </p>
-                    </div>
-                    <div class="d-flex">
-                      <p>4-6:</p>
-                      <p>
-                        O Império usa sua Carta de Ação de Atribuição.
-                      </p>
-                    </div>
-                  </div>
-                  <span class="material-icons">science</span>
-                </div>
-                <p>
-                  O Império joga todas as Cartas de Ação designadas como <strong class="text-medium">jogáveis</strong>
-                  durante a Fase de Atribuição.
-                </p>
-              </div>
-            </section>
+                                <div class="d-none variant" id="var-ActionCardExecution">
+                                    <div>
+                                        <p>
+                                            Role um <a class="link-danger d6button" href="#" type="button">D6</a>:
+                                        </p>
+                                        <div class="d-flex">
+                                            <p>1-3:</p>
+                                            <p>
+                                                O Império não usa sua Carta de Ação de Atribuição.
+                                            </p>
+                                        </div>
+                                        <div class="d-flex">
+                                            <p>4-6:</p>
+                                            <p>
+                                                O Império usa sua Carta de Ação de Atribuição.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <span class="material-icons">science</span>
+                                </div>
+                                <p>
+                                    O Império joga todas as Cartas de Ação designadas como <strong class="text-medium">jogáveis</strong> durante a Fase de Atribuição.
+                                </p>
+                            </div>
+                        </section>
 
-            <!-- Command Steps-->
-            <section class="tab-pane" id="list-command-steps" role="tabpanel" aria-labelledby="list-command-list">
-              <div class="callout">
-                <h5>Jogue Missões</h5>
-                <p>Começando com o jogador Rebelde, alterne em turnos.</p>
+                        <!-- Command Steps-->
+                        <section class="tab-pane" id="list-command-steps" role="tabpanel" aria-labelledby="list-command-list">
+                            <div class="callout">
+                                <h5>Jogue Missões</h5>
+                                <p>Começando com o jogador Rebelde, alterne em turnos.</p>
 
-                <div class="callout-rebel">
-                  <h5>Jogue Missões / Ative Sistemas</h5>
-                  <p>O jogador Rebelde pode revelar missões ou ativar sistemas.</p>
+                                <div class="callout-rebel">
+                                    <h5>Jogue Missões / Ative Sistemas</h5>
+                                    <p>O jogador Rebelde pode revelar missões ou ativar sistemas.</p>
 
-                  <div class="callout-rebel">
-                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
-                      data-bs-target="#establishnewbase">
-                      <h5>Estabelescendo uma Nova Base</h5>
-                    </a>
-                    <p class="collapse" id="establishnewbase">
-                      Os Rebeldes podem estabelecer uma nova Base de forma similar ao procedimento normal.
-                      Primeiro, devolva todas as cartas de Sonda de Sistemas Remotos não controlados
-                      (sem nenhuma unidade terrestre Imperial) da pilha do Império ao baralho de Sonda
-                      e embaralhe.
-                      Depois, os Rebeldes compram o número normal de cartas até o máximo da diferença entre
-                      os Marcadores de Tempo e Reputação, e estabelescem uma nova Base em qualquer Sistema Remoto
-                      comprado.
-                      Em seguida, o Império volta a buscar a Base Rebelde como fazia antes da base ser revelada.
-                      Finalmente, coloque a carta <em>Obter Inteligência</em> de volta no Baralho de Missões Iniciais.
-                    </p>
-                  </div>
+                                    <div class="callout-rebel">
+                                        <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#establishnewbase">
+                                            <h5>Estabelescendo uma Nova Base</h5>
+                                        </a>
+                                        <p class="collapse" id="establishnewbase">
+                                            Os Rebeldes podem estabelecer uma nova Base de forma similar ao procedimento normal. Primeiro, devolva todas as cartas de Sonda de Sistemas Remotos não controlados (sem nenhuma unidade terrestre Imperial) da pilha do Império ao baralho de Sonda e embaralhe.
+                                            Depois, os Rebeldes compram o número normal de cartas até o máximo da diferença entre os Marcadores de Tempo e Reputação, e estabelescem uma nova Base em qualquer Sistema Remoto comprado. Em seguida, o Império
+                                            volta a buscar a Base Rebelde como fazia antes da base ser revelada. Finalmente, coloque a carta <em>Obter Inteligência</em> de volta no Baralho de Missões Iniciais.
+                                        </p>
+                                    </div>
 
-                  <div class="callout-empire">
-                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
-                      data-bs-target="#opposingrebelmissions">
-                      <h5>Contrapondo Missões Rebeldes</h5>
-                    </a>
-                    <p class="collapse" id="opposingrebelmissions">
-                      Apenas se houver mais Líderes Imperiais do que cartas de <em>Missões Iniciais</em> não
-                      reveladas,
-                      o Império vai emitir uma ordem (em um resultado no
-                      <a class="link-danger" href="#" type="button">D6</a>
-                      de 4+) para enviar seu Líder “melhor” qualificado para contrapor à Missão Rebelde.
-                      Se nenhum Líder tiver ícones de habilidade correspondentes,
-                      o Líder com menor número total de ícones de habilidade é selecionado.
-                    </p>
+                                    <div class="callout-empire">
+                                        <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#opposingrebelmissions">
+                                            <h5>Contrapondo Missões Rebeldes</h5>
+                                        </a>
+                                        <p class="collapse" id="opposingrebelmissions">
+                                            Apenas se houver mais Líderes Imperiais do que cartas de <em>Missões Iniciais</em> não reveladas, o Império vai emitir uma ordem (em um resultado no
+                                            <a class="link-danger" href="#" type="button">D6</a> de 4+) para enviar seu Líder “melhor” qualificado para contrapor à Missão Rebelde. Se nenhum Líder tiver ícones de habilidade correspondentes, o Líder com
+                                            menor número total de ícones de habilidade é selecionado.
+                                        </p>
 
-                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
-                      data-bs-target="#joinabattle">
-                      <h5>Entrar na Batalha</h5>
-                    </a>
-                    <p class="collapse" id="joinabattle">
-                      Apenas se houver mais Líderes Imperiais do que cartas de <em>Missões Iniciais</em> não
-                      reveladas,
-                      o Império enviará um Líder selecionado para entrar em uma batalha sem Líder ou
-                      com um Líder que não possua Valor(es) Tático(s).
-                      Priorize Líderes com cartas de Ação “Início do Combate”, e com os maiores Valores Táticos
-                      combinados
-                      (se ambos os Palcos) ou o maior Valor Tático (no Palco apropriado).
-                    </p>
-                  </div>
-                </div>
+                                        <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#joinabattle">
+                                            <h5>Entrar na Batalha</h5>
+                                        </a>
+                                        <p class="collapse" id="joinabattle">
+                                            Apenas se houver mais Líderes Imperiais do que cartas de <em>Missões Iniciais</em> não reveladas, o Império enviará um Líder selecionado para entrar em uma batalha sem Líder ou com um Líder que não possua Valor(es)
+                                            Tático(s). Priorize Líderes com cartas de Ação “Início do Combate”, e com os maiores Valores Táticos combinados (se ambos os Palcos) ou o maior Valor Tático (no Palco apropriado).
+                                        </p>
+                                    </div>
+                                </div>
 
-                <div class="callout-empire">
-                  <h5>Jogue Missões Iniciais</h5>
-                  <p>
-                    O Império <strong>sempre</strong> completa <em class="text-medium">Missões Iniciais</em>
-                    primeiro, antes de Ativar Sistemas para movimentação.</p>
-                  <p>
-                    <strong>Realizando <em class="text-medium">Missões Iniciais</em>:</strong>
-                    Vire a Missão do topo do baralho e atribua o Líder “melhor” qualificado
-                    (imagem do Líder na Missão ou Líder possuindo
-                    o maior número de ícones de Habilidade correspondentes).
-                  </p>
-                  <p id="Base-Unplayablemissions">
-                    Se uma Missão se mostrar injogável (nenhum Líder apropriado ou por qualquer outra razão),
-                    selecione uma nova Missão do Baralho apropriado e coloque todas as
-                    cartas de Missão não completadas no fundo dos seus respectivos Baralhos.
-                  </p>
-                  <div class="d-none variant" id="var-Unplayablemissions">
-                    <p>
-                      Se uma missão não puder ser realizada devido a circunstâncias que podem ser alteradas
-                      (ex: nenhum líder capturado, a Estrela da Morte não se moveu, etc),
-                      coloque a carta no fundo do Baralho de <em class="text-medium">Missões Iniciais</em>.
-                      Reserve o líder que teria feito a missão.
-                      Depois de ter feito todas as outras <em class="text-medium">Missões Iniciais</em> e
-                      movimentações,
-                      tente resolver qualquer missão injogável com o líder reservado.
-                      Se a missão ainda não puder ser realizada,
-                      compre uma nova missão.
-                    </p>
-                    <span class="material-icons">science</span>
-                  </div>
-                  <p>
-                    Selecione o local das Missões baseado na
-                    <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
-                      data-bs-target="#carddecisionlist">Lista de Decisão de Cartas do Império</a>
-                    ou no Sistema com o
-                    <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
-                      data-bs-target="#productionvalueguide">Maior Valor de Produção</a>.
-                  </p>
+                                <div class="callout-empire">
+                                    <h5>Jogue Missões Iniciais</h5>
+                                    <p>
+                                        O Império <strong>sempre</strong> completa <em class="text-medium">Missões Iniciais</em> primeiro, antes de Ativar Sistemas para movimentação.</p>
+                                    <p>
+                                        <strong>Realizando <em class="text-medium">Missões Iniciais</em>:</strong> Vire a Missão do topo do baralho e atribua o Líder “melhor” qualificado (imagem do Líder na Missão ou Líder possuindo o maior número de
+                                        ícones de Habilidade correspondentes).
+                                    </p>
+                                    <p id="Base-Unplayablemissions">
+                                        Se uma Missão se mostrar injogável (nenhum Líder apropriado ou por qualquer outra razão), selecione uma nova Missão do Baralho apropriado e coloque todas as cartas de Missão não completadas no fundo dos seus respectivos Baralhos.
+                                    </p>
+                                    <div class="d-none variant" id="var-Unplayablemissions">
+                                        <p>
+                                            Se uma missão não puder ser realizada devido a circunstâncias que podem ser alteradas (ex: nenhum líder capturado, a Estrela da Morte não se moveu, etc), coloque a carta no fundo do Baralho de <em class="text-medium">Missões Iniciais</em>.
+                                            Reserve o líder que teria feito a missão. Depois de ter feito todas as outras <em class="text-medium">Missões Iniciais</em> e movimentações, tente resolver qualquer missão injogável com o líder reservado. Se
+                                            a missão ainda não puder ser realizada, compre uma nova missão.
+                                        </p>
+                                        <span class="material-icons">science</span>
+                                    </div>
+                                    <p>
+                                        Selecione o local das Missões baseado na
+                                        <a class="link-danger text-medium" href="#" data-bs-toggle="modal" data-bs-target="#carddecisionlist">Lista de Decisão de Cartas do Império</a> ou no Sistema com o
+                                        <a class="link-danger text-medium" href="#" data-bs-toggle="modal" data-bs-target="#productionvalueguide">Maior Valor de Produção</a>.
+                                    </p>
 
-                  <div class="callout">
-                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
-                      data-bs-target="#capturingleaders">
-                      <h5>Capturando Líderes</h5>
-                    </a>
-                    <p class="collapse" id="capturingleaders">
-                      Um Líder Rebelde capturado é considerado uma Unidade Terrestre,
-                      e mantido refém pela Unidade Espacial Imperial mais forte
-                      presente atualmente no Sistema onde ele ou ela está localizado.</p>
+                                    <div class="callout">
+                                        <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#capturingleaders">
+                                            <h5>Capturando Líderes</h5>
+                                        </a>
+                                        <p class="collapse" id="capturingleaders">
+                                            Um Líder Rebelde capturado é considerado uma Unidade Terrestre, e mantido refém pela Unidade Espacial Imperial mais forte presente atualmente no Sistema onde ele ou ela está localizado.</p>
 
-                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
-                      data-bs-target="#acquiringprojectcards">
-                      <h5>Adquirindo Cartas de Projeto</h5>
-                    </a>
-                    <p class="collapse" id="acquiringprojectcards">
-                      Quaisquer Projetos adquiridos durante o jogo são colocados virados para baixo
-                      (sem olhar para eles) ao lado Baralho de Missões Principais,
-                      e colocados no topo do baralho depois dele ter side reembaralhado
-                      no final da Fase de Comando.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="callout-empire">
-                <h5>Ative Sistemas</h5>
-                <p>
-                  O Império pode, tendo realizado todas as Missões Iniciais,
-                  usar Líderes para Ativar Sistemas (Mover Unidades)
-                  para a PBR(s) mais próxima ou para a Base Rebelde Revelada.
-                </p>
+                                        <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#acquiringprojectcards">
+                                            <h5>Adquirindo Cartas de Projeto</h5>
+                                        </a>
+                                        <p class="collapse" id="acquiringprojectcards">
+                                            Quaisquer Projetos adquiridos durante o jogo são colocados virados para baixo (sem olhar para eles) ao lado Baralho de Missões Principais, e colocados no topo do baralho depois dele ter side reembaralhado no final da Fase de Comando.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="callout-empire">
+                                <h5>Ative Sistemas</h5>
+                                <p>
+                                    O Império pode, tendo realizado todas as Missões Iniciais, usar Líderes para Ativar Sistemas (Mover Unidades) para a PBR(s) mais próxima ou para a Base Rebelde Revelada.
+                                </p>
 
-                <div class="callout">
-                  <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
-                    data-bs-target="#movementrules">
-                    <h5>Regras de Movimentação</h5>
-                  </a>
-                  <div class="collapse" id="movementrules">
-                    <div class="d-none variant" id="var-movement">
-                      <div>
-                        <p>
-                          Antes de se mover, role um <a class="link-danger d6button" href="#" type="button">D6</a>:
-                        </p>
-                        <div class="d-flex">
-                          <p style="white-space: nowrap;">1‒3:</p>
-                          <p>
-                            Mova as Unidades Imperiais para o sistema mais próximo que contenha peças rebeldes.
-                            Priorize Sistemas leais > maior frota.
-                          </p>
-                        </div>
-                        <div class="d-flex">
-                          <p style="white-space: nowrap;">4‒6:</p>
-                          <p>
-                            Mova as Unidades Imperiais pela rota mais curta possível na direção do Sistema Remoto
-                            inexplorado (Carta de Sonda ainda não obtida) mais próximo
-                            (também chamado de Possível Base Rebelde [PRB])
-                            e vai atacar quaisquer naves rebeldes no caminho.
-                          </p>
-                        </div>
-                      </div>
-                      <span class="material-icons">science</span>
-                    </div>
-                    <p id="Base-movement">
-                      Mova as Unidades Imperiais pela rota mais curta possível na direção do Sistema Remoto
-                      inexplorado (Carta de Sonda ainda não obtida) mais próximo
-                      (também chamado de Possível Base Rebelde [PRB])
-                      e vai atacar quaisquer naves rebeldes no caminho.
-                    </p>
-                    <p>
-                      Quando se mover para um sistema, o Império vai mover todas as Unidades de
-                      Sistemas adjacentes para o Sistema Ativado,
-                      trazendo consigo quantas Unidades Terrestres ele puder transportar,
-                      priorizando Unidades Espaciais com os maiores valores de
-                      <a class="link-danger text-medium" href="#" data-bs-target="#strengthguide"
-                        data-bs-toggle="modal">Força</a>.
-                    </p>
-                    <P class="important"><strong>IMPORTANTE:</strong>
-                      O Império <strong>deve</strong> deixar uma única Unidade Terrestre mais fraca para trás,
-                      para tornar o movimento válido.
-                      Se a frota foi selecionada (pois está mais próxima),
-                      mas não pode deixar uma Unidade Terrestre para trás,
-                      coloque um Líder no Sistema, junto com um Stormtrooper do suprimento.
-                      A frota poderá então se mover em uma rodada posterior.
-                    </p>
-                    <p>
-                      Depois de um movimento bem sucessido, com Unidades Terrestres, para um Sistema Remoto,
-                      imediatamente obtenha a Carta de Sonda daquele sistema (reembaralhe o baralho).
-                      Se o Império perder sua última Unidate Terrestre estacionada em um Sistema Remoto
-                      (ex: devido a perdas de Combate),
-                      retorne a Carta de Sonda para o Baralho de Sonda e reembaralhe.
-                    </p>
-                    <p>
-                      Quando a diferença entre os Marcadores de Tempo e Reputação for ≤ 5,
-                      as frotas Imperiais podem se mover (uma ver por rodada) mesmo
-                      se houver um Líder no Sistema inicial.
-                      O Império vai alterar seu comportamento de movimentação
-                      quando a Base Rebelde for revelada
-                      (veja Revelando a Base Rebelde abaixo).
-                    </p>
-                  </div>
+                                <div class="callout">
+                                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#movementrules">
+                                        <h5>Regras de Movimentação</h5>
+                                    </a>
+                                    <div class="collapse" id="movementrules">
+                                        <div class="d-none variant" id="var-movement">
+                                            <div>
+                                                <p>
+                                                    Antes de se mover, role um <a class="link-danger d6button" href="#" type="button">D6</a>:
+                                                </p>
+                                                <div class="d-flex">
+                                                    <p style="white-space: nowrap;">1‒3:</p>
+                                                    <p>
+                                                        Mova as Unidades Imperiais para o sistema mais próximo que contenha peças rebeldes. Priorize Sistemas leais > maior frota.
+                                                    </p>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <p style="white-space: nowrap;">4‒6:</p>
+                                                    <p>
+                                                        Mova as Unidades Imperiais pela rota mais curta possível na direção do Sistema Remoto inexplorado (Carta de Sonda ainda não obtida) mais próximo (também chamado de Possível Base Rebelde [PRB]) e vai atacar quaisquer naves rebeldes no caminho.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <span class="material-icons">science</span>
+                                        </div>
+                                        <p id="Base-movement">
+                                            Mova as Unidades Imperiais pela rota mais curta possível na direção do Sistema Remoto inexplorado (Carta de Sonda ainda não obtida) mais próximo (também chamado de Possível Base Rebelde [PRB]) e vai atacar quaisquer naves rebeldes no caminho.
+                                        </p>
+                                        <p>
+                                            Quando se mover para um sistema, o Império vai mover todas as Unidades de Sistemas adjacentes para o Sistema Ativado, trazendo consigo quantas Unidades Terrestres ele puder transportar, priorizando Unidades Espaciais com os maiores valores de
+                                            <a class="link-danger text-medium" href="#" data-bs-target="#strengthguide" data-bs-toggle="modal">Força</a>.
+                                        </p>
+                                        <P class="important"><strong>IMPORTANTE:</strong> O Império <strong>deve</strong> deixar uma única Unidade Terrestre mais fraca para trás, para tornar o movimento válido. Se a frota foi selecionada (pois está mais próxima), mas não
+                                            pode deixar uma Unidade Terrestre para trás, coloque um Líder no Sistema, junto com um Stormtrooper do suprimento. A frota poderá então se mover em uma rodada posterior.
+                                        </p>
+                                        <p>
+                                            Depois de um movimento bem sucessido, com Unidades Terrestres, para um Sistema Remoto, imediatamente obtenha a Carta de Sonda daquele sistema (reembaralhe o baralho). Se o Império perder sua última Unidate Terrestre estacionada em um Sistema Remoto (ex:
+                                            devido a perdas de Combate), retorne a Carta de Sonda para o Baralho de Sonda e reembaralhe.
+                                        </p>
+                                        <p>
+                                            Quando a diferença entre os Marcadores de Tempo e Reputação for ≤ 5, as frotas Imperiais podem se mover (uma ver por rodada) mesmo se houver um Líder no Sistema inicial. O Império vai alterar seu comportamento de movimentação quando a Base Rebelde for
+                                            revelada (veja Revelando a Base Rebelde abaixo).
+                                        </p>
+                                    </div>
 
-                  <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
-                    data-bs-target="#revealingtherebelbase">
-                    <h5>Revelando a Base Rebelde</h5>
-                  </a>
-                  <div class="collapse" id="revealingtherebelbase">
-                    <p>
-                      Revele a <strong>Base Rebelde</strong> apenas após o Império ter obtido
-                      Cartas de Sonda para os outros 7 Sistemas Remotos
-                      OU quando o Império tiver alguma <strong>Unidade Terrestre</strong> nesse Sistema.
-                    </p>
-                    <p>
-                      Quando revelada, remova a Missão Inicial <em>Obter Inteligência</em> da pilha
-                      (ela pode voltar ao jogo se os Rebeldes estabelecerem uma nova base).
-                    </p>
-                    <p>
-                      Note que que quando a Base Rebelde for <strong>revelada</strong>
-                      e/ou quando a <strong>diferença entre os Marcadores de Tempo e Reputação for ≤ 5</strong>,
-                      as frotas Rebeldes podem se mover (uma vez por rodada),
-                      mesmo se houver um Líder no Sistema inicial
-                      (controle isso deitando o Líder ativando o Sistema e iniciando o movimento, por exemplo).
-                    </p>
-                    <p>
-                      Além disso, o Império prioriza Sistema possíveis mais próximos da Base Rebelde para fins
-                      tanto de movimentação da frota quanto para o destacamento de forças.
-                      Quando o Império escolhe ativar um Sistema,
-                      calcule a diferença entre os Marcadores de Tempo e de Reputação.
-                      Se todas as frotas dentro desse alcance tiverem se movido,
-                      altere a prioridade para outras frotas que terão como alvo os Sistemas Remotos
-                      não controlados (sem nenhuma unidade terrestre Imperial) mais próximos.
-                      Quando o Império tiver revelado a Base Rebelde, o Império compra 3 cartas
-                      (1 Missão Inicial e 2 Missões Principais) durante a Fase de Atribuição.
-                    </p>
-                  </div>
+                                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#revealingtherebelbase">
+                                        <h5>Revelando a Base Rebelde</h5>
+                                    </a>
+                                    <div class="collapse" id="revealingtherebelbase">
+                                        <p>
+                                            Revele a <strong>Base Rebelde</strong> apenas após o Império ter obtido Cartas de Sonda para os outros 7 Sistemas Remotos OU quando o Império tiver alguma <strong>Unidade Terrestre</strong> nesse Sistema.
+                                        </p>
+                                        <p>
+                                            Quando revelada, remova a Missão Inicial <em>Obter Inteligência</em> da pilha (ela pode voltar ao jogo se os Rebeldes estabelecerem uma nova base).
+                                        </p>
+                                        <p>
+                                            Note que que quando a Base Rebelde for <strong>revelada</strong> e/ou quando a <strong>diferença entre os Marcadores de Tempo e Reputação for ≤ 5</strong>, as frotas Rebeldes podem se mover (uma vez por rodada),
+                                            mesmo se houver um Líder no Sistema inicial (controle isso deitando o Líder ativando o Sistema e iniciando o movimento, por exemplo).
+                                        </p>
+                                        <p>
+                                            Além disso, o Império prioriza Sistema possíveis mais próximos da Base Rebelde para fins tanto de movimentação da frota quanto para o destacamento de forças. Quando o Império escolhe ativar um Sistema, calcule a diferença entre os Marcadores de Tempo
+                                            e de Reputação. Se todas as frotas dentro desse alcance tiverem se movido, altere a prioridade para outras frotas que terão como alvo os Sistemas Remotos não controlados (sem nenhuma unidade terrestre Imperial)
+                                            mais próximos. Quando o Império tiver revelado a Base Rebelde, o Império compra 3 cartas (1 Missão Inicial e 2 Missões Principais) durante a Fase de Atribuição.
+                                        </p>
+                                    </div>
 
-                  <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse"
-                    data-bs-target="#battles">
-                    <h5>Batalhas</h5>
-                  </a>
-                  <div class="collapse" id="battles">
-                    <p id="Base-Battles">
-                      Embora as Batalhas sejam executadas normalmente,
-                      o Império não vai comprar/usar cartas Táticas.
-                      Além disso, siga essas regras especiais:
-                    </p>
-                    <div class="d-none variant" id="ROTE-Battles">
-                      <p>
-                        Embora as Batalhas sejam executadas normalmente,
-                        o Império vai comprar uma <strong>Carta Tática Avançada</strong>
-                        aleatoriamente por ataque.
-                        Além disso, siga essas regras especiais:
-                      </p>
-                      <span class="material-icons">dark_mode</span>
-                    </div>
-                    <ul>
-                      <li>
-                        Quaisquer Ícones Especiais rolados são considerados “acertos” vs. Unidades Rebeldes.
-                      </li>
-                      <li>
-                        Você DEVE rerolar um número de “acertos” igual o Valor Tático
-                        do Palco específico do Líder Imperial
-                        (começando com “Acertos Diretos” seguido pelos acertos regulares/únicos)
-                        até todo Valor Tático ter sido usado;
-                        o restante ser usado nas rodadas seguintes.
-                        <br>
-                        <em>
+                                    <a class="text-decoration-none" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#battles">
+                                        <h5>Batalhas</h5>
+                                    </a>
+                                    <div class="collapse" id="battles">
+                                        <p id="Base-Battles">
+                                            Embora as Batalhas sejam executadas normalmente, o Império não vai comprar/usar cartas Táticas. Além disso, siga essas regras especiais:
+                                        </p>
+                                        <div class="d-none variant" id="ROTE-Battles">
+                                            <p>
+                                                Embora as Batalhas sejam executadas normalmente, o Império vai comprar uma <strong>Carta Tática Avançada</strong> aleatoriamente por ataque. Além disso, siga essas regras especiais:
+                                            </p>
+                                            <span class="material-icons">dark_mode</span>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                Quaisquer Ícones Especiais rolados são considerados “acertos” vs. Unidades Rebeldes.
+                                            </li>
+                                            <li>
+                                                Você DEVE rerolar um número de “acertos” igual o Valor Tático do Palco específico do Líder Imperial (começando com “Acertos Diretos” seguido pelos acertos regulares/únicos) até todo Valor Tático ter sido usado; o restante ser usado nas rodadas seguintes.
+                                                <br>
+                                                <em>
                           Por exemplo: O Líder Imperial possui 2 de valor tático.
                           Você DEVE ignorar seus primeiros dois <strong>acertos</strong> e rerolar estes dados.
                           Se você não rolar nenhum acerto, as duas rerrolagens podem ser usadas no próximo ataque.
                         </em>
-                      </li>
-                      <li>
-                        O Império vai atribuir acertos vs. Unidades Rebeldes com a seguinte prioridade:
-                        Canhão Iônico, Unidades Mais Fracas (Vida Restante), e Maior Poder de Fogo
-                        (ou seja, número de dados de ataque rolados)
-                        <br>
-                        Nota: Use a Regra de Ouro para desempates.
-                      </li>
-                      <li>
-                        ESTRELA DA MORTE: O Império atacará APENAS a Base Rebelde, a PBR,
-                        ou um Sistema com Lealdade Rebelde e/ou Unidades Terrestres Rebeldes.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="callout-empire">
-                <h5>Líderes Não Utilizados</h5>
-                <p>
-                  No caso improvável de restar líderes não utilizados, compre e realize
-                  uma Missão do Baralho de Missões Principais para cada Líder.
-                </p>
-              </div>
-              <div class="callout-empire">
-                <h5>Manutenção</h5>
-                <p>
-                  No final da Fase de Comando, embaralhe ambos os Baralhos de Missões Separadamente,
-                  e coloque quaisquer Cartas de Projeto adquiridas no topo do Baralho de Missões Principais.
-                </p>
-              </div>
-            </section>
+                                            </li>
+                                            <li>
+                                                O Império vai atribuir acertos vs. Unidades Rebeldes com a seguinte prioridade: Canhão Iônico, Unidades Mais Fracas (Vida Restante), e Maior Poder de Fogo (ou seja, número de dados de ataque rolados)
+                                                <br> Nota: Use a Regra de Ouro para desempates.
+                                            </li>
+                                            <li>
+                                                ESTRELA DA MORTE: O Império atacará APENAS a Base Rebelde, a PBR, ou um Sistema com Lealdade Rebelde e/ou Unidades Terrestres Rebeldes.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="callout-empire">
+                                <h5>Líderes Não Utilizados</h5>
+                                <p>
+                                    No caso improvável de restar líderes não utilizados, compre e realize uma Missão do Baralho de Missões Principais para cada Líder.
+                                </p>
+                            </div>
+                            <div class="callout-empire">
+                                <h5>Manutenção</h5>
+                                <p>
+                                    No final da Fase de Comando, embaralhe ambos os Baralhos de Missões Separadamente, e coloque quaisquer Cartas de Projeto adquiridas no topo do Baralho de Missões Principais.
+                                </p>
+                            </div>
+                        </section>
 
-            <!-- Refresh Steps-->
-            <section class="tab-pane" id="list-refresh-steps" role="tabpanel" aria-labelledby="list-refresh-list">
-              <div class="callout-both">
-                <h5>Retorne os Líderes</h5>
-                <p>
-                  Cada jogador pega todos os seus líderes do tabuleiro e os devolvem
-                  para sua reserva de líderes.
-                  Se um líder ainda estiver em uma carta de Missão,
-                  ele é devolvido à reserva de líderes
-                  e a carta é devolvida a mão do jogador.</p>
-              </div>
-              <div class="callout-rebel">
-                <h5>Compre Missões</h5>
-                <p>
-                  O jogador Rebelde compra duas cartas de Missão e,
-                  se tiver mais de 10 cartas em sua mão,
-                  descarta até ter 10 cartas.
-                </p>
-                <div class="callout-empire">
-                  <p>
-                    O Império não compra cartas de Missão durante a Fase de Restauração.
-                    As Missões Imperiais são compradas durante a Fase de Atribuição.</p>
-                </div>
-              </div>
-              <div class="callout-empire">
-                <h5>Lance Droides Sonda</h5>
-                <p>
-                  Revele duas Cartas de Sonda, conforme as regras normais.</p>
-              </div>
-              <div class="callout-rebel">
-                <h5>Compre um Objetivo</h5>
-                <p>
-                  O jogador Rebelde compra uma carta de Objetivo e a adiciona em sua mão.</p>
-              </div>
-              <div class="callout">
-                <h5>Avance o Marcador de Tempo</h5>
-                <p>
-                  Avance o Marcador de Tempo um espaço no indicador.
-                  Em seguinda, os jogadores recrutam líderes e/ou constroem unidades
-                  se o novo espaço do Marcador de Tempo tiver os ícones correspondentes.
-                </p>
+                        <!-- Refresh Steps-->
+                        <section class="tab-pane" id="list-refresh-steps" role="tabpanel" aria-labelledby="list-refresh-list">
+                            <div class="callout-both">
+                                <h5>Retorne os Líderes</h5>
+                                <p>
+                                    Cada jogador pega todos os seus líderes do tabuleiro e os devolvem para sua reserva de líderes. Se um líder ainda estiver em uma carta de Missão, ele é devolvido à reserva de líderes e a carta é devolvida a mão do jogador.</p>
+                            </div>
+                            <div class="callout-rebel">
+                                <h5>Compre Missões</h5>
+                                <p>
+                                    O jogador Rebelde compra duas cartas de Missão e, se tiver mais de 10 cartas em sua mão, descarta até ter 10 cartas.
+                                </p>
+                                <div class="callout-empire">
+                                    <p>
+                                        O Império não compra cartas de Missão durante a Fase de Restauração. As Missões Imperiais são compradas durante a Fase de Atribuição.</p>
+                                </div>
+                            </div>
+                            <div class="callout-empire">
+                                <h5>Lance Droides Sonda</h5>
+                                <p>
+                                    Revele duas Cartas de Sonda, conforme as regras normais.</p>
+                            </div>
+                            <div class="callout-rebel">
+                                <h5>Compre um Objetivo</h5>
+                                <p>
+                                    O jogador Rebelde compra uma carta de Objetivo e a adiciona em sua mão.</p>
+                            </div>
+                            <div class="callout">
+                                <h5>Avance o Marcador de Tempo</h5>
+                                <p>
+                                    Avance o Marcador de Tempo um espaço no indicador. Em seguinda, os jogadores recrutam líderes e/ou constroem unidades se o novo espaço do Marcador de Tempo tiver os ícones correspondentes.
+                                </p>
 
-                <!-- Recruit -->
-                <div class="callout-rebel">
-                  <h5>Recrutamento Rebelde</h5>
-                  <p>
-                    O jogador Rebelde compra duas cartas do seus Baralho de Ação,
-                    escolhe um líder exibido em uma das cartas,
-                    e coloca esse líder em sua Reserva de Líderes.</p>
-                </div>
+                                <!-- Recruit -->
+                                <div class="callout-rebel">
+                                    <h5>Recrutamento Rebelde</h5>
+                                    <p>
+                                        O jogador Rebelde compra duas cartas do seus Baralho de Ação, escolhe um líder exibido em uma das cartas, e coloca esse líder em sua Reserva de Líderes.</p>
+                                </div>
 
-                <div class="callout-empire">
-                  <h5>Recrutamento Imperial</h5>
-                  <p>
-                    O Império compra um Carta de Ação,
-                    escolhendo aleatoriamente se houver líderes disponíveis.
-                    Compre novamente, se necessário.
-                  </p>
-                </div>
+                                <div class="callout-empire">
+                                    <h5>Recrutamento Imperial</h5>
+                                    <p>
+                                        O Império compra um Carta de Ação, escolhendo aleatoriamente se houver líderes disponíveis. Compre novamente, se necessário.
+                                    </p>
+                                </div>
 
-                <!-- Build -->
-                <div class="callout-both">
-                  <h5>Construa Unidades</h5>
-                  <p><strong>
+                                <!-- Build -->
+                                <div class="callout-both">
+                                    <h5>Construa Unidades</h5>
+                                    <p><strong>
                       O Império constrói antes dos Rebeldes.
                     </strong></p>
-                  <p>Siga as regras normais de construção.</p>
-                </div>
-              </div>
+                                    <p>Siga as regras normais de construção.</p>
+                                </div>
+                            </div>
 
-              <!-- Deploy -->
-              <div class="callout">
-                <h5>Destacamento</h5>
-                <p></p>
-                <div class="callout-empire">
-                  <h5>Destacamento Imperial</h5>
-                  <p><strong>
+                            <!-- Deploy -->
+                            <div class="callout">
+                                <h5>Destacamento</h5>
+                                <p></p>
+                                <div class="callout-empire">
+                                    <h5>Destacamento Imperial</h5>
+                                    <p><strong>
                       O Império destaca antes dos Rebeldes
                     </strong></p>
-                  <p>
-                    Siga os passos abaixos para destacar unidades,
-                    seguindo a regra do máximo de 2 unidades colocadas por sistema:
-                  </p>
-                  <ul id="deployflowchart" style="list-style-position: inside;">
-                    <li id="Base-Empiredeploy">
-                      Encontre o Sistema com <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
-                        data-bs-target="#productionvalueguide">Maior Valor de Produção</a>.
-                    </li>
-                    <div class="d-none variant" id="var-Empiredeploy">
-                      <li>
-                        Encontre o sistema Imperial mais próximo (em ordem de prioridade)
-                        à BR/PBR
-                        >
-                        a um sistema Rebelde (desempate pela
-                        <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
-                          data-bs-target="#productionvalueguide">Força de Produção</a>)
-                        >
-                        <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
-                          data-bs-target="#productionvalueguide">Força de Produção</a> Imperial.
-                      </li>
-                      <span class="material-icons">science</span>
-                    </div>
-                    <li>
-                      Encontre o Palco (Espacial ou Terrestre) com menos Unidades.
-                    </li>
-                    <li>
-                      Coloque a unidade mais forte disponível neste Palco.
-                      <br>
-                      Nota: Se o Império não tiver uma Unidade para colocar neste Palco,
-                      coloque a Unidade Construída mais forte do outro tipo de Palco
-                      (se houver o mesmo número de Unidades em ambos os Palcos, escolha aleatoriamente entre eles).
-                    </li>
-                    <li id="Base-Empiredeploy">
-                      Vá para o próximo Sistema com
-                      <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
-                        data-bs-target="#productionvalueguide">Maior Valor de Produção</a>;
-                      Repita o fluxograma, retornando ao primeiro Sistema com
-                      <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
-                        data-bs-target="#productionvalueguide">Maior Valor de Produção</a>,
-                      se necessário.
-                    </li>
-                    <div class="d-none variant" id="var-Empiredeploy">
-                      <li class="d-none" id="var-Empiredeploy">
-                        Volte ao início do fluxograma, retornando ao primeiro Sistema
-                        localizado, se necessário.
-                      </li>
-                      <span class="material-icons">science</span>
-                    </div>
-                  </ul>
-                </div>
+                                    <p>
+                                        Siga os passos abaixos para destacar unidades, seguindo a regra do máximo de 2 unidades colocadas por sistema:
+                                    </p>
+                                    <ul id="deployflowchart" style="list-style-position: inside;">
+                                        <li id="Base-Empiredeploy">
+                                            Encontre o Sistema com <a class="link-danger text-medium" href="#" data-bs-toggle="modal" data-bs-target="#productionvalueguide">Maior Valor de Produção</a>.
+                                        </li>
+                                        <div class="d-none variant" id="var-Empiredeploy">
+                                            <li>
+                                                Encontre o sistema Imperial mais próximo (em ordem de prioridade) à BR/PBR > a um sistema Rebelde (desempate pela
+                                                <a class="link-danger text-medium" href="#" data-bs-toggle="modal" data-bs-target="#productionvalueguide">Força de Produção</a>) >
+                                                <a class="link-danger text-medium" href="#" data-bs-toggle="modal" data-bs-target="#productionvalueguide">Força de Produção</a> Imperial.
+                                            </li>
+                                            <span class="material-icons">science</span>
+                                        </div>
+                                        <li>
+                                            Encontre o Palco (Espacial ou Terrestre) com menos Unidades.
+                                        </li>
+                                        <li>
+                                            Coloque a unidade mais forte disponível neste Palco.
+                                            <br> Nota: Se o Império não tiver uma Unidade para colocar neste Palco, coloque a Unidade Construída mais forte do outro tipo de Palco (se houver o mesmo número de Unidades em ambos os Palcos, escolha aleatoriamente
+                                            entre eles).
+                                        </li>
+                                        <li id="Base-Empiredeploy">
+                                            Vá para o próximo Sistema com
+                                            <a class="link-danger text-medium" href="#" data-bs-toggle="modal" data-bs-target="#productionvalueguide">Maior Valor de Produção</a>; Repita o fluxograma, retornando ao primeiro Sistema com
+                                            <a class="link-danger text-medium" href="#" data-bs-toggle="modal" data-bs-target="#productionvalueguide">Maior Valor de Produção</a>, se necessário.
+                                        </li>
+                                        <div class="d-none variant" id="var-Empiredeploy">
+                                            <li class="d-none" id="var-Empiredeploy">
+                                                Volte ao início do fluxograma, retornando ao primeiro Sistema localizado, se necessário.
+                                            </li>
+                                            <span class="material-icons">science</span>
+                                        </div>
+                                    </ul>
+                                </div>
 
-                <div class="callout-rebel">
-                  <h5>Destacamento Rebelde</h5>
-                  <p>
-                    O jogador Rebelde segue as regras normais de destacamento.
-                  </p>
-                </div>
-              </div>
-            </section>
+                                <div class="callout-rebel">
+                                    <h5>Destacamento Rebelde</h5>
+                                    <p>
+                                        O jogador Rebelde segue as regras normais de destacamento.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
 
-            <!-- Build Steps -->
-            <section class="tab-pane" id="list-build-steps" role="tabpanel" aria-labelledby="list-build-list">
-              <div class="callout">
-                <div class="container-flex" id="buildqueue">
-                  <div class="row sticky-top align-items-center" id="buildheader">
-                    <div class="col-3"></div>
-                    <div class="col-1 swg swg-lightsabers swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Bloqueado/Sabotado"></div>
-                    <div class="col-1 swg swg-stormtrooper swg-lg d-flex justify-content-center"
-                      data-bs-toggle="tooltip" data-bs-placement="bottom" title="Subjugado"></div>
-                    <div class="col-1 swg swg-galemp swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Lealdade Imperial"></div>
-                    <!-- <div class="col-1 swg swg-stormtrooper swg-lg d-flex justify-content-center" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                        <!-- Build Steps -->
+                        <section class="tab-pane" id="list-build-steps" role="tabpanel" aria-labelledby="list-build-list">
+                            <div class="callout">
+                                <div class="container-flex" id="buildqueue">
+                                    <div class="row sticky-top align-items-center" id="buildheader">
+                                        <div class="col-3"></div>
+                                        <div class="col-1 swg swg-lightsabers swg-lg d-flex justify-content-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Bloqueado/Sabotado"></div>
+                                        <div class="col-1 swg swg-stormtrooper swg-lg d-flex justify-content-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Subjugado"></div>
+                                        <div class="col-1 swg swg-galemp swg-lg d-flex justify-content-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Lealdade Imperial"></div>
+                                        <!-- <div class="col-1 swg swg-stormtrooper swg-lg d-flex justify-content-center" data-bs-toggle="tooltip" data-bs-placement="bottom"
                         title="Subjugated"></div> -->
-                    <div class="col-1 swg swg-galsenate swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Neutro"></div>
-                    <div class="col-1 swg swg-reball swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
-                      data-bs-placement="bottom" title="Lealdade Rebelde"></div>
-                    <!-- <div class="col-1 swg swg-stormtrooper-3 swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
+                                        <div class="col-1 swg swg-galsenate swg-lg d-flex justify-content-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Neutro"></div>
+                                        <div class="col-1 swg swg-reball swg-lg d-flex justify-content-center" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Lealdade Rebelde"></div>
+                                        <!-- <div class="col-1 swg swg-stormtrooper-3 swg-lg d-flex justify-content-center" data-bs-toggle="tooltip"
                         data-bs-placement="bottom" title="Rebel-Loyal-Subjugated"></div> -->
-                  </div>
-                  <div class="row my-3 mx-1" id="buildtemplate">
-                    <div class="col-3">
-                      <div class="planetname">
-                        BuildTemplate
-                      </div>
+                                    </div>
+                                    <div class="row my-3 mx-1" id="buildtemplate">
+                                        <div class="col-3">
+                                            <div class="planetname">
+                                                BuildTemplate
+                                            </div>
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-center">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="blockade">
+                                            </div>
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-center">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="subjugate">
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                            <div class="form-check d-flex justify-content-center">
+                                                <input class="form-check-input" type="radio" id="radioempire" name="RadioOptions" value="empire">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-1">
+                                            <div class="form-check d-flex justify-content-center">
+                                                <input class="form-check-input" type="radio" id="radioneutral" name="RadioOptions" value="Neutral">
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                            <div class="form-check d-flex justify-content-center">
+                                                <input class="form-check-input" type="radio" id="radiorebel" name="RadioOptions" value="Rebel">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="buildbutton">
+                                        <button class="btn btn-secondary" style="width: 50%;" data-bs-toggle="modal" data-bs-target="#buildqueuelist" onclick="createBuildQueue()">Construir!</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Remote Systems -->
+                        <section class="tab-pane" id="list-remotesystems-steps" role="tabpanel" aria-labelledby="list-remotesystems-list">
+                            <div class="callout">
+                                <h5>Lista de Sistemas Remotos</h5>
+                                <ul>
+                                    <input type="checkbox" class="planetbtn d-none" id="planet-check-dagobah" title="Dagobah" />
+                                    <label for="planet-check-dagobah" id="dagobah" class="planetlabel"></label>
+
+                                    <input type="checkbox" class="planetbtn d-none" id="planet-check-dantooine" title="Dantooine" />
+                                    <label for="planet-check-dantooine" id="dantooine" class="planetlabel"></label>
+
+                                    <input type="checkbox" class="planetbtn d-none" id="planet-check-dathomir" title="Dathomir" />
+                                    <label for="planet-check-dathomir" id="dathomir" class="planetlabel"></label>
+
+                                    <input type="checkbox" class="planetbtn d-none" id="planet-check-endor" title="Endor" />
+                                    <label for="planet-check-endor" id="endor" class="planetlabel"></label>
+
+                                    <input type="checkbox" class="planetbtn d-none" id="planet-check-hoth" title="Hoth" />
+                                    <label for="planet-check-hoth" id="hoth" class="planetlabel"></label>
+
+                                    <input type="checkbox" class="planetbtn d-none" id="planet-check-ilum" title="Ilum" />
+                                    <label for="planet-check-ilum" id="ilum" class="planetlabel"></label>
+
+                                    <input type="checkbox" class="planetbtn d-none" id="planet-check-tatooine" title="Tatooine" />
+                                    <label for="planet-check-tatooine" id="tatooine" class="planetlabel"></label>
+
+                                    <input type="checkbox" class="planetbtn d-none" id="planet-check-yavin" title="Yavin" />
+                                    <label for="planet-check-yavin" id="yavin" class="planetlabel"></label>
+                                </ul>
+                                <p class="paraseparator fs-7 p-2">A Base Rebelde será revelada apenas após o Império ter obtido as Cartas de Sonda dos outros 7 Sistemas Remotos OU quando o Império tiver Unidades Terrestres nesse Sistema.</p>
+                                <p class="fs-7 px-2">O movimento e destacamento do Império terão prioridade alterada quando a Base Rebelde for revelada.
+                                </p>
+                                <div class="modal-footer">
+                                    <div>Número de Sistemas escaneados:</div>
+                                    <div id="numselectedsystems">0</div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
-                    <div class="col-1 d-flex justify-content-center">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="blockade">
-                      </div>
-                    </div>
-                    <div class="col-1 d-flex justify-content-center">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="subjugate">
-                      </div>
-                    </div>
-                    <div class="col-1">
-                      <div class="form-check d-flex justify-content-center">
-                        <input class="form-check-input" type="radio" id="radioempire" name="RadioOptions"
-                          value="empire">
-                      </div>
-                    </div>
+                </section>
+            </div>
+        </div>
 
-                    <div class="col-1">
-                      <div class="form-check d-flex justify-content-center">
-                        <input class="form-check-input" type="radio" id="radioneutral" name="RadioOptions"
-                          value="Neutral">
-                      </div>
-                    </div>
-                    <div class="col-1">
-                      <div class="form-check d-flex justify-content-center">
-                        <input class="form-check-input" type="radio" id="radiorebel" name="RadioOptions" value="Rebel">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row" id="buildbutton">
-                    <button class="btn btn-secondary" style="width: 50%;" data-bs-toggle="modal"
-                      data-bs-target="#buildqueuelist" onclick="createBuildQueue()">Construir!</button>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- Remote Systems -->
-            <section class="tab-pane" id="list-remotesystems-steps" role="tabpanel"
-              aria-labelledby="list-remotesystems-list">
-              <div class="callout">
-                <h5>Lista de Sistemas Remotos</h5>
-                <ul>
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-dagobah" title="Dagobah" />
-                  <label for="planet-check-dagobah" id="dagobah" class="planetlabel"></label>
-
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-dantooine" title="Dantooine" />
-                  <label for="planet-check-dantooine" id="dantooine" class="planetlabel"></label>
-
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-dathomir" title="Dathomir" />
-                  <label for="planet-check-dathomir" id="dathomir" class="planetlabel"></label>
-
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-endor" title="Endor" />
-                  <label for="planet-check-endor" id="endor" class="planetlabel"></label>
-
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-hoth" title="Hoth" />
-                  <label for="planet-check-hoth" id="hoth" class="planetlabel"></label>
-
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-ilum" title="Ilum" />
-                  <label for="planet-check-ilum" id="ilum" class="planetlabel"></label>
-
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-tatooine" title="Tatooine" />
-                  <label for="planet-check-tatooine" id="tatooine" class="planetlabel"></label>
-
-                  <input type="checkbox" class="planetbtn d-none" id="planet-check-yavin" title="Yavin" />
-                  <label for="planet-check-yavin" id="yavin" class="planetlabel"></label>
-                </ul>
-                <p class="paraseparator fs-7 p-2">A Base Rebelde será revelada apenas após o Império ter
-                  obtido as Cartas de Sonda dos outros 7 Sistemas Remotos
-                  OU quando o Império tiver Unidades Terrestres nesse Sistema.</p>
-                <p class="fs-7 px-2">O movimento e destacamento do Império terão prioridade alterada quando a Base
-                  Rebelde for revelada.
-                </p>
-                <div class="modal-footer">
-                  <div>Número de Sistemas escaneados:</div>
-                  <div id="numselectedsystems">0</div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <footer id="footer" class="fixed-bottom">
-      <div class="container-fluid h-100 py-2">
-        <div class="row justify-content-between h-100">
-          <ul class="col-4 list-unstyled">
-            <li><strong>Website projetado por: </strong><a href="https://boardgamegeek.com/user/OZ10"
-                target="_blank">OZ10</a></li>
-            <li><strong>Tradução PT-BR por: </strong><a href="https://boardgamegeek.com/user/zhouluyi"
-                target="_blank">zhouluyi</a></li>
-          </ul>
-          <ul class="col-4 list-unstyled">
-            <li><strong>Variante Solo por: </strong><a href="https://boardgamegeek.com/user/Elad" target="_blank">Dale
+        <footer id="footer" class="fixed-bottom">
+            <div class="container-fluid h-100 py-2">
+                <div class="row justify-content-between h-100">
+                    <ul class="col-6 list-unstyled">
+                        <li><strong>Website: </strong><a href="https://boardgamegeek.com/user/OZ10" target="_blank">OZ10</a></li>
+                        <li><strong>Tradução PT-BR: </strong><a href="https://boardgamegeek.com/user/zhouluyi" target="_blank">zhouluyi</a></li>
+                    </ul>
+                    <ul class="col-6 list-unstyled">
+                        <li><strong>Variante Solo: </strong><a href="https://boardgamegeek.com/user/Elad" target="_blank">Dale
                 Buonocore</a></li>
-            <li><a
-                href="https://boardgamegeek.com/thread/1697801/solitaire-variant-empire-attacks-revised-version-1/page/1"
-                target="_blank">Solo Variant BBG Thread</a></li>
-            <p></p>
-            <li><strong>Ícones de Star Wars: </strong> <a href="http://starwarsglyphicons.com/" target="_blank">Star
+                        <li><a href="https://boardgamegeek.com/thread/1697801/solitaire-variant-empire-attacks-revised-version-1/page/1" target="_blank">Solo Variant BBG Thread</a></li>
+                        <li><strong>Ícones de Star Wars: </strong> <a href="http://starwarsglyphicons.com/" target="_blank">Star
                 Wars Glyph Icons</a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </main>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </main>
 
-  <!-- Modals -->
-  <div>
-    <!-- Empire's Decision List Modal -->
-    <div class="modal fade" id="carddecisionlist" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Lista de Decisão de Cartas de Império</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="col-15">
-              <input type="search" class="form-control" id="searchbar" placeholder="Busca">
+    <!-- Modals -->
+    <div>
+        <!-- Empire's Decision List Modal -->
+        <div class="modal fade" id="carddecisionlist" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Lista de Decisão de Cartas de Império</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-15">
+                            <input type="search" class="form-control" id="searchbar" placeholder="Busca">
+                        </div>
+                        <!-- <div class="row"> -->
+                        <div class="container" id="row1">
+                            <div class="row cardlist" title="Administrador Excepcional">
+                                <div class="col-4">Administrador Excepcional</div>
+                                <div class="col">Sistema Imperial mais produtivo.</div>
+                            </div>
+                            <div class="row cardlist" title="Aprovação Pública">
+                                <div class="col-4">Aprovação Pública</div>
+                                <div class="col">
+                                    Base Rebelde revelada: Sistema mais próximo da BR.
+                                    <br> Senão: Sistema Imperial mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Boba Fett? Onde?">
+                                <div class="col-4">Boba Fett? Onde?</div>
+                                <div class="col">Sistema Imperial mais produtivo.</div>
+                            </div>
+                            <div class="row cardlist" title="Continue Conforme Planejado">
+                                <div class="col-4">Continue Conforme Planejado</div>
+                                <div class="col">
+                                    Compre Cartas de Projeto até que uma Missão realizável seja revelada.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="De Acordo com meus Planos">
+                                <div class="col-4">De Acordo com meus Planos</div>
+                                <div class="col">-</div>
+                            </div>
+                            <div class="row cardlist" title="Destruam o Gerador">
+                                <div class="col-4">Destruam o Gerador</div>
+                                <div class="col">
+                                    Use apenas em combate em um Sistema com estruturas.
+                                    <br> Prioridade: Canhão Iônico.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="É o seu Destino">
+                                <div class="col-4">É o seu Destino</div>
+                                <div class="col">
+                                    Guarde essa carta e use-a assim que um Líder for resgatado.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Em Pleno Funcionamento">
+                                <div class="col-4">Em Pleno Funcionamento</div>
+                                <div class="col">Escolha Nave mais forte.</div>
+                            </div>
+                            <div class="row cardlist" title="Informações Relevantes">
+                                <div class="col-4">Informações Relevantes</div>
+                                <div class="col">
+                                    Compre apenas 1 carta por Palco no início do Combate (ignore o valor Tático do seu Líder).
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Mais Perigoso do que Você Imagina">
+                                <div class="col-4">Mais Perigoso do que Você Imagina
+                                </div>
+                                <div class="col">
+                                    Adicione 3 em um Valor Tático aleatório do Líder Imperial conduzindo o esse Combate.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Missão de Reconhecimento">
+                                <div class="col-4">Missão de Reconhecimento</div>
+                                <div class="col">
+                                    Base Rebelde revelada: Escolha BR.
+                                    <br> Senão: Sistema Rebelde mais produtivo.
+                                    <br> Escolha TIE Fighters mais distantes do Sistema alvo
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Não os Deixem Escapar">
+                                <div class="col-4">Não os Deixem Escapar</div>
+                                <div class="col">-
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Pegue-os de Surpresa">
+                                <div class="col-4">Pegue-os de Surpresa</div>
+                                <div class="col">
+                                    Sistema com pelo menos 1 unidade Imperial adjacente. Siga as regras de movimentação.
+                                    <br> Prioridades: 1) BR, 2) PBR, 3) Sistema Rebelde mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Ponto Cego">
+                                <div class="col-4">Ponto Cego</div>
+                                <div class="col">
+                                    Se disponível, use um desses Líderes na próxima Missão realizável revelada.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Preparados para a Ação">
+                                <div class="col-4">Preparados para a Ação</div>
+                                <div class="col">-
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Rumores">
+                                <div class="col-4">Rumores</div>
+                                <div class="col">
+                                    Base Rebelde revelada: guarde essa carta e use-a assim que uma nova Base for estabelecida.
+                                    <br> Senão: Região aleatória com PBR. Se bem sucedido o Império obtém a Carta de Sonda do Sistema Remoto dessa Região.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="É uma Armadilha">
+                                <div class="col-4">É uma Armadilha</div>
+                                <div class="col">
+                                    O Líder Imperial não usará suas táticas espaciais durante a primeira rodada (nenhuma rerrolagem forçada).
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Operação Independente">
+                                <div class="col-4">Operação Independente</div>
+                                <div class="col">
+                                    Base Rebelde revelada: O Império move unidades para o Sistema Imperial mais próximo da BR.
+                                    <br> Senão: O Império move unidades para o Sistema Imperial mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Coração do Império">
+                                <div class="col-4">Coração do Império</div>
+                                <div class="col">
+                                    Remova essa carta do jogo durante a preparação.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Capturar Agente Rebelde">
+                                <div class="col-4">Capturar Agente Rebelde</div>
+                                <div class="col">Líder mais valioso.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Governar pelo Medo">
+                                <div class="col-4">Governar pelo Medo</div>
+                                <div class="col">
+                                    Prioridade: 1) Sistema Subjugado, 2) Sistema mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Obter Inteligência">
+                                <div class="col-4">Obter Inteligência</div>
+                                <div class="col">Sistema Rebelde mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Pesquisa e Desenvolvimento">
+                                <div class="col-4">Pesquisa e Desenvolvimento</div>
+                                <div class="col">
+                                    Prioridade: 1) Sistema Sabotado, 2) Sistema mais produtivo.
+                                    <br> Escolha a segunda opção. Coloque a carta de Projeto no topo do baralho de Missões Principais no final da Fase de Comando.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Atração do Lado Sombrio">
+                                <div class="col-4">Atração do Lado Sombrio</div>
+                                <div class="col">
+                                    Escolha o Líder capturado mais forte.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Caçada">
+                                <div class="col-4">Caçada</div>
+                                <div class="col">
+                                    Base Rebelde revelada: Escolha BR.
+                                    <br> Senão: Sistema mais produtivo com Unidades Rebeldes.
+                                    <br> Destrua a unidade mais forte do Palco mais forte.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Cárcere">
+                                <div class="col-4">Cárcere</div>
+                                <div class="col">
+                                    Escolha o Líder mais forte.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Coletar Recompensa">
+                                <div class="col-4">Coletar Recompensa</div>
+                                <div class="col">
+                                    Escolhe o Líder mais forte.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Congelamento Carbônico">
+                                <div class="col-4">Congelamento Carbônico</div>
+                                <div class="col">-
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Conquista Planetária">
+                                <div class="col-4">Conquista Planetária</div>
+                                <div class="col">
+                                    Base Rebelde revelada: Escolha BR.
+                                    <br> Senão: Sistema Rebelde mais produtivo.
+                                    <br> Mova unidades de Sistemas mais distantes da BR.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Destacar Droides Sonda">
+                                <div class="col-4">Destacar Droides Sonda</div>
+                                <div class="col">-
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Dobre os Esforços">
+                                <div class="col-4">Dobre os Esforços</div>
+                                <div class="col">
+                                    Sistema Imperial mais produtivo. Mova a unidade mais forte. Prefira o espaço 3.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Droide Interrogador">
+                                <div class="col-4">Droide Interrogador</div>
+                                <div class="col">
+                                    Escolha o Líder capturado mais forte. O Império recebe todas, exceto 3 cartas de Sonda de Sistemas Remotos escolhidas de sua escolha (se houver apenas 3 ou menos no Baralho de Sonda, sem efeito).
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Eliminar Atrasos">
+                                <div class="col-4">Eliminar Atrasos</div>
+                                <div class="col">
+                                    Sistema Imperial mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="O Medo Garantirá o Controle">
+                                <div class="col-4">O Medo Garantirá o Controle</div>
+                                <div class="col">
+                                    Sistema aleatório com Estrela da Morte ou Super Star Destroyer. Ganhe lealdade.
+                                    <br> Prioridade: 1) Sistema Rebelde mais produtivo, 2) Sistema Subjugado, 3) Sistema mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Interceptar Transmissão">
+                                <div class="col-4">Interceptar Transmissão</div>
+                                <div class="col">
+                                    Sistema Rebelde mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Interrogatório">
+                                <div class="col-4">Interrogatório</div>
+                                <div class="col">
+                                    Escolha o Líder capturado mais forte. Descarte 1 carta de Objetivo aleatória da mão.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Mostra de Poder">
+                                <div class="col-4">Mostra de Poder</div>
+                                <div class="col">
+                                    Sistema Rebelde mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Negociações Comerciais">
+                                <div class="col-4">Negociações Comerciais</div>
+                                <div class="col">
+                                    Sistema Rebelde mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Pesquisa de Armas Secretas">
+                                <div class="col-4">Pesquisa de Armas Secretas</div>
+                                <div class="col">
+                                    Sistema Imperial mais produtivo. Coloque a carta de Projeto no topo do baralho de Missões Principais no final da Fase de Comando.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Populismo Imperial">
+                                <div class="col-4">Populismo Imperial</div>
+                                <div class="col">
+                                    1) Sistema na Região com mais Sistemas Rebeldes. 2) Maior valor combinado de produção.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Recuperar os Planos">
+                                <div class="col-4">Recuperar os Planos</div>
+                                <div class="col">
+                                    Escolha o Líder capturado mais forte. Remova a carta de Objetivo mais alta (maior reputação) da mão para o fundo do baralho.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Sinal Localizador">
+                                <div class="col-4">Sinal Localizador</div>
+                                <div class="col">
+                                    Escolha o Líder capturado mais forte. O Império recebe a Carta de Sonda de todos os Sistemas remotos fora dessa Região.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Sonda de Longo Alcance">
+                                <div class="col-4">Sonda de Longo Alcance</div>
+                                <div class="col">
+                                    PBR mais distante dos Sistemas Imperiais.
+                                    <br> Se não for BR: O Império recebe a Carta de Sonda desse Sistema.
+                                    <br> Se for BR: O Império recebe a Carta de Sonda de todos os outros Sistemas Remotos.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Construir Estrela da Morte">
+                                <div class="col-4">Construir Estrela da Morte </div>
+                                <div class="col">
+                                    PBR aleatória.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Construir Fábrica">
+                                <div class="col-4">Construir Fábrica</div>
+                                <div class="col">
+                                    Sistema mais produtivo.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Construir Super Star Destroyer">
+                                <div class="col-4">Construir Super Star Destroyer</div>
+                                <div class="col">-
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Superlaser Ativado">
+                                <div class="col-4">Superlaser Ativado</div>
+                                <div class="col">
+                                    Prioridade: 1) BR, 2) PBR, 3) Sistema Rebelde, 4) nenhum - pule ação.
+                                </div>
+                            </div>
+                            <div class="row cardlist" title="Supervisionar Projeto">
+                                <div class="col-4">Supervisionar Projeto</div>
+                                <div class="col">
+                                    Base Rebelde revelada: Sistema mais próximo da BR.
+                                    <br> Senão: Sistema Imperial mais produtivo. Coloque unidade mais forte. Prefira espaço 2.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
             </div>
-            <!-- <div class="row"> -->
-            <div class="container" id="row1">
-              <div class="row cardlist" title="Administrador Excepcional">
-                <div class="col-4">Administrador Excepcional</div>
-                <div class="col">Sistema Imperial mais produtivo.</div>
-              </div>
-              <div class="row cardlist" title="Aprovação Pública">
-                <div class="col-4">Aprovação Pública</div>
-                <div class="col">
-                  Base Rebelde revelada: Sistema mais próximo da BR.
-                  <br>
-                  Senão: Sistema Imperial mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Boba Fett? Onde?">
-                <div class="col-4">Boba Fett? Onde?</div>
-                <div class="col">Sistema Imperial mais produtivo.</div>
-              </div>
-              <div class="row cardlist" title="Continue Conforme Planejado">
-                <div class="col-4">Continue Conforme Planejado</div>
-                <div class="col">
-                  Compre Cartas de Projeto até que uma Missão realizável seja revelada.
-                </div>
-              </div>
-              <div class="row cardlist" title="De Acordo com meus Planos">
-                <div class="col-4">De Acordo com meus Planos</div>
-                <div class="col">-</div>
-              </div>
-              <div class="row cardlist" title="Destruam o Gerador">
-                <div class="col-4">Destruam o Gerador</div>
-                <div class="col">
-                  Use apenas em combate em um Sistema com estruturas.
-                  <br>
-                  Prioridade: Canhão Iônico.
-                </div>
-              </div>
-              <div class="row cardlist" title="É o seu Destino">
-                <div class="col-4">É o seu Destino</div>
-                <div class="col">
-                  Guarde essa carta e use-a assim que um Líder for resgatado.
-                </div>
-              </div>
-              <div class="row cardlist" title="Em Pleno Funcionamento">
-                <div class="col-4">Em Pleno Funcionamento</div>
-                <div class="col">Escolha Nave mais forte.</div>
-              </div>
-              <div class="row cardlist" title="Informações Relevantes">
-                <div class="col-4">Informações Relevantes</div>
-                <div class="col">
-                  Compre apenas 1 carta por Palco no início do Combate
-                  (ignore o valor Tático do seu Líder).
-                </div>
-              </div>
-              <div class="row cardlist" title="Mais Perigoso do que Você Imagina">
-                <div class="col-4">Mais Perigoso do que Você Imagina
-                </div>
-                <div class="col">
-                  Adicione 3 em um Valor Tático aleatório do Líder Imperial conduzindo o esse Combate.
-                </div>
-              </div>
-              <div class="row cardlist" title="Missão de Reconhecimento">
-                <div class="col-4">Missão de Reconhecimento</div>
-                <div class="col">
-                  Base Rebelde revelada: Escolha BR.
-                  <br>
-                  Senão: Sistema Rebelde mais produtivo.
-                  <br>
-                  Escolha TIE Fighters mais distantes do Sistema alvo
-                </div>
-              </div>
-              <div class="row cardlist" title="Não os Deixem Escapar">
-                <div class="col-4">Não os Deixem Escapar</div>
-                <div class="col">-
-                </div>
-              </div>
-              <div class="row cardlist" title="Pegue-os de Surpresa">
-                <div class="col-4">Pegue-os de Surpresa</div>
-                <div class="col">
-                  Sistema com pelo menos 1 unidade Imperial adjacente.
-                  Siga as regras de movimentação.
-                  <br>
-                  Prioridades: 1) BR, 2) PBR, 3) Sistema Rebelde mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Ponto Cego">
-                <div class="col-4">Ponto Cego</div>
-                <div class="col">
-                  Se disponível, use um desses Líderes na próxima Missão realizável revelada.
-                </div>
-              </div>
-              <div class="row cardlist" title="Preparados para a Ação">
-                <div class="col-4">Preparados para a Ação</div>
-                <div class="col">-
-                </div>
-              </div>
-              <div class="row cardlist" title="Rumores">
-                <div class="col-4">Rumores</div>
-                <div class="col">
-                  Base Rebelde revelada: guarde essa carta e use-a assim que uma nova Base for estabelecida.
-                  <br>
-                  Senão: Região aleatória com PBR.
-                  Se bem sucedido o Império obtém a Carta de Sonda do Sistema Remoto dessa Região.
-                </div>
-              </div>
-              <div class="row cardlist" title="É uma Armadilha">
-                <div class="col-4">É uma Armadilha</div>
-                <div class="col">
-                  O Líder Imperial não usará suas táticas espaciais durante a primeira rodada (nenhuma rerrolagem
-                  forçada).
-                </div>
-              </div>
-              <div class="row cardlist" title="Operação Independente">
-                <div class="col-4">Operação Independente</div>
-                <div class="col">
-                  Base Rebelde revelada: O Império move unidades para o Sistema Imperial mais próximo da BR.
-                  <br>
-                  Senão: O Império move unidades para o Sistema Imperial mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Coração do Império">
-                <div class="col-4">Coração do Império</div>
-                <div class="col">
-                  Remova essa carta do jogo durante a preparação.
-                </div>
-              </div>
-              <div class="row cardlist" title="Capturar Agente Rebelde">
-                <div class="col-4">Capturar Agente Rebelde</div>
-                <div class="col">Líder mais valioso.
-                </div>
-              </div>
-              <div class="row cardlist" title="Governar pelo Medo">
-                <div class="col-4">Governar pelo Medo</div>
-                <div class="col">
-                  Prioridade: 1) Sistema Subjugado, 2) Sistema mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Obter Inteligência">
-                <div class="col-4">Obter Inteligência</div>
-                <div class="col">Sistema Rebelde mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Pesquisa e Desenvolvimento">
-                <div class="col-4">Pesquisa e Desenvolvimento</div>
-                <div class="col">
-                  Prioridade: 1) Sistema Sabotado, 2) Sistema mais produtivo.
-                  <br>
-                  Escolha a segunda opção. Coloque a carta de Projeto no topo do baralho de Missões Principais
-                  no final da Fase de Comando.
-                </div>
-              </div>
-              <div class="row cardlist" title="Atração do Lado Sombrio">
-                <div class="col-4">Atração do Lado Sombrio</div>
-                <div class="col">
-                  Escolha o Líder capturado mais forte.
-                </div>
-              </div>
-              <div class="row cardlist" title="Caçada">
-                <div class="col-4">Caçada</div>
-                <div class="col">
-                  Base Rebelde revelada: Escolha BR.
-                  <br>
-                  Senão: Sistema mais produtivo com Unidades Rebeldes.
-                  <br>
-                  Destrua a unidade mais forte do Palco mais forte.
-                </div>
-              </div>
-              <div class="row cardlist" title="Cárcere">
-                <div class="col-4">Cárcere</div>
-                <div class="col">
-                  Escolha o Líder mais forte.
-                </div>
-              </div>
-              <div class="row cardlist" title="Coletar Recompensa">
-                <div class="col-4">Coletar Recompensa</div>
-                <div class="col">
-                  Escolhe o Líder mais forte.
-                </div>
-              </div>
-              <div class="row cardlist" title="Congelamento Carbônico">
-                <div class="col-4">Congelamento Carbônico</div>
-                <div class="col">-
-                </div>
-              </div>
-              <div class="row cardlist" title="Conquista Planetária">
-                <div class="col-4">Conquista Planetária</div>
-                <div class="col">
-                  Base Rebelde revelada: Escolha BR.
-                  <br>
-                  Senão: Sistema Rebelde mais produtivo.
-                  <br>
-                  Mova unidades de Sistemas mais distantes da BR.
-                </div>
-              </div>
-              <div class="row cardlist" title="Destacar Droides Sonda">
-                <div class="col-4">Destacar Droides Sonda</div>
-                <div class="col">-
-                </div>
-              </div>
-              <div class="row cardlist" title="Dobre os Esforços">
-                <div class="col-4">Dobre os Esforços</div>
-                <div class="col">
-                  Sistema Imperial mais produtivo.
-                  Mova a unidade mais forte. Prefira o espaço 3.
-                </div>
-              </div>
-              <div class="row cardlist" title="Droide Interrogador">
-                <div class="col-4">Droide Interrogador</div>
-                <div class="col">
-                  Escolha o Líder capturado mais forte.
-                  O Império recebe todas, exceto 3 cartas de Sonda de Sistemas Remotos escolhidas de sua escolha
-                  (se houver apenas 3 ou menos no Baralho de Sonda, sem efeito).
-                </div>
-              </div>
-              <div class="row cardlist" title="Eliminar Atrasos">
-                <div class="col-4">Eliminar Atrasos</div>
-                <div class="col">
-                  Sistema Imperial mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="O Medo Garantirá o Controle">
-                <div class="col-4">O Medo Garantirá o Controle</div>
-                <div class="col">
-                  Sistema aleatório com Estrela da Morte ou Super Star Destroyer.
-                  Ganhe lealdade.
-                  <br>
-                  Prioridade: 1) Sistema Rebelde mais produtivo, 2) Sistema Subjugado, 3) Sistema mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Interceptar Transmissão">
-                <div class="col-4">Interceptar Transmissão</div>
-                <div class="col">
-                  Sistema Rebelde mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Interrogatório">
-                <div class="col-4">Interrogatório</div>
-                <div class="col">
-                  Escolha o Líder capturado mais forte. Descarte 1 carta de Objetivo aleatória da mão.
-                </div>
-              </div>
-              <div class="row cardlist" title="Mostra de Poder">
-                <div class="col-4">Mostra de Poder</div>
-                <div class="col">
-                  Sistema Rebelde mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Negociações Comerciais">
-                <div class="col-4">Negociações Comerciais</div>
-                <div class="col">
-                  Sistema Rebelde mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Pesquisa de Armas Secretas">
-                <div class="col-4">Pesquisa de Armas Secretas</div>
-                <div class="col">
-                  Sistema Imperial mais produtivo.
-                  Coloque a carta de Projeto no topo do baralho de Missões Principais no final da Fase de Comando.
-                </div>
-              </div>
-              <div class="row cardlist" title="Populismo Imperial">
-                <div class="col-4">Populismo Imperial</div>
-                <div class="col">
-                  1) Sistema na Região com mais Sistemas Rebeldes.
-                  2) Maior valor combinado de produção.
-                </div>
-              </div>
-              <div class="row cardlist" title="Recuperar os Planos">
-                <div class="col-4">Recuperar os Planos</div>
-                <div class="col">
-                  Escolha o Líder capturado mais forte.
-                  Remova a carta de Objetivo mais alta (maior reputação) da mão para o fundo do baralho.
-                </div>
-              </div>
-              <div class="row cardlist" title="Sinal Localizador">
-                <div class="col-4">Sinal Localizador</div>
-                <div class="col">
-                  Escolha o Líder capturado mais forte.
-                  O Império recebe a Carta de Sonda de todos os Sistemas remotos fora dessa Região.
-                </div>
-              </div>
-              <div class="row cardlist" title="Sonda de Longo Alcance">
-                <div class="col-4">Sonda de Longo Alcance</div>
-                <div class="col">
-                  PBR mais distante dos Sistemas Imperiais.
-                  <br>
-                  Se não for BR: O Império recebe a Carta de Sonda desse Sistema.
-                  <br>
-                  Se for BR: O Império recebe a Carta de Sonda de todos os outros Sistemas Remotos.
-                </div>
-              </div>
-              <div class="row cardlist" title="Construir Estrela da Morte">
-                <div class="col-4">Construir Estrela da Morte </div>
-                <div class="col">
-                  PBR aleatória.
-                </div>
-              </div>
-              <div class="row cardlist" title="Construir Fábrica">
-                <div class="col-4">Construir Fábrica</div>
-                <div class="col">
-                  Sistema mais produtivo.
-                </div>
-              </div>
-              <div class="row cardlist" title="Construir Super Star Destroyer">
-                <div class="col-4">Construir Super Star Destroyer</div>
-                <div class="col">-
-                </div>
-              </div>
-              <div class="row cardlist" title="Superlaser Ativado">
-                <div class="col-4">Superlaser Ativado</div>
-                <div class="col">
-                  Prioridade: 1) BR, 2) PBR, 3) Sistema Rebelde, 4) nenhum - pule ação.
-                </div>
-              </div>
-              <div class="row cardlist" title="Supervisionar Projeto">
-                <div class="col-4">Supervisionar Projeto</div>
-                <div class="col">
-                  Base Rebelde revelada: Sistema mais próximo da BR.
-                  <br>
-                  Senão: Sistema Imperial mais produtivo.
-                  Coloque unidade mais forte. Prefira espaço 2.
-                </div>
-              </div>
-            </div>
-            <!-- </div> -->
-          </div>
-          <div class="modal-footer"></div>
         </div>
-      </div>
-    </div>
 
-    <!-- D6 -->
-    <div class="modal fade" id="d6modal" tabindex="-1" aria-labelledby="D6" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="remotesystems">um D6 apareceu!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body d-flex">
-            <img src="./resources/images/D6_1.png" alt="" id="d6" />
-          </div>
-          <div class="modal-footer"></div>
+        <!-- D6 -->
+        <div class="modal fade" id="d6modal" tabindex="-1" aria-labelledby="D6" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="remotesystems">um D6 apareceu!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex">
+                        <img src="./resources/images/D6_1.png" alt="" id="d6" />
+                    </div>
+                    <div class="modal-footer"></div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Build Queue -->
-    <div class="modal fade" id="buildqueuelist" tabindex="-1" aria-labelledby="BuildQueue" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="remotesystems">Linha de Construção</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body container-fluid">
-            <h6 class="buildrowheader">Império</h6>
-            <div class="row buildrowempire">
-              <div class="col-1 fw-bold">3:</div>
-              <div class="triangle d-none" id="build-emp-ground-tri-3">
-                0
-              </div>
-              <div class="circle d-none" id="build-emp-ground-cir-3">
-                0
-              </div>
-              <div class="square d-none" id="build-emp-ground-squ-3">
-                0
-              </div>
-              <div class="triangle d-none" id="build-emp-space-tri-3">
-                0
-              </div>
-              <div class="circle d-none" id="build-emp-space-cir-3">
-                0
-              </div>
-              <div class="square d-none" id="build-emp-space-squ-3">
-                0
-              </div>
+        <!-- Build Queue -->
+        <div class="modal fade" id="buildqueuelist" tabindex="-1" aria-labelledby="BuildQueue" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="remotesystems">Linha de Construção</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body container-fluid">
+                        <h6 class="buildrowheader">Império</h6>
+                        <div class="row buildrowempire">
+                            <div class="col-1 fw-bold">3:</div>
+                            <div class="triangle d-none" id="build-emp-ground-tri-3">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-emp-ground-cir-3">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-emp-ground-squ-3">
+                                0
+                            </div>
+                            <div class="triangle d-none" id="build-emp-space-tri-3">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-emp-space-cir-3">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-emp-space-squ-3">
+                                0
+                            </div>
+                        </div>
+                        <div class="row buildrowempire">
+                            <div class="col-1 fw-bold">2:</div>
+                            <div class="triangle d-none" id="build-emp-ground-tri-2">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-emp-ground-cir-2">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-emp-ground-squ-2">
+                                0
+                            </div>
+                            <div class="triangle d-none" id="build-emp-space-tri-2">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-emp-space-cir-2">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-emp-space-squ-2">
+                                0
+                            </div>
+                        </div>
+                        <div class="row buildrowempire">
+                            <div class="col-1 fw-bold">1:</div>
+                            <div class="triangle d-none" id="build-emp-ground-tri-1">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-emp-ground-cir-1">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-emp-ground-squ-1">
+                                0
+                            </div>
+                            <div class="triangle d-none" id="build-emp-space-tri-1">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-emp-space-cir-1">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-emp-space-squ-1">
+                                0
+                            </div>
+                        </div>
+                        <p></p>
+                        <h6 class="buildrowheader">Rebeldes</h6>
+                        <div class="row buildrowrebel">
+                            <div class="col-1 fw-bold">3:</div>
+                            <div class="triangle d-none" id="build-rebel-ground-tri-3">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-rebel-ground-cir-3">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-rebel-ground-squ-3">
+                                0
+                            </div>
+                            <div class="triangle d-none" id="build-rebel-space-tri-3">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-rebel-space-cir-3">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-rebel-space-squ-3">
+                                0
+                            </div>
+                        </div>
+                        <div class="row buildrowrebel">
+                            <div class="col-1 fw-bold">2:</div>
+                            <div class="triangle d-none" id="build-rebel-ground-tri-2">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-rebel-ground-cir-2">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-rebel-ground-squ-2">
+                                0
+                            </div>
+                            <div class="triangle d-none" id="build-rebel-space-tri-2">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-rebel-space-cir-2">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-rebel-space-squ-2">
+                                0
+                            </div>
+                        </div>
+                        <div class="row buildrowrebel">
+                            <div class="col-1 fw-bold">1:</div>
+                            <div class="triangle d-none" id="build-rebel-ground-tri-1">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-rebel-ground-cir-1">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-rebel-ground-squ-1">
+                                0
+                            </div>
+                            <div class="triangle d-none" id="build-rebel-space-tri-1">
+                                0
+                            </div>
+                            <div class="circle d-none" id="build-rebel-space-cir-1">
+                                0
+                            </div>
+                            <div class="square d-none" id="build-rebel-space-squ-1">
+                                0
+                            </div>
+                        </div>
+                        <div class="modal-footer"></div>
+                    </div>
+                </div>
             </div>
-            <div class="row buildrowempire">
-              <div class="col-1 fw-bold">2:</div>
-              <div class="triangle d-none" id="build-emp-ground-tri-2">
-                0
-              </div>
-              <div class="circle d-none" id="build-emp-ground-cir-2">
-                0
-              </div>
-              <div class="square d-none" id="build-emp-ground-squ-2">
-                0
-              </div>
-              <div class="triangle d-none" id="build-emp-space-tri-2">
-                0
-              </div>
-              <div class="circle d-none" id="build-emp-space-cir-2">
-                0
-              </div>
-              <div class="square d-none" id="build-emp-space-squ-2">
-                0
-              </div>
-            </div>
-            <div class="row buildrowempire">
-              <div class="col-1 fw-bold">1:</div>
-              <div class="triangle d-none" id="build-emp-ground-tri-1">
-                0
-              </div>
-              <div class="circle d-none" id="build-emp-ground-cir-1">
-                0
-              </div>
-              <div class="square d-none" id="build-emp-ground-squ-1">
-                0
-              </div>
-              <div class="triangle d-none" id="build-emp-space-tri-1">
-                0
-              </div>
-              <div class="circle d-none" id="build-emp-space-cir-1">
-                0
-              </div>
-              <div class="square d-none" id="build-emp-space-squ-1">
-                0
-              </div>
-            </div>
-            <p></p>
-            <h6 class="buildrowheader">Rebeldes</h6>
-            <div class="row buildrowrebel">
-              <div class="col-1 fw-bold">3:</div>
-              <div class="triangle d-none" id="build-rebel-ground-tri-3">
-                0
-              </div>
-              <div class="circle d-none" id="build-rebel-ground-cir-3">
-                0
-              </div>
-              <div class="square d-none" id="build-rebel-ground-squ-3">
-                0
-              </div>
-              <div class="triangle d-none" id="build-rebel-space-tri-3">
-                0
-              </div>
-              <div class="circle d-none" id="build-rebel-space-cir-3">
-                0
-              </div>
-              <div class="square d-none" id="build-rebel-space-squ-3">
-                0
-              </div>
-            </div>
-            <div class="row buildrowrebel">
-              <div class="col-1 fw-bold">2:</div>
-              <div class="triangle d-none" id="build-rebel-ground-tri-2">
-                0
-              </div>
-              <div class="circle d-none" id="build-rebel-ground-cir-2">
-                0
-              </div>
-              <div class="square d-none" id="build-rebel-ground-squ-2">
-                0
-              </div>
-              <div class="triangle d-none" id="build-rebel-space-tri-2">
-                0
-              </div>
-              <div class="circle d-none" id="build-rebel-space-cir-2">
-                0
-              </div>
-              <div class="square d-none" id="build-rebel-space-squ-2">
-                0
-              </div>
-            </div>
-            <div class="row buildrowrebel">
-              <div class="col-1 fw-bold">1:</div>
-              <div class="triangle d-none" id="build-rebel-ground-tri-1">
-                0
-              </div>
-              <div class="circle d-none" id="build-rebel-ground-cir-1">
-                0
-              </div>
-              <div class="square d-none" id="build-rebel-ground-squ-1">
-                0
-              </div>
-              <div class="triangle d-none" id="build-rebel-space-tri-1">
-                0
-              </div>
-              <div class="circle d-none" id="build-rebel-space-cir-1">
-                0
-              </div>
-              <div class="square d-none" id="build-rebel-space-squ-1">
-                0
-              </div>
-            </div>
-            <div class="modal-footer"></div>
-          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Production Value Guide -->
-    <div class="modal fade" id="productionvalueguide" tabindex="-1" aria-labelledby="productionvalueguideLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="productionvalueguideLabel">Guia do Valor de Produção</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p class="text-small">
-              Valor de produção igual a
-              <a class="link-danger text-medium" href="#" data-bs-toggle="modal"
-                data-bs-target="#strengthguide">Força</a>
-              de todas as Unidades que um sistema pode produzir.
-              Conte todos os ícones de produção, incluindo Sistemas Subjugados (ex: o Sistema Mon Calamari tem Valor
-              de
-              Produção 4).
-              Sistemas Sabotados tem Valor de Produção 0.
-            </p>
-          </div>
+        <!-- Production Value Guide -->
+        <div class="modal fade" id="productionvalueguide" tabindex="-1" aria-labelledby="productionvalueguideLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productionvalueguideLabel">Guia do Valor de Produção</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-small">
+                            Valor de produção igual a
+                            <a class="link-danger text-medium" href="#" data-bs-toggle="modal" data-bs-target="#strengthguide">Força</a> de todas as Unidades que um sistema pode produzir. Conte todos os ícones de produção, incluindo Sistemas Subjugados
+                            (ex: o Sistema Mon Calamari tem Valor de Produção 4). Sistemas Sabotados tem Valor de Produção 0.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Strength List -->
-    <div class="modal fade" id="strengthguide" tabindex="-1" aria-labelledby="strengthguideLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="strengthguideLabel">Guia de Força</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-small">
-            <ul style="list-style-type: none;">
-              Fatores de força na decisão do Império:
-              <p></p>
-              <li>
-                <strong class="maincolour">Unidades </strong>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
-                  class="bi bi-triangle-fill" viewBox="0 0 16 16">
+        <!-- Strength List -->
+        <div class="modal fade" id="strengthguide" tabindex="-1" aria-labelledby="strengthguideLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="strengthguideLabel">Guia de Força</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-small">
+                        <ul style="list-style-type: none;">
+                            Fatores de força na decisão do Império:
+                            <p></p>
+                            <li>
+                                <strong class="maincolour">Unidades </strong>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-triangle-fill" viewBox="0 0 16 16">
                   <path fill-rule="evenodd"
                     d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z" />
                 </svg><strong class="maincolour">: FORÇA 1</strong> (X-Wings, TIE Fighters, Troopers dos dois lados)
-              </li>
-              <li>
-                <strong class="maincolour">Unidades </strong>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
-                  class="bi bi-circle-fill" viewBox="0 0 16 16">
+                            </li>
+                            <li>
+                                <strong class="maincolour">Unidades </strong>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
                   <circle cx="8" cy="8" r="8" />
                 </svg><strong class="maincolour">: FORÇA 2</strong> (Airspeeder e AT-ST)
-              </li>
-              <li>
-                <strong class="maincolour">Unidades </strong>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
-                  class="bi bi-square-fill" viewBox="0 0 16 16">
+                            </li>
+                            <li>
+                                <strong class="maincolour">Unidades </strong>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-square-fill" viewBox="0 0 16 16">
                   <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" />
                 </svg><strong class="maincolour">: FORÇA 3</strong> (Mon Calamari Cruiser e Star Destroyer)
-              </li>
-              <li>
-                <strong class="maincolour">Unidades </strong>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
-                  class="bi bi-patch-minus-fill" viewBox="0 0 16 16">
+                            </li>
+                            <li>
+                                <strong class="maincolour">Unidades </strong>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-patch-minus-fill" viewBox="0 0 16 16">
                   <path
                     d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636z" />
                 </svg><strong class="maincolour">: FORÇA 4</strong> (Super Star Destroyers e Estrela da Morte)
-              </li>
-            </ul>
-          </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <!-- Yes/No Box -->
+        <div class="modal fade" id="yesNo" tabindex="-1" aria-labelledby="YesNo" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="remotesystems">Tem certeza?</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex">
+                        <p>Reiniciar Jogo?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="resetGame()" data-bs-dismiss="modal">Sim</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Box -->
+        <div class="modal fade" id="messageBox" tabindex="-1" aria-labelledby="MessageBox" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="messageBoxTitle"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex">
+                        <p id="messageBoxBody"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Yes/No Box -->
-    <div class="modal fade" id="yesNo" tabindex="-1" aria-labelledby="YesNo" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="remotesystems">Tem certeza?</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body d-flex">
-            <p>Reiniciar Jogo?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="resetGame()" data-bs-dismiss="modal">Sim</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
-    <!-- Message Box -->
-    <div class="modal fade" id="messageBox" tabindex="-1" aria-labelledby="MessageBox" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="messageBoxTitle"></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body d-flex">
-            <p id="messageBoxBody"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script src="./resources/js/main.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-  <script src="./resources/js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#dismissbutton, .overlay").on("click", function() {
+                $("#sidebar").removeClass("show");
+                $(".overlay").removeClass("show");
+            });
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+            $("#sidebarToggle").on("click", function() {
+                $("#sidebar").addClass("show");
+                $(".overlay").addClass("show");
+            });
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $("#dismissbutton, .overlay").on("click", function () {
-        $("#sidebar").removeClass("show");
-        $(".overlay").removeClass("show");
-      });
-
-      $("#sidebarToggle").on("click", function () {
-        $("#sidebar").addClass("show");
-        $(".overlay").addClass("show");
-      });
-
-    });
-  </script>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js')
-        .then(function (registration) {
-          console.log('Service worker registration succeeded: ', registration);
-        })
-        .catch(function (error) {
-          console.error('Service worker registration failed: ', error);
         });
-    } else {
-      console.log('Service workers are not supported');
-    }
-  </script>
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(function(registration) {
+                    console.log('Service worker registration succeeded: ', registration);
+                })
+                .catch(function(error) {
+                    console.error('Service worker registration failed: ', error);
+                });
+        } else {
+            console.log('Service workers are not supported');
+        }
+    </script>
 </body>
 
 </html>
