@@ -15,12 +15,23 @@
     src: url('../font/Goldman-Bold.ttf')  format('truetype');
 }
 
-$SWFont: "Goldman", serif;
+$sw-font: "Goldman", serif;
 
 /* Bootstrap modifiers */
 .sticky-top {
     top: 0.5em;
 }
+
+.font-bold {
+    font-family: $sw-font;
+    font-weight: 700;
+}
+
+.font-regular {
+    font-family: $sw-font;
+    font-weight: 400;
+}
+
 
 html,
 body {
@@ -31,59 +42,56 @@ body {
 
 
 .main {
-    margin-bottom: 100px;
-    padding-top: 120px;
+    margin-bottom: 101px;
+    padding-top: 91px;
 }
 
-@media (min-width: 544px) {
+@include breakpoint(sm) {
     .main {
-        padding-top: 100px;
+        padding-top: 114px;
     }
 }
 
-@media (min-width: 580px) {
+@include breakpoint(md) {
     .main {
-        padding-top: 130px;
+        padding-top: 82px;
     }
 }
 
-
-@media (min-width: 695px) {
+@include breakpoint(xl) {
     .main {
-        padding-top: 120px;
+        padding-top: 88px;
     }
 }
 
 
 .mainheader {
     background-color: $gray-200;
-    padding: 20px;
+    padding: 5px 10px 5px 10px;
     font-weight: bold;
-    font-family: $SWFont;
+    font-family: $sw-font;
     color: $primary;
-    @include font-size-pxem(32px);
 }
 
 .mainheader {
-    @include font-size-pxem(18px);
+    @include font-size-pxem(16px);
 }
 
-
-@media(min-width: 544px) {
+@include breakpoint(sm) {
     .mainheader {
-        @include font-size-pxem(21px);
+        @include font-size-pxem(20px);
     }
 }
 
-@media(min-width: 768px) {
+@include breakpoint(md) {
     .mainheader {
-        @include font-size-pxem(32px);
+        @include font-size-pxem(24px);
     }
 }
 
-@media(min-width: 768px) {
+@include breakpoint(lg) {
     .mainheader {
-        @include font-size-pxem(37px);
+        @include font-size-pxem(30px);
     }
 }
 
@@ -228,11 +236,11 @@ a:hover {
 }
 
 div[id*=ground] {
-    background-color: orange;
+    background-color: $buildGround;
 }
 
 div[id*=space] {
-    background-color: blue;
+    background-color: $buildSpace;
 }
 
 .buildrowheader {
@@ -274,6 +282,9 @@ div[id*=space] {
     justify-content: center;
 }
 
+
+
+
 .circle {
     width: 40px;
     height: 40px;
@@ -310,12 +321,12 @@ div[id*=space] {
 }
 
 .triangle[id*=ground] {
-    border-bottom-color: orange;
+    border-bottom-color: $buildGround;
     @extend .trianglebase;
 }
 
 .triangle[id*=space] {
-    border-bottom-color: blue;
+    border-bottom-color: $buildSpace;
     @extend .trianglebase;
 }
 
@@ -336,7 +347,7 @@ div[id*=space] {
     border-style: solid;
     line-height: 35px;
     position: relative;
-    font-family: $SWFont;
+    font-family: $sw-font;
 }
 
 input[id^=round] {
@@ -363,6 +374,7 @@ input[id^=round]:disabled+label {
     margin: 16px;
 }
 
+
 .fs-7 {
     font-size: small;
 }
@@ -370,6 +382,26 @@ input[id^=round]:disabled+label {
 .list-group a {
     font-size: medium;
     color: gray;
+}
+
+.build {
+    position: relative;
+}
+
+.build__number {
+    position: absolute;
+}
+
+.build__number-squ {
+    right: 15px;
+}
+
+.build__number-tri {
+    right: -4px;
+}
+
+.build__number-cir {
+    right: 16px;
 }
 
 /* Callouts */
@@ -401,7 +433,7 @@ input[id^=round]:disabled+label {
     }
 
     h5 {
-        font-family: $SWFont;
+        font-family: $sw-font;
     }
 }
 
@@ -495,7 +527,7 @@ input[id^=round]:disabled+label {
     padding: 4px;
     background-color: #F5F5F5;
     @include font-size-pxem(13px);
-    font-family: $SWFont;
+    font-family: $sw-font;
     color: $gray-600;
 }
 
@@ -553,24 +585,12 @@ input[id^=round]:disabled+label {
 }
 
 .icon-medium {
-    @include font-size-pxem(32px);
+    @include font-size-pxem(29px);
 }
 
-@media(min-width: 300px) {
+@include breakpoint(md) {
     .icon-medium {
-        @include font-size-pxem(19px);
-    }
-}
-
-@media(min-width: 544px) {
-    .icon-medium {
-        @include font-size-pxem(24px);
-    }
-}
-
-@media(min-width: 768px) {
-    .icon-medium {
-        @include font-size-pxem(32px);
+        @include font-size-pxem(28px);
     }
 }
 

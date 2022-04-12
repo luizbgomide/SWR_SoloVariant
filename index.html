@@ -156,18 +156,20 @@
     <main class="main">
         <header class="fixed-top">
             <div class="d-flex justify-content-between mainheader" id="mainheader">
-                <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#options">
+                    <button type="button" class="mainheader__navbutton me-3 btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#options">
           <span class="material-icons align-middle icon-medium" data-bs-target="#options">menu</span>
         </button>
-                <div>
-                    <div class="d-inline" id="fulltitle">
+                    <div class="mainheader__headline flex-fill">
+                        <div class="d-flex flex-column flex-sm-row">
+                            <div class="font-bold me-3" id="fulltitle">
                         Star Wars Rebellion
                     </div>
-                    <div class="d-inline" style="font-weight: 100">
-                        Variante Solo
+                            <div class="font-regular">
+                                Variante Solo
+                            </div>
                     </div>
-                </div>
-                <div>
+                    </div>
+                    <div class="mainheader__buttons">
                     <button type="button" class="btnNoBackground" data-bs-toggle="offcanvas" data-bs-target="#roundtracker">
             <span class="icon-medium" id="roundnumber" data-bs-toggle="tooltip" title="Rodada"
               data-bs-placement="bottom" data-bs-target="#roundtracker">
@@ -441,7 +443,7 @@
                                     </div>
                                     <span class="material-icons">science</span>
                                 </div>
-                                <p>
+                                <p id="Base-ActionCardExecution">
                                     O Império joga todas as Cartas de Ação designadas como <strong class="text-medium">jogáveis</strong> durante a Fase de Atribuição.
                                 </p>
                             </div>
@@ -869,6 +871,7 @@
                     <ul class="col-6 list-unstyled">
                         <li><strong>Website: </strong><a href="https://boardgamegeek.com/user/OZ10" target="_blank">OZ10</a></li>
                         <li><strong>Tradução PT-BR: </strong><a href="https://boardgamegeek.com/user/zhouluyi" target="_blank">zhouluyi</a></li>
+<li><strong>Contribuições:</strong> <a href="https://boardgamegeek.com/user/Vortilion" target="_blank">Vortilion</a></li>
                     </ul>
                     <ul class="col-6 list-unstyled">
                         <li><strong>Variante Solo: </strong><a href="https://boardgamegeek.com/user/Elad" target="_blank">Dale
@@ -1224,130 +1227,130 @@
                         <h6 class="buildrowheader">Império</h6>
                         <div class="row buildrowempire">
                             <div class="col-1 fw-bold">3:</div>
-                            <div class="triangle d-none" id="build-emp-ground-tri-3">
-                                0
+                                <div class="build triangle d-none" id="build-emp-ground-tri-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-emp-ground-cir-3">
-                                0
+                                <div class="build circle d-none" id="build-emp-ground-cir-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-emp-ground-squ-3">
-                                0
+                                <div class="build square d-none" id="build-emp-ground-squ-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="triangle d-none" id="build-emp-space-tri-3">
-                                0
+                                <div class="build triangle d-none" id="build-emp-space-tri-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-emp-space-cir-3">
-                                0
+                                <div class="build circle d-none" id="build-emp-space-cir-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-emp-space-squ-3">
-                                0
+                                <div class="build square d-none" id="build-emp-space-squ-3">
+                                    <div class="build__number">0</div>
                             </div>
                         </div>
                         <div class="row buildrowempire">
                             <div class="col-1 fw-bold">2:</div>
-                            <div class="triangle d-none" id="build-emp-ground-tri-2">
-                                0
+                                <div class="build triangle d-none" id="build-emp-ground-tri-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-emp-ground-cir-2">
-                                0
+                                <div class="build circle d-none" id="build-emp-ground-cir-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-emp-ground-squ-2">
-                                0
+                                <div class="build square d-none" id="build-emp-ground-squ-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="triangle d-none" id="build-emp-space-tri-2">
-                                0
+                                <div class="build triangle d-none" id="build-emp-space-tri-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-emp-space-cir-2">
-                                0
+                                <div class="build circle d-none" id="build-emp-space-cir-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-emp-space-squ-2">
-                                0
+                                <div class="build square d-none" id="build-emp-space-squ-2">
+                                    <div class="build__number">0</div>
                             </div>
                         </div>
                         <div class="row buildrowempire">
                             <div class="col-1 fw-bold">1:</div>
-                            <div class="triangle d-none" id="build-emp-ground-tri-1">
-                                0
+                                <div class="build triangle d-none" id="build-emp-ground-tri-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-emp-ground-cir-1">
-                                0
+                                <div class="build circle d-none" id="build-emp-ground-cir-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-emp-ground-squ-1">
-                                0
+                                <div class="build square d-none" id="build-emp-ground-squ-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="triangle d-none" id="build-emp-space-tri-1">
-                                0
+                                <div class="build triangle d-none" id="build-emp-space-tri-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-emp-space-cir-1">
-                                0
+                                <div class="build circle d-none" id="build-emp-space-cir-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-emp-space-squ-1">
-                                0
+                                <div class="build square d-none" id="build-emp-space-squ-1">
+                                    <div class="build__number">0</div>
                             </div>
                         </div>
                         <p></p>
                         <h6 class="buildrowheader">Rebeldes</h6>
                         <div class="row buildrowrebel">
                             <div class="col-1 fw-bold">3:</div>
-                            <div class="triangle d-none" id="build-rebel-ground-tri-3">
-                                0
+                                <div class="build triangle d-none" id="build-rebel-ground-tri-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-rebel-ground-cir-3">
-                                0
+                                <div class="build circle d-none" id="build-rebel-ground-cir-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-rebel-ground-squ-3">
-                                0
+                                <div class="build square d-none" id="build-rebel-ground-squ-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="triangle d-none" id="build-rebel-space-tri-3">
-                                0
+                                <div class="build triangle d-none" id="build-rebel-space-tri-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-rebel-space-cir-3">
-                                0
+                                <div class="build circle d-none" id="build-rebel-space-cir-3">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-rebel-space-squ-3">
-                                0
+                                <div class="build square d-none" id="build-rebel-space-squ-3">
+                                    <div class="build__number">0</div>
                             </div>
                         </div>
                         <div class="row buildrowrebel">
                             <div class="col-1 fw-bold">2:</div>
-                            <div class="triangle d-none" id="build-rebel-ground-tri-2">
-                                0
+                                <div class="build triangle d-none" id="build-rebel-ground-tri-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-rebel-ground-cir-2">
-                                0
+                                <div class="build circle d-none" id="build-rebel-ground-cir-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-rebel-ground-squ-2">
-                                0
+                                <div class="build square d-none" id="build-rebel-ground-squ-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="triangle d-none" id="build-rebel-space-tri-2">
-                                0
+                                <div class="build triangle d-none" id="build-rebel-space-tri-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-rebel-space-cir-2">
-                                0
+                                <div class="build circle d-none" id="build-rebel-space-cir-2">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-rebel-space-squ-2">
-                                0
+                                <div class="build square d-none" id="build-rebel-space-squ-2">
+                                    <div class="build__number">0</div>
                             </div>
                         </div>
                         <div class="row buildrowrebel">
                             <div class="col-1 fw-bold">1:</div>
-                            <div class="triangle d-none" id="build-rebel-ground-tri-1">
-                                0
+                                <div class="build triangle d-none" id="build-rebel-ground-tri-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-rebel-ground-cir-1">
-                                0
+                                <div class="build circle d-none" id="build-rebel-ground-cir-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-rebel-ground-squ-1">
-                                0
+                                <div class="build square d-none" id="build-rebel-ground-squ-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="triangle d-none" id="build-rebel-space-tri-1">
-                                0
+                                <div class="build triangle d-none" id="build-rebel-space-tri-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="circle d-none" id="build-rebel-space-cir-1">
-                                0
+                                <div class="build circle d-none" id="build-rebel-space-cir-1">
+                                    <div class="build__number">0</div>
                             </div>
-                            <div class="square d-none" id="build-rebel-space-squ-1">
-                                0
+                                <div class="build square d-none" id="build-rebel-space-squ-1">
+                                    <div class="build__number">0</div>
                             </div>
                         </div>
                         <div class="modal-footer"></div>
@@ -1457,20 +1460,22 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
     <script src="./resources/js/main.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $("#dismissbutton, .overlay").on("click", function() {
+            $(document).ready(function () {
+                $("#dismissbutton, .overlay").on("click", function () {
                 $("#sidebar").removeClass("show");
                 $(".overlay").removeClass("show");
             });
 
-            $("#sidebarToggle").on("click", function() {
+                $("#sidebarToggle").on("click", function () {
                 $("#sidebar").addClass("show");
                 $(".overlay").addClass("show");
             });
