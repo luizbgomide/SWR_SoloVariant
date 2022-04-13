@@ -1,4 +1,4 @@
-# SWR_SoloVariant
+# SWR_VarianteSolo
 Instruções para usar a variante solo para Star Wars Rebellion
 
 Link PT-BR - https://luizbgomide.github.io/SWR_SoloVariant/
